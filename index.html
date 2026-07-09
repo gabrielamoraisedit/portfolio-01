@@ -73,22 +73,30 @@
 				padding: 1em 0.5em;
 				background: rgba(255, 255, 255, 0.03);
 				border-radius: 6px;
-				transition: background 0.3s ease;
+				transition: all 0.3s ease;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 			}
 			.software-item:hover {
-				background: rgba(255, 255, 255, 0.08);
+				background: rgba(255, 255, 255, 0.1);
+				transform: translateY(-4px);
 			}
-			.software-item i {
-				font-size: 1.8em;
+			.software-item-icon {
+				width: 48px;
+				height: 48px;
 				display: block;
-				margin-bottom: 0.4em;
-				color: #efa8b0;
+				margin-bottom: 0.6em;
+				object-fit: contain;
+				filter: drop-shadow(0 2px 4px rgba(239, 168, 176, 0.3));
 			}
 			.software-item span {
 				font-size: 0.75em;
 				font-weight: 500;
 				display: block;
 				font-family: 'Roboto', sans-serif;
+				color: inherit;
 			}
 			.expertise-list dd {
 				margin-bottom: 1.5em;
@@ -118,6 +126,13 @@
 			.languages {
 				font-size: 0.95em;
 				margin-top: 0.8em;
+				margin-bottom: 0;
+			}
+			/* Skills section description */
+			#skills > .major > p {
+				font-size: 0.85em;
+				color: rgba(255, 255, 255, 0.7);
+				margin-top: 0.5em;
 				margin-bottom: 0;
 			}
 		</style>
@@ -237,20 +252,47 @@
 							<section id="skills" class="main special">
 								<header class="major">
 									<h2>Kit de Ferramentas</h2>
-									<p>*Aplicações utilizadas em constante processo de aperfeiçoamento.</p>
+									<p>Tecnologias que domino e aprimoro</p>
 								</header>
 								
 								<h3>Meu Kit Técnico de Softwares</h3>
 								<div class="software-grid">
-									<div class="software-item"><i class="icon solid fa-image"></i><span>Photoshop</span></div>
-									<div class="software-item"><i class="icon solid fa-bezier-curve"></i><span>Illustrator</span></div>
-									<div class="software-item"><i class="icon solid fa-video"></i><span>Premiere Pro</span></div>
-									<div class="software-item"><i class="icon solid fa-film"></i><span>After Effects</span></div>
-									<div class="software-item"><i class="icon solid fa-cubes"></i><span>Blender</span></div>
-									<div class="software-item"><i class="icon solid fa-pen-nib"></i><span>Figma</span></div>
-									<div class="software-item"><i class="icon solid fa-palette"></i><span>Canva</span></div>
-									<div class="software-item"><i class="icon solid fa-wand-magic-sparkles"></i><span>Flow (Veo 3)</span></div>
-									<div class="software-item"><i class="icon solid fa-mobile-screen"></i><span>CapCut</span></div>
+									<div class="software-item">
+										<img src="images/photoshop.png" alt="Adobe Photoshop" class="software-item-icon" />
+										<span>Photoshop</span>
+									</div>
+									<div class="software-item">
+										<img src="images/illustrator.png" alt="Adobe Illustrator" class="software-item-icon" />
+										<span>Illustrator</span>
+									</div>
+									<div class="software-item">
+										<img src="images/premiere.png" alt="Adobe Premiere Pro" class="software-item-icon" />
+										<span>Premiere Pro</span>
+									</div>
+									<div class="software-item">
+										<img src="images/aftereffects.png" alt="Adobe After Effects" class="software-item-icon" />
+										<span>After Effects</span>
+									</div>
+									<div class="software-item">
+										<img src="images/blender.png" alt="Blender 3D" class="software-item-icon" />
+										<span>Blender</span>
+									</div>
+									<div class="software-item">
+										<img src="images/figma.png" alt="Figma" class="software-item-icon" />
+										<span>Figma</span>
+									</div>
+									<div class="software-item">
+										<img src="images/canva.png" alt="Canva" class="software-item-icon" />
+										<span>Canva</span>
+									</div>
+									<div class="software-item">
+										<img src="images/flow.png" alt="Flow - Veo 3" class="software-item-icon" />
+										<span>Flow (Veo 3)</span>
+									</div>
+									<div class="software-item">
+										<img src="images/capcut.png" alt="CapCut" class="software-item-icon" />
+										<span>CapCut</span>
+									</div>
 								</div>
 							</section>
 
