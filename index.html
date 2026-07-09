@@ -6,11 +6,58 @@
 -->
 <html>
 	<head>
-		<title>Portfolio - Vijay Ravuri</title> <!-- Control's tab title -->
+		<title>Gabriela Pacheco de Morais | Portfólio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Estilo minimalista para a grade de softwares */
+			.software-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+				gap: 1.5em;
+				margin-top: 1.5em;
+				text-align: center;
+			}
+			.software-item {
+				padding: 1em 0.5em;
+				background: rgba(255, 255, 255, 0.03);
+				border-radius: 6px;
+				transition: background 0.3s ease;
+			}
+			.software-item:hover {
+				background: rgba(255, 255, 255, 0.08);
+			}
+			.software-item i {
+				font-size: 1.8em;
+				display: block;
+				margin-bottom: 0.4em;
+				color: #efa8b0;
+			}
+			.software-item span {
+				font-size: 0.8em;
+				font-weight: 500;
+				display: block;
+			}
+			.expertise-list dt {
+				font-weight: bold;
+				color: #efa8b0;
+				margin-top: 1em;
+			}
+			.expertise-list dd {
+				margin-bottom: 1.5em;
+			}
+			/* Estilo para a lista ordenada do Processo Criativo */
+			.creative-process {
+				padding-left: 1.5em;
+				margin-top: 1em;
+			}
+			.creative-process li {
+				margin-bottom: 0.8em;
+				padding-left: 0.5em;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -20,88 +67,142 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Vijay Ravuri</h1>
-						<p>Data Scientist &nbsp;&bull;&nbsp; Statistician </p>
+						<h1>Gabriela Pacheco de Morais</h1>
+						<p>Publicidade e Propaganda &bull; Design Gráfico &bull; Edição de Vídeos</p>
 						<ul class="icons">
-							<li><a href="https://github.com/vijay-ravuri" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.linkedin.com/in/vijay-ravuri/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+							<li><a href="LINK_DO_SEU_LINKEDIN_AQUI" class="icon brands fa-linkedin alt" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://www.behance.net/gabrielamorais_" class="icon brands fa-behance alt" target="_blank"><span class="label">Behance</span></a></li>
+							<li><a href="LINK_DO_SEU_CANAL_YOUTUBE_AQUI" class="icon brands fa-youtube alt" target="_blank"><span class="label">YouTube</span></a></li>
+							<li><a href="https://x.com/gabrielam_edit" class="icon brands fa-twitter alt" target="_blank"><span class="label">X (Twitter)</span></a></li>
 						</ul>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">About Me</a></li>
-							<li><a href="#projects">My Projects</a></li>
-							<li><a href="#edu">Education</a></li>
-							<li><a href="#cta">Contact Me</a></li>
+							<li><a href="#intro" class="active">Sobre Mim</a></li>
+							<li><a href="#expertise">Conhecimento & Processo</a></li>
+							<li><a href="#videos">Edição de Vídeo</a></li>
+							<li><a href="#design">Design Gráfico</a></li>
+							<li><a href="#skills">Ferramentas</a></li>
+							<li><a href="#cta">Contato</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Introduction -->
+						<!-- Sobre Mim -->
 							<section id="intro" class="main">
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>About Me</h2>
+											<h2>Olá, meu nome é Gabriela.</h2>
 										</header>
-										<p>I am a detail-oriented statistician and data scientist driven by a passion for deciphering the intricate relationship between trends in data and creating actionable change. I view statistics as a powerful and versatile tool that is uniquely suited for application across and between diverse domains. My goal is to combine creative problem solving, adaptability, along with a solid foundation in theoretical and applied statistics to experience a wide range of disciplines while gaining deeper insights and perspectives with the aim of making a meaningful impact in the world.</p>
+										<p>Sou estudante de Publicidade e Propaganda na UNAERP e venho me aperfeiçoando constantemente em Design Gráfico e na área de edição de vídeos. Sou apaixonada pela criação de conteúdos visuais coesos, unindo criatividade e pensamento estratégico para alavancar os propósitos de produtos e marcas.</p>
+										<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade visual definida."</blockquote>
 									</div>
 								</div>
 							</section>
 
-						<!-- First Section -->
-							<section id="projects" class="main special">
-								<header class="major">
-									<h2>My Projects</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<a href="https://github.com/vijay-ravuri/audio-modeling" class="icon solid major style1 fa-headphones"></a>
-										<h3><a href="https://github.com/vijay-ravuri/audio-modeling">Song Classification and Recommendations</a></h3>
-										<p>Genre classification and recommender system based on song data from the Free Music Archive. Processed and analyzed audio from 8000 songs using the librosa library along with Neural Networks and dimension reduction techniques to classify songs by genre. <a href="https://audio-modeling.streamlit.app/">This app</a> allows users to see how my analysis works on a song of their choosing.</p>
-									</li>
-									<li>
-										<a href="https://github.com/vijay-ravuri/poll-accuracy-modeling" class="icon major style3 fa-chart-bar"></a>
-										<h3><a href="https://github.com/vijay-ravuri/poll-accuracy-modeling"> U.S. Political Poll Accuracy Modeling</a></h3>
-										<p>Applying supervised and unsupervised machine learning models onto US polling data to understand trends and differences in accurate and inaccurate polls. Used various clustering (K-Means, HDBSCAN) and classification techniques to understand trends between incorrect and correct polls from a set of over 10,000 election polls spanning from 1998 to 2020.</p>
-									</li>
-									<li>
-										<a href="https://github.com/vijay-ravuri/reddit-comment-classification" class="icon solid major style5 fa-laptop"></a>
-										<h3><a href="https://github.com/vijay-ravuri/reddit-comment-classification">Real vs AI-Generated Reddit Comments</a></h3>
-										<p>Applying various classification and NLP techniques to classify real vs AI-generated (via OpenAI API) Reddit comments to thread titles. Applied PRAW and OpenAI APIs to gather real and AI-generated reddit responses to real posts. Trained, tuned, and compared the performance of various classification methods (Ensemble Tree Models, Boosting, SVM) and identified the optimal model.</p>
-									</li>
-								</ul>
+						<!-- Áreas de Conhecimento & Processo Criativo -->
+							<section id="expertise" class="main">
+								<div class="row">
+									<div class="col-6 col-12-medium">
+										<header class="major">
+											<h2>Áreas de Conhecimento</h2>
+										</header>
+										<dl class="expertise-list">
+											<dt>Design & Branding</dt>
+											<dd>Criação de ativos visuais com foco em identidade e clareza.</dd>
+											
+											<dt>Edição Audiovisual</dt>
+											<dd>Vídeos dinâmicos unindo ferramentas Adobe e IA Generativa.</dd>
+											
+											<dt>Social Media</dt>
+											<dd>Gestão estratégica e produção de conteúdo para autoridade digital.</dd>
+											
+											<dt>Modelagem 3D e 2D</dt>
+											<dd>Uso do software Blender para desenvolvimento de ilustrações e design de peças tridimensionais.</dd>
+											
+											<dt>Estratégia & Dados</dt>
+											<dd>Planejamento baseado em métricas de performance e crescimento.</dd>
+										</dl>
+									</div>
+									<div class="col-6 col-12-medium">
+										<header class="major">
+											<h2>Processo Criativo</h2>
+										</header>
+										<p>Metodologia organizada para garantir consistência e impacto em cada projeto:</p>
+										<ol class="creative-process">
+											<li><strong>Análise do conceito ideal:</strong> Alinhamento profundo adjunto aos valores e propósitos da empresa contratante.</li>
+											<li><strong>Definição conceitual:</strong> Estruturação do direcionamento visual e conceito de design da peça ou campanha.</li>
+											<li><strong>Criação e execução:</strong> Desenvolvimento prático e edições avançadas utilizando o ecossistema Adobe.</li>
+											<li><strong>Ajustes finais:</strong> Refinamento de detalhes para assegurar consistência visual e clareza na comunicação.</li>
+										</ol>
+									</div>
+								</div>
 							</section>
 
-						<!-- Second Section -->
-							<section id="edu" class="main special">
+						<!-- Seção de Vídeos -->
+							<section id="videos" class="main special">
 								<header class="major">
-									<h2>Education</h2>
-									<ul style="font-size:24px; list-style: none;">
-										<li>General Assembly | Data Science Immersive | Remote | 2023</li>
-										<li>CalPoly | B.S. in Statistics | San Luis Obispo, CA | 2019</li>
-									</ul>
+									<h2>Edição de Vídeo & Audiovisual</h2>
+									<p>Produções dinâmicas e estratégicas para conectar marcas ao seu público-alvo.</p>
 								</header>
+								<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 2em;">
+									<iframe src="https://www.youtube.com/embed/COLE_O_ID_DO_VIDEO_AQUI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</section>
+
+						<!-- Seção de Design Gráfico -->
+							<section id="design" class="main special">
+								<header class="major">
+									<h2>Design Gráfico & Projetos</h2>
+									<p>Desenvolvimento de criativos, identidades visuais e layouts organizados.</p>
+								</header>
+								<p>Você pode visualizar meus projetos de design gráfico, estratégias de marca e materiais práticos em formato PDF diretamente através do botão abaixo.</p>
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="./assets/resume.pdf" class="button">Resumé</a></li>
+										<li><a href="LINK_DO_SEU_GOOGLE_DRIVE_AQUI" class="button primary" target="_blank">Acessar Portfólio em PDF</a></li>
 									</ul>
 								</footer>
 							</section>
 
-						<!-- Get Started -->
+						<!-- Ferramentas e Idiomas -->
+							<section id="skills" class="main special">
+								<header class="major">
+									<h2>Ferramentas & Idiomas</h2>
+									<p>*Aplicações utilizadas em constante processo de aperfeiçoamento.</p>
+								</header>
+								
+								<h3>Softwares & Aplicações</h3>
+								<div class="software-grid">
+									<div class="software-item"><i class="icon solid fa-image"></i><span>Photoshop</span></div>
+									<div class="software-item"><i class="icon solid fa-bezier-curve"></i><span>Illustrator</span></div>
+									<div class="software-item"><i class="icon solid fa-video"></i><span>Premiere Pro</span></div>
+									<div class="software-item"><i class="icon solid fa-film"></i><span>After Effects</span></div>
+									<div class="software-item"><i class="icon solid fa-cubes"></i><span>Blender</span></div>
+									<div class="software-item"><i class="icon solid fa-figma"></i><span>Figma</span></div>
+									<div class="software-item"><i class="icon solid fa-palette"></i><span>Canva</span></div>
+									<div class="software-item"><i class="icon solid fa-bolt"></i><span>Flow (Veo 3)</span></div>
+									<div class="software-item"><i class="icon solid fa-mobile-alt"></i><span>CapCut</span></div>
+								</div>
+
+								<br><br>
+								<h3>Idiomas</h3>
+								<p>Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
+							</section>
+
+						<!-- Contato -->
 							<section id="cta" class="main special">
 								<header class="major">
-									<h2>Contact Me</h2>
+									<h2>Vamos transformar suas ideias em experiências visuais impactantes?</h2>
 								</header>
-								<p>Feel free to reach out to me either by email or through <a href="https://www.linkedin.com/in/vijay-ravuri/">LinkedIn</a> if you have any questions, suggestions,  or feedback regarding my projects. I'm always interested in improving my skills and projects!</p>
+								<p>Estou à disposição para desafios criativos e colaborações estratégicas. Contrate-me e vamos cooperar na criação de conteúdos que comunicam com clareza, engajam e inspiram.</p>
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="mailto:vijay_ravuri@outlook.com" class="button primary">Email</a></li>
+										<li><a href="mailto:gabrielamoraisedit@gmail.com" class="button primary">Contrate-me por E-mail</a></li>
 									</ul>
 								</footer>
 							</section>
@@ -110,20 +211,16 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section>
-							<h2>Contact Info</h2>
-							<dl class="alt">
-								<dt>Location</dt>
-								<dd>San Francisco Bay Area &bull; California &bull; USA</dd>
+						<section style="width: 100%; text-align: center;">
+							<h2>Contato Direto</h2>
+							<dl class="alt" style="margin-bottom: 0;">
+								<dt>Atendimento</dt>
+								<dd>Remoto / Brasil</dd>
 								<dt>Email</dt>
-								<dd><a href="mailto:vijay_ravuri@outlook.com">vijay_ravuri@outlook.com</a></dd>
+								<dd><a href="mailto:gabrielamoraisedit@gmail.com">gabrielamoraisedit@gmail.com</a></dd>
 							</dl>
-							<!-- <ul class="icons">
-								<li><a href="https://github.com/vijay-ravuri" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.linkedin.com/in/vijay-ravuri/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-							</ul> -->
 						</section>
-						<p class="copyright">&copy; Vijay Ravuri. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright" style="text-align: center; margin-top: 2em;">&copy; Gabriela Pacheco de Morais. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
