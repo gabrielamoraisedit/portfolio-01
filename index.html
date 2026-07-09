@@ -10,6 +10,16 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 		<style>
+			/* Sobrescrita do Background com as novas cores corporativas */
+			body, #wrapper {
+				background-color: #121821 !important;
+				background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important;
+			}
+			body::before {
+				background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important;
+				opacity: 1 !important;
+			}
+
 			/* Font family definitions and global text color */
 			html, body {
 				font-family: 'Roboto', sans-serif;
@@ -67,7 +77,7 @@
 				background: rgba(255, 255, 255, 0.02);
 				padding: 1.2em 1.8em;
 				max-width: 750px;
-				margin: 2.5em auto;
+				margin: 2em auto;
 				border-radius: 0 8px 8px 0;
 				line-height: 1.7;
 				letter-spacing: -0.01em;
