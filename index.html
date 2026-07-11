@@ -1,345 +1,320 @@
 <!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Gabriela Pacheco de Morais | Portfólio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<!-- Google Fonts Import -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-		<style>
-			/* Sobrescrita do Background com as novas cores corporativas */
-			body, #wrapper {
-				background-color: #121821 !important;
-				background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important;
-			}
-			body::before {
-				background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important;
-				opacity: 1 !important;
-			}
+<html lang="pt-BR">
+<head>
+	<title>Gabriela Pacheco de Morais | Portfólio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Portfólio de Gabriela Pacheco de Morais — Estudante de Publicidade e Propaganda na UNAERP, focada em Design Gráfico e Edição de Vídeos." />
+	<meta name="author" content="Gabriela Pacheco de Morais" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b; }
+		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
+		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%); opacity: 1; z-index: -1; }
+		h1,h2,h3,h4,h5,h6,p,span,dt,dd,li,blockquote { color: #0b0b0b; }
+		#header h1, #header p { color: #8b99ad !important; }
+		h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2em; }
+		h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6em; }
+		h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3em; }
+		h4,h5,h6 { font-family: 'Montserrat', sans-serif; font-size: 1.1em; }
+		header h1, header p { font-family: 'Montserrat', sans-serif; }
+		header p { font-size: 1em; }
+		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em; }
+		section header h2 { font-family: 'Montserrat', sans-serif; }
+		p { font-size: 0.95em; line-height: 1.6; }
+		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,0.02); padding: 1.2em 1.8em; max-width: 750px; margin: 2em auto; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -0.01em; color: #0b0b0b; }
+		.software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1.5em; margin-top: 1.5em; text-align: center; justify-content: center; }
+		.software-item { padding: 1em 0.5em; background: rgba(255,255,255,0.03); border-radius: 6px; transition: background 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+		.software-item:hover { background: rgba(255,255,255,0.10); transform: translateY(-4px); }
+		.software-item-icon { width: 32px; height: 32px; display: block; margin-bottom: 0.8em; }
+		.software-custom-icon { filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(-30deg) saturate(0.6) opacity(0.8) drop-shadow(0 2px 4px rgba(239,176,186,0.3)); }
+		.software-item span { font-size: 0.75em; font-weight: 500; display: block; font-family: 'Roboto', sans-serif; color: #0b0b0b; }
+		.languages { font-size: 0.95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0; color: #0b0b0b; }
+		#skills > .major > p { font-size: 0.85em; margin-top: 0.5em; margin-bottom: 0; }
+		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: 0.3em; color: #0b0b0b; }
+		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-family: 'Roboto', sans-serif; font-size: 0.95em; text-align: justify; letter-spacing: -0.01em; margin-left: 0; color: #0b0b0b; }
+		#main > section.main { background: #f0f1f3; }
+		#main > section.main:nth-child(even) { background: #e8eaed; }
+		#footer { background: rgba(11,16,25,0.6); }
+		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,0.6); }
+		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em; }
+		.expertise-columns h3 { margin-bottom: 1.2em; padding-bottom: 0.5em; border-bottom: 2px solid rgba(239,168,176,0.3); }
+		.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8em; margin-top: 1.5em; }
+		.project-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,153,173,0.12); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+		.project-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); border-color: rgba(239,168,176,0.35); }
+		.project-card-body { padding: 1.2em 1.4em 1.4em; }
+		.project-card-body h4 { margin: 0 0 0.4em; font-size: 1em; }
+		.project-card-body p { margin: 0; font-size: 0.85em; opacity: 0.8; }
+		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8em; margin-top: 1.5em; }
+		.video-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,153,173,0.12); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); border-color: rgba(239,168,176,0.35); }
+		.video-card-thumbnail { position: relative; background: #0b101a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; }
+		.video-card-thumbnail::before { content: ''; display: block; width: 3.5em; height: 3.5em; background: rgba(239,168,176,0.2); border: 2px solid rgba(239,168,176,0.5); border-radius: 50%; }
+		.video-card-thumbnail::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: 0.6em 0 0.6em 1.1em; border-color: transparent transparent transparent #efa8b0; margin-left: 0.2em; }
+		.video-card-body { padding: 1.2em 1.4em 1.4em; }
+		.video-card-body h4 { margin: 0 0 0.4em; font-size: 1em; }
+		.video-card-body p { margin: 0; font-size: 0.85em; opacity: 0.8; }
+		.tag { display: inline-block; padding: 0.25em 0.75em; border-radius: 3px; font-size: 0.72em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(239,168,176,0.12); color: #efa8b0; border: 1px solid rgba(239,168,176,0.3); margin-bottom: 0.8em; }
+		.button { display: inline-block; padding: 0.75em 2em; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease; border: 2px solid #efa8b0; color: #efa8b0; background: transparent; text-decoration: none; }
+		.button:hover { background: rgba(239,168,176,0.12); color: #f0c4ca; }
+		.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+		@media screen and (max-width: 768px) {
+			.expertise-columns { grid-template-columns: 1fr; }
+			#header h1 { font-size: 1.8em; }
+		}
+		@media screen and (max-width: 480px) {
+			.software-grid { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+		}
+	</style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
-			/* Font family definitions and global text color */
-			html, body {
-				font-family: 'Roboto', sans-serif;
-				font-size: 14px;
-				color: #0b0b0b;
-			}
-			h1, h2, h3, h4, h5, h6, p, span, dt, dd, li, blockquote {
-				color: #0b0b0b;
-			}
-			/* Customização específica de cor para o Nome e Subtítulo do Header */
-			#header h1, #header p {
-				color: #8b99ad !important;
-			}
-			h1 {
-				font-family: 'Montserrat', sans-serif;
-				font-size: 2.2em;
-			}
-			h2 {
-				font-family: 'Montserrat', sans-serif;
-				font-size: 1.6em;
-			}
-			h3 {
-				font-family: 'Montserrat', sans-serif;
-				font-size: 1.3em;
-			}
-			h4, h5, h6 {
-				font-family: 'Montserrat', sans-serif;
-				font-size: 1.1em;
-			}
-			header h1, header p {
-				font-family: 'Montserrat', sans-serif;
-			}
-			header p {
-				font-size: 1em;
-			}
-			nav a {
-				font-family: 'Roboto', sans-serif;
-				font-size: 0.95em;
-			}
-			section header h2 {
-				font-family: 'Montserrat', sans-serif;
-			}
-			.expertise-list dt, .creative-process-list dt {
-				font-family: 'Montserrat', sans-serif;
-				font-size: 1em;
-				font-weight: 600;
-			}
-			p {
-				font-size: 0.95em;
-				line-height: 1.6;
-			}
-			/* Bloco de citação de destaque totalmente estilizado e profissional */
-			blockquote {
-				font-size: 1.05em;
-				font-style: italic;
-				text-align: left;
-				border-left: 4px solid #efa8b0;
-				border-bottom: none;
-				background: rgba(255, 255, 255, 0.02);
-				padding: 1.2em 1.8em;
-				max-width: 750px;
-				margin: 2em auto;
-				border-radius: 0 8px 8px 0;
-				line-height: 1.7;
-				letter-spacing: -0.01em;
-			}
-			/* Estilo minimalista para a grade de softwares com alinhamento simétrico */
-			.software-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-				gap: 1.5em;
-				margin-top: 1.5em;
-				text-align: center;
-				justify-content: center;
-			}
-			.software-item {
-				padding: 1em 0.5em;
-				background: rgba(255, 255, 255, 0.03);
-				border-radius: 6px;
-				transition: all 0.3s ease;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
-			.software-item:hover {
-				background: rgba(255, 255, 255, 0.1);
-				transform: translateY(-4px);
-			}
-			.software-item-icon {
-				width: 32px;
-				height: 32px;
-				display: block;
-				margin-bottom: 0.8em;
-			}
-			/* Filtro unificado para adequar todos os SVGs externos à paleta pastel do site */
-			.software-custom-icon {
-				filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(-30deg) saturate(0.6) opacity(0.8) drop-shadow(0 2px 4px rgba(239, 176, 186, 0.3));
-			}
-			.software-item span {
-				font-size: 0.75em;
-				font-weight: 500;
-				display: block;
-				font-family: 'Roboto', sans-serif;
-			}
-			.expertise-list dd, .creative-process-list dd {
-				margin-bottom: 1.5em;
-				font-family: 'Roboto', sans-serif;
-				font-size: 0.95em;
-				text-align: justify;
-				letter-spacing: -0.01em;
-			}
-			/* Spacing for sections */
-			.software-grid + h3 {
-				margin-top: 2em;
-			}
-			/* Languages styling */
-			.languages {
-				font-size: 0.95em;
-				font-weight: 500;
-				text-align: center;
-				margin-top: 2em;
-				margin-bottom: 0;
-			}
-			/* Skills section description */
-			#skills > .major > p {
-				font-size: 0.85em;
-				margin-top: 0.5em;
-				margin-bottom: 0;
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+	<header id="header" class="alt">
+		<span class="logo">
+			<img src="images/logo.svg" alt="Logo Gabriela Pacheco" width="80" height="80" />
+		</span>
+		<h1>Gabriela Pacheco de Morais</h1>
+		<p>Publicidade e Propaganda &bull; Design Gráfico &bull; Edição de Vídeos</p>
+		<ul class="icons">
+			<li><a href="https://www.linkedin.com/in/gabriela-morais/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a></li>
+			<li><a href="https://www.behance.net/gabrielamorais_" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i><span class="sr-only">Behance</span></a></li>
+			<li><a href="https://www.youtube.com/@gabrielamoraisedit" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i><span class="sr-only">YouTube</span></a></li>
+			<li><a href="https://x.com/gabrielam_edit" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i><span class="sr-only">X (Twitter)</span></a></li>
+		</ul>
+	</header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<nav id="nav" aria-label="Menu principal">
+		<ul>
+			<li><a href="#intro" class="active">Sobre Mim</a></li>
+			<li><a href="#skills">Kit de Ferramentas</a></li>
+			<li><a href="#expertise">Conhecimento &amp; Processo</a></li>
+			<li><a href="#design">Design Gráfico</a></li>
+			<li><a href="#videos">Edição de Vídeo</a></li>
+		</ul>
+	</nav>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="Logo" /></span>
-						<h1>Gabriela Pacheco de Morais</h1>
-						<p>Publicidade e Propaganda &bull; Design Gráfico &bull; Edição de Vídeos</p>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/gabriela-morais/" class="icon brands fa-linkedin alt" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.behance.net/gabrielamorais_" class="icon brands fa-behance alt" target="_blank" rel="noopener"><span class="label">Behance</span></a></li>
-							<li><a href="https://www.youtube.com/@gabrielamoraisedit" class="icon brands fa-youtube alt" target="_blank" rel="noopener"><span class="label">YouTube</span></a></li>
-							<li><a href="https://x.com/gabrielam_edit" class="icon brands fa-twitter alt" target="_blank" rel="noopener"><span class="label">X (Twitter)</span></a></li>
-						</ul>
-					</header>
+	<main id="main">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">Sobre Mim</a></li>
-							<li><a href="#skills">Kit de Ferramentas</a></li>
-							<li><a href="#expertise">Conhecimento & Processo</a></li>
-							<li><a href="#design">Design Gráfico</a></li>
-							<li><a href="#videos">Edição de Vídeo</a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Sobre Mim -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Olá, boas-vindas!</h2>
-										</header>
-										<p>Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
-										<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
-										<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
-									</div>
-								</div>
-							</section>
-
-						<!-- Kit de Ferramentas -->
-							<section id="skills" class="main special">
-								<header class="major">
-									<h2>Meu Kit Técnico de Softwares</h2>
-									<p>Tecnologias que venho aprimorando com o passar dos anos...</p>
-								</header>
-								
-								<div class="software-grid">
-									<div class="software-item">
-										<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Adobe Photoshop" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>Photoshop</span>
-									</div>
-									<div class="software-item">
-										<img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Adobe Illustrator" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>Illustrator</span>
-									</div>
-									<div class="software-item">
-										<img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Adobe Premiere Pro" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>Premiere Pro</span>
-									</div>
-									<div class="software-item">
-										<img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="Adobe After Effects" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>After Effects</span>
-									</div>
-									<div class="software-item">
-										<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/blender-icon.svg" alt="Blender 3D" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>Blender</span>
-									</div>
-									<div class="software-item">
-										<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/figma-icon.svg" alt="Figma" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>Figma</span>
-									</div>
-									<div class="software-item">
-										<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/canva-icon.svg" alt="Canva" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>Canva</span>
-									</div>
-									<div class="software-item">
-										<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/capcut-icon.svg" alt="CapCut" class="software-item-icon software-custom-icon" loading="lazy" />
-										<span>CapCut</span>
-									</div>
-								</div>
-							</section>
-
-						<!-- Áreas de Conhecimento & Processo Criativo -->
-							<section id="expertise" class="main">
-								<div class="row">
-									<div class="col-6 col-12-medium">
-										<header class="major">
-											<h2>Áreas do Conhecimento</h2>
-										</header>
-										<dl class="expertise-list">
-											<dt>Design & Branding</dt>
-											<dd>Criação de ativos visuais estratégicos com foco em identidade, clareza e posicionamento de marca.</dd>
-											
-											<dt>Edição Audiovisual</dt>
-											<dd>Produção de vídeos dinâmicos, unindo o ecossistema Adobe à potência da inteligência artificial generativa.</dd>
-											
-											<dt>Social Media</dt>
-											<dd>Gestão estratégica e criação de conteúdo sob medida para construir autoridade digital e engajamento real.</dd>
-											
-											<dt>Modelagem 2D & 3D</dt>
-											<dd>Desenvolvimento de ilustrações e design de peças tridimensionais no Blender para projetos com profundidade e inovação.</dd>
-											
-											<dt>Estratégia & Dados</dt>
-											<dd>Planejamento criativo totalmente orientado pelas métricas de performance e crescimento.</dd>
-											
-											<dt>Design Gráfico</dt>
-											<dd>Criação de criativos para redes sociais, layouts, thumbnails organizados e materiais com forte consistência visual.</dd>
-										</dl>
-									</div>
-									<div class="col-6 col-12-medium">
-										<header class="major">
-											<h2>Processo Criativo</h2>
-										</header>
-										<dl class="creative-process-list">
-											<dt>Imersão & Alinhamento</dt>
-											<dd>Análise aprofundada da essência, valores e propósitos da sua marca para garantir total sinergia.</dd>
-											
-											<dt>Direcionamento Visual</dt>
-											<dd>Estruturação do conceito de design e planejamento criativo da peça ou campanha.</dd>
-											
-											<dt>Modelagem & Ilustrações 3D</dt>
-											<dd>Desenvolvimento de elementos tridimensionais exclusivos para elevar o nível estético e o impacto visual de conteúdos para redes sociais e vídeos.</dd>
-											
-											<dt>Criação & Execução</dt>
-											<dd>Desenvolvimento prático e edições avançadas utilizando as principais ferramentas do mercado.</dd>
-											
-											<dt>Refinamento Técnico</dt>
-											<dd>Ajustes minuciosos de detalhes para assegurar máxima consistência visual e clareza na comunicação.</dd>
-										</dl>
-									</div>
-								</div>
-							</section>
-
-						<!-- Seção de Design Gráfico -->
-							<section id="design" class="main special">
-								<header class="major">
-									<h2>Design Gráfico & Projetos</h2>
-									<p>Desenvolvimento de criativos, identidades visuais e layouts organizados.</p>
-								</header>
-								<p>Você pode visualizar meus projetos de design gráfico, estratégias de marca e materiais práticos em formato PDF diretamente através do botão abaixo.</p>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="https://drive.google.com/YOUR_PORTFOLIO_LINK_HERE" class="button primary" target="_blank" rel="noopener">Acessar Portfólio em PDF</a></li>
-									</ul>
-								</footer>
-							</section>
-
-						<!-- Seção de Vídeos -->
-							<section id="videos" class="main special">
-								<header class="major">
-									<h2>Edição de Vídeo & Audiovisual</h2>
-									<p>Produções dinâmicas e estratégicas para conectar marcas ao seu público-alvo.</p>
-								</header>
-								<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 2em;">
-									<iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Edição de Vídeo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
-								</div>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright" style="text-align: center; margin-top: 2em;">&copy; Gabriela Pacheco de Morais. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
+		<!-- SEÇÃO 1 — Sobre Mim -->
+		<section id="intro" class="main">
+			<div style="max-width:900px;margin:0 auto;padding:3em 2em;">
+				<header class="major">
+					<h2>Olá, boas-vindas!</h2>
+				</header>
+				<p>Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
+				<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- SEÇÃO 2 — Kit Técnico de Softwares -->
+		<section id="skills" class="main special">
+			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
+				<header class="major">
+					<h2>Meu Kit Técnico de Softwares</h2>
+					<p>Tecnologias que venho aprimorando com o passar dos anos…</p>
+				</header>
+				<div class="software-grid">
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Adobe Photoshop" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>Photoshop</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Adobe Illustrator" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>Illustrator</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg" alt="Adobe InDesign" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>InDesign</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Adobe_Premiere_Pro_CC_icon.svg" alt="Adobe Premiere Pro" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>Premiere Pro</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Adobe_After_Effects_CC_icon.svg" alt="Adobe After Effects" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>After Effects</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>Figma</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Canva_Logo.svg" alt="Canva" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>Canva</span>
+					</div>
+					<div class="software-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Capcut-icon.svg" alt="CapCut" class="software-item-icon software-custom-icon" width="32" height="32" loading="lazy" />
+						<span>CapCut</span>
+					</div>
+				</div>
+			</div>
+		</section>
 
-	</body>
+		<!-- SEÇÃO 3 — Conhecimento & Processo Criativo -->
+		<section id="expertise" class="main">
+			<div style="max-width:900px;margin:0 auto;padding:3em 2em;">
+				<header class="major">
+					<h2>Conhecimento &amp; Processo</h2>
+				</header>
+				<div class="expertise-columns">
+					<div>
+						<h3>Áreas do Conhecimento</h3>
+						<dl class="expertise-list">
+							<dt>Identidade Visual</dt>
+							<dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
+							<dt>Design Editorial</dt>
+							<dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
+							<dt>Edição de Vídeo</dt>
+							<dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
+							<dt>Comunicação Digital</dt>
+							<dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
+						</dl>
+					</div>
+					<div>
+						<h3>Processo Criativo</h3>
+						<dl class="creative-process-list">
+							<dt>Briefing &amp; Pesquisa</dt>
+							<dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual. O diagnóstico preciso define a direção criativa.</dd>
+							<dt>Conceituação</dt>
+							<dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
+							<dt>Execução &amp; Refinamento</dt>
+							<dd>Produção do projeto com atenção aos detalhes técnicos — tipografia, grid, paleta e consistência —, seguida de ciclos de revisão até a entrega impecável.</dd>
+							<dt>Entrega &amp; Aplicação</dt>
+							<dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente em todos os contextos.</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SEÇÃO 4 — Design Gráfico -->
+		<section id="design" class="main special">
+			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
+				<header class="major">
+					<h2>Design Gráfico</h2>
+					<p>Projetos de identidade visual, editorial e comunicação digital.</p>
+				</header>
+				<div class="projects-grid">
+					<article class="project-card">
+						<div style="height:190px;background:linear-gradient(135deg,#2f3c4f 0%,#1a2535 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="color:rgba(139,153,173,0.45);font-family:'Montserrat',sans-serif;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;">Identidade Visual</span>
+						</div>
+						<div class="project-card-body">
+							<span class="tag">Branding</span>
+							<h4>Identidade Visual — Projeto 01</h4>
+							<p>Desenvolvimento de marca completa com logotipo, paleta de cores, tipografia e manual de aplicação.</p>
+						</div>
+					</article>
+					<article class="project-card">
+						<div style="height:190px;background:linear-gradient(135deg,#3a2f4f 0%,#1e1a35 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="color:rgba(139,153,173,0.45);font-family:'Montserrat',sans-serif;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;">Editorial</span>
+						</div>
+						<div class="project-card-body">
+							<span class="tag">Design Editorial</span>
+							<h4>Publicação Digital — Projeto 02</h4>
+							<p>Layout editorial para publicação digital com sistema de grid, hierarquia tipográfica e elementos infográficos.</p>
+						</div>
+					</article>
+					<article class="project-card">
+						<div style="height:190px;background:linear-gradient(135deg,#2f3c4f 0%,#35242f 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="color:rgba(139,153,173,0.45);font-family:'Montserrat',sans-serif;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;">Social Media</span>
+						</div>
+						<div class="project-card-body">
+							<span class="tag">Social Media</span>
+							<h4>Conteúdo Digital — Projeto 03</h4>
+							<p>Criação de feed coeso para redes sociais com template system e linguagem visual unificada.</p>
+						</div>
+					</article>
+				</div>
+				<p style="margin-top:2.5em;">
+					<a href="https://www.behance.net/gabrielamorais_" class="button" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance</a>
+				</p>
+			</div>
+		</section>
+
+		<!-- SEÇÃO 5 — Edição de Vídeo -->
+		<section id="videos" class="main special">
+			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
+				<header class="major">
+					<h2>Edição de Vídeo</h2>
+					<p>Conteúdo audiovisual para plataformas digitais e projetos criativos.</p>
+				</header>
+				<div class="video-grid">
+					<article class="video-card">
+						<div class="video-card-thumbnail" role="img" aria-label="Thumbnail — Motion Graphics"></div>
+						<div class="video-card-body">
+							<span class="tag">Motion Graphics</span>
+							<h4>Animação de Marca — Vídeo 01</h4>
+							<p>Animação de logotipo e elementos de identidade visual com After Effects para abertura de conteúdo.</p>
+						</div>
+					</article>
+					<article class="video-card">
+						<div class="video-card-thumbnail" role="img" aria-label="Thumbnail — Edição Narrativa"></div>
+						<div class="video-card-body">
+							<span class="tag">Edição</span>
+							<h4>Edição Narrativa — Vídeo 02</h4>
+							<p>Edição de conteúdo narrativo com ritmo, cortes dinâmicos, colorização e trilha sonora sincronizada.</p>
+						</div>
+					</article>
+					<article class="video-card">
+						<div class="video-card-thumbnail" role="img" aria-label="Thumbnail — Reels e Short-form"></div>
+						<div class="video-card-body">
+							<span class="tag">Short-form</span>
+							<h4>Reels &amp; TikTok — Vídeo 03</h4>
+							<p>Criação e edição de conteúdo vertical para Instagram Reels e TikTok com legendas animadas e efeitos.</p>
+						</div>
+					</article>
+				</div>
+				<p style="margin-top:2.5em;">
+					<a href="https://www.youtube.com/@gabrielamoraisedit" class="button" target="_blank" rel="noopener noreferrer">Assistir no YouTube</a>
+				</p>
+			</div>
+		</section>
+
+	</main>
+
+	<footer id="footer">
+		<p class="copyright">&copy; <span id="footer-year"></span> Gabriela Pacheco de Morais. Design: <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>.</p>
+	</footer>
+
+</div>
+
+<script>
+	document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+<script>
+	(function () {
+		var navLinks = document.querySelectorAll('#nav ul li a');
+		var sections = [];
+		navLinks.forEach(function (link) {
+			var id = link.getAttribute('href');
+			if (id && id.startsWith('#')) {
+				var section = document.querySelector(id);
+				if (section) sections.push({ link: link, section: section });
+			}
+		});
+		function onScroll() {
+			var scrollY = window.scrollY || window.pageYOffset;
+			var windowH = window.innerHeight;
+			var active = null;
+			sections.forEach(function (item) {
+				if (scrollY >= item.section.offsetTop - windowH * 0.35) active = item;
+			});
+			navLinks.forEach(function (l) { l.classList.remove('active'); });
+			if (active) active.link.classList.add('active');
+			else if (sections.length > 0) sections[0].link.classList.add('active');
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	})();
+</script>
+
+</body>
 </html>
