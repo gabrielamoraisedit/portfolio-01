@@ -11,7 +11,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
 		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b; }
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
@@ -62,7 +61,6 @@
 		.tag { display: inline-block; padding: 0.25em 0.75em; border-radius: 3px; font-size: 0.72em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(239,168,176,0.12); color: #efa8b0; border: 1px solid rgba(239,168,176,0.3); margin-bottom: 0.8em; }
 		.button { display: inline-block; padding: 0.75em 2em; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease; border: 2px solid #efa8b0; color: #efa8b0; background: transparent; text-decoration: none; }
 		.button:hover { background: rgba(239,168,176,0.12); color: #f0c4ca; }
-		.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 		@media screen and (max-width: 768px) {
 			.expertise-columns { grid-template-columns: 1fr; }
 			#header h1 { font-size: 1.8em; }
@@ -76,20 +74,18 @@
 <div id="wrapper">
 
 	<header id="header" class="alt">
-		<span class="logo">
-			<img src="images/logo.svg" alt="Logo Gabriela Pacheco" width="80" height="80" />
-		</span>
+		<span class="logo"><img src="images/logo.svg" alt="Logo" /></span>
 		<h1>Gabriela Pacheco de Morais</h1>
 		<p>Publicidade e Propaganda &bull; Design Gráfico &bull; Edição de Vídeos</p>
 		<ul class="icons">
-			<li><a href="https://www.linkedin.com/in/gabriela-morais/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a></li>
-			<li><a href="https://www.behance.net/gabrielamorais_" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i><span class="sr-only">Behance</span></a></li>
-			<li><a href="https://www.youtube.com/@gabrielamoraisedit" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i><span class="sr-only">YouTube</span></a></li>
-			<li><a href="https://x.com/gabrielam_edit" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i><span class="sr-only">X (Twitter)</span></a></li>
+			<li><a href="https://www.linkedin.com/in/gabriela-morais/" class="icon brands fa-linkedin alt" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+			<li><a href="https://www.behance.net/gabrielamorais_" class="icon brands fa-behance alt" target="_blank" rel="noopener noreferrer"><span class="label">Behance</span></a></li>
+			<li><a href="https://www.youtube.com/@gabrielamoraisedit" class="icon brands fa-youtube alt" target="_blank" rel="noopener noreferrer"><span class="label">YouTube</span></a></li>
+			<li><a href="https://x.com/gabrielam_edit" class="icon brands fa-twitter alt" target="_blank" rel="noopener noreferrer"><span class="label">X (Twitter)</span></a></li>
 		</ul>
 	</header>
 
-	<nav id="nav" aria-label="Menu principal">
+	<nav id="nav">
 		<ul>
 			<li><a href="#intro" class="active">Sobre Mim</a></li>
 			<li><a href="#skills">Kit de Ferramentas</a></li>
@@ -99,7 +95,7 @@
 		</ul>
 	</nav>
 
-	<main id="main">
+	<div id="main">
 
 		<!-- SEÇÃO 1 — Sobre Mim -->
 		<section id="intro" class="main">
@@ -278,7 +274,7 @@
 			</div>
 		</section>
 
-	</main>
+	</div>
 
 	<footer id="footer">
 		<p class="copyright">&copy; <span id="footer-year"></span> Gabriela Pacheco de Morais. Design: <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>.</p>
@@ -289,32 +285,13 @@
 <script>
 	document.getElementById('footer-year').textContent = new Date().getFullYear();
 </script>
-<script>
-	(function () {
-		var navLinks = document.querySelectorAll('#nav ul li a');
-		var sections = [];
-		navLinks.forEach(function (link) {
-			var id = link.getAttribute('href');
-			if (id && id.startsWith('#')) {
-				var section = document.querySelector(id);
-				if (section) sections.push({ link: link, section: section });
-			}
-		});
-		function onScroll() {
-			var scrollY = window.scrollY || window.pageYOffset;
-			var windowH = window.innerHeight;
-			var active = null;
-			sections.forEach(function (item) {
-				if (scrollY >= item.section.offsetTop - windowH * 0.35) active = item;
-			});
-			navLinks.forEach(function (l) { l.classList.remove('active'); });
-			if (active) active.link.classList.add('active');
-			else if (sections.length > 0) sections[0].link.classList.add('active');
-		}
-		window.addEventListener('scroll', onScroll, { passive: true });
-		onScroll();
-	})();
-</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
