@@ -15,7 +15,9 @@
 		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b; }
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%); opacity: 1; z-index: -1; }
-		h1,h2,h3,h4,h5,h6,p,span,dt,dd,li,blockquote { color: #0b0b0b; }
+
+		/* ── Cor de texto geral (sem span, que tem cores próprias) ── */
+		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b; }
 
 		/* ── Header ── */
 		#header, #header .logo, #header h1, #header > p, #header .icons, #header .icons li, #header .icons li a {
@@ -44,8 +46,14 @@
 		.languages { font-size: 0.95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0; color: #0b0b0b; }
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: 0.3em; color: #0b0b0b; }
 		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-family: 'Roboto', sans-serif; font-size: 0.95em; text-align: justify; letter-spacing: -0.01em; margin-left: 0; color: #0b0b0b; }
-		#main > section.main { background: #f0f1f3; }
-		#main > section.main:nth-child(even) { background: #e8eaed; }
+
+		/* ── Cores de fundo das seções ── */
+		#intro   { background: #f0f1f3; }
+		#skills  { background: #e8eaed; }
+		#expertise { background: #f0f1f3; }
+		#design  { background: #e8eaed; }
+		#videos  { background: #f0f1f3; }
+
 		#footer { background: rgba(11,16,25,0.6); }
 		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,0.6); }
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em; }
@@ -56,14 +64,14 @@
 		.expertise-details summary::-webkit-details-marker { display: none; }
 		.expertise-summary-content { display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: opacity 0.2s ease; margin: 0; }
 		.expertise-summary-content:hover { opacity: 0.7; }
-		.toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 2px solid #efa8b0; color: #efa8b0; border-radius: 50%; font-size: 22px; font-weight: 400; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; font-family: sans-serif; line-height: 0; }
-		.expertise-details[open] .toggle-icon { transform: rotate(45deg); background: #efa8b0; color: #121821; }
+		.toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 2px solid #efa8b0; color: #efa8b0 !important; border-radius: 50%; font-size: 22px; font-weight: 400; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; font-family: sans-serif; line-height: 0; }
+		.expertise-details[open] .toggle-icon { transform: rotate(45deg); background: #efa8b0; color: #121821 !important; }
 		.expertise-details[open] .expertise-columns { animation: slideDownFade 0.4s ease-out forwards; margin-top: 3em; }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 
 		/* ── Slideshow ── */
 		.slideshow-outer { max-width: 850px; margin: 2.5em auto 0; }
-		.slideshow-container { position: relative; display: flex; align-items: center; gap: 0; }
+		.slideshow-container { position: relative; display: flex; align-items: center; }
 		.slideshow-wrapper {
 			display: flex;
 			overflow-x: auto;
@@ -78,7 +86,6 @@
 		}
 		.slideshow-wrapper::-webkit-scrollbar { display: none; }
 
-		/* ── SLIDE: proporção fixa 3/2, imagem preenche sem margens ── */
 		.slide {
 			flex: 0 0 100%;
 			scroll-snap-align: start;
@@ -99,7 +106,6 @@
 			border-radius: 10px;
 		}
 
-		/* Botões de navegação */
 		.slide-btn {
 			flex-shrink: 0;
 			background: rgba(18,24,33,0.85);
@@ -120,7 +126,6 @@
 		}
 		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.08); }
 
-		/* Indicadores de pontos */
 		.slideshow-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
 		.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(139,153,173,0.35); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease, transform 0.2s ease; }
 		.dot.active { background: #efa8b0; transform: scale(1.3); }
