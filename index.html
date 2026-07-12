@@ -245,23 +245,19 @@
 
 					<div class="slideshow-wrapper" id="design-slideshow">
 
-						<!-- ═══════════════════════════════════════════════════
-						     SLIDE 1 — sua imagem já está aqui!
-						     O script abaixo testa .jpg, .JPG, .png e .PNG
-						     automaticamente. Basta ter o arquivo na pasta images/
-						     ═══════════════════════════════════════════════════ -->
-						<div class="slide" id="slide-1">
-							<img id="slide1-img" alt="Projeto Autoral 01 - Beginners Understanding Shortcuts" />
+						<!-- SLIDE 1 -->
+						<div class="slide">
+							<img src="images/project 01.png" alt="Projeto Autoral 01 - Beginners Understanding Shortcuts" />
 						</div>
 
-						<!-- SLIDE 2 — substitua a div placeholder por: <img src="images/projeto2.jpg" alt="..." /> -->
+						<!-- SLIDE 2 — substitua pelo seu: <img src="images/project 02.png" alt="..." /> -->
 						<div class="slide">
 							<div class="slide-placeholder" style="background:linear-gradient(135deg,#3a2f4f 0%,#1e1a35 100%);">
 								<span>Imagem Horizontal 02</span>
 							</div>
 						</div>
 
-						<!-- SLIDE 3 — substitua a div placeholder por: <img src="images/projeto3.jpg" alt="..." /> -->
+						<!-- SLIDE 3 — substitua pelo seu: <img src="images/project 03.png" alt="..." /> -->
 						<div class="slide">
 							<div class="slide-placeholder" style="background:linear-gradient(135deg,#2f3c4f 0%,#35242f 100%);">
 								<span>Imagem Horizontal 03</span>
@@ -329,7 +325,6 @@
 <script>
 	document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-	// ── Slideshow: botões de navegação ──
 	document.addEventListener("DOMContentLoaded", function () {
 		const wrapper = document.getElementById('design-slideshow');
 		const prevBtn = document.getElementById('prev-slide');
@@ -338,35 +333,6 @@
 			nextBtn.addEventListener('click', () => wrapper.scrollBy({ left: wrapper.clientWidth, behavior: 'smooth' }));
 			prevBtn.addEventListener('click', () => wrapper.scrollBy({ left: -wrapper.clientWidth, behavior: 'smooth' }));
 		}
-
-		// ── Fallback automático para Slide 1 ──
-		// Testa cada extensão em sequência até encontrar a imagem correta
-		const img = document.getElementById('slide1-img');
-		const candidates = [
-			'images/projeto1.jpg',
-			'images/projeto1.JPG',
-			'images/projeto1.jpeg',
-			'images/projeto1.JPEG',
-			'images/projeto1.png',
-			'images/projeto1.PNG'
-		];
-		let idx = 0;
-		function tryNext() {
-			if (idx >= candidates.length) {
-				// Nenhuma extensão funcionou: mostra placeholder elegante
-				if (img && img.parentNode) {
-					const ph = document.createElement('div');
-					ph.className = 'slide-placeholder';
-					ph.style.background = 'linear-gradient(135deg,#2f3c4f 0%,#1a2535 100%)';
-					ph.innerHTML = '<span>Projeto Autoral 01</span>';
-					img.parentNode.replaceChild(ph, img);
-				}
-				return;
-			}
-			img.onerror = tryNext;
-			img.src = candidates[idx++];
-		}
-		if (img) tryNext();
 	});
 </script>
 <script src="assets/js/jquery.min.js"></script>
