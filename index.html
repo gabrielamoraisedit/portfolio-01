@@ -42,9 +42,9 @@
 		p { font-size: 0.95em; line-height: 1.6; }
 		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,0.02); padding: 1.2em 1.8em; max-width: 750px; margin: 2em auto; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -0.01em; color: #0b0b0b; }
 
-		/* ── Grid de softwares ── */
-		.software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1.5em; margin-top: 1.5em; text-align: center; justify-content: center; }
-		.software-item { padding: 1em 0.5em; background: rgba(255,255,255,0.03); border-radius: 6px; transition: background 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+		/* ── Grid de softwares (Atualizado para Flexbox para centralizar a última linha) ── */
+		.software-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em; margin-top: 1.5em; }
+		.software-item { flex: 0 1 130px; padding: 1em 0.5em; background: rgba(255,255,255,0.03); border-radius: 6px; transition: background 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 		.software-item:hover { background: rgba(255,255,255,0.10); transform: translateY(-4px); }
 		.software-item-icon {
 			width: 36px;
@@ -102,7 +102,7 @@
 			#header h1 { font-size: 1.8em; }
 		}
 		@media screen and (max-width: 480px) {
-			.software-grid { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+			.software-item { flex: 0 1 100px; }
 		}
 	</style>
 </head>
@@ -218,7 +218,7 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 3 — Conhecimento & Processo Criativo (AGORA RETRÁTIL) -->
+		<!-- SEÇÃO 3 — Conhecimento & Processo Criativo -->
 		<section id="expertise" class="main">
 			<div style="max-width:900px;margin:0 auto;padding:3em 2em;">
 				
