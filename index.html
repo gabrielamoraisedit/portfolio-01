@@ -16,7 +16,21 @@
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%); opacity: 1; z-index: -1; }
 		h1,h2,h3,h4,h5,h6,p,span,dt,dd,li,blockquote { color: #0b0b0b; }
-		#header h1, #header p { color: #8b99ad !important; }
+
+		/* ── HEADER: força visibilidade independente da animação do Stellar ── */
+		#header,
+		#header .logo,
+		#header h1,
+		#header > p,
+		#header .icons,
+		#header .icons li,
+		#header .icons li a {
+			opacity: 1 !important;
+			transform: none !important;
+			visibility: visible !important;
+		}
+		#header h1, #header > p { color: #8b99ad !important; }
+
 		h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2em; }
 		h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6em; }
 		h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3em; }
@@ -27,11 +41,15 @@
 		section header h2 { font-family: 'Montserrat', sans-serif; }
 		p { font-size: 0.95em; line-height: 1.6; }
 		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,0.02); padding: 1.2em 1.8em; max-width: 750px; margin: 2em auto; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -0.01em; color: #0b0b0b; }
+
+		/* ── GRID DE SOFTWARES ── */
 		.software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1.5em; margin-top: 1.5em; text-align: center; justify-content: center; }
 		.software-item { padding: 1em 0.5em; background: rgba(255,255,255,0.03); border-radius: 6px; transition: background 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 		.software-item:hover { background: rgba(255,255,255,0.10); transform: translateY(-4px); }
-		.software-item-icon { width: 32px; height: 32px; display: block; margin-bottom: 0.8em; filter: drop-shadow(0 2px 6px rgba(239,168,176,0.4)); }
+		.software-item-icon { width: 32px; height: 32px; display: block; margin-bottom: 0.8em; }
+		.software-custom-icon { filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(-30deg) saturate(0.6) opacity(0.8) drop-shadow(0 2px 4px rgba(239,176,186,0.3)); }
 		.software-item span { font-size: 0.75em; font-weight: 500; display: block; font-family: 'Roboto', sans-serif; color: #0b0b0b; }
+
 		.languages { font-size: 0.95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0; color: #0b0b0b; }
 		#skills > .major > p { font-size: 0.85em; margin-top: 0.5em; margin-bottom: 0; }
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: 0.3em; color: #0b0b0b; }
@@ -119,49 +137,65 @@
 
 					<!-- Adobe Photoshop -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/adobephotoshop/efa8b0" alt="Adobe Photoshop" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+							 alt="Adobe Photoshop" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>Photoshop</span>
 					</div>
 
 					<!-- Adobe Illustrator -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/adobeillustrator/efa8b0" alt="Adobe Illustrator" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
+							 alt="Adobe Illustrator" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>Illustrator</span>
 					</div>
 
 					<!-- Adobe InDesign -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/adobeindesign/efa8b0" alt="Adobe InDesign" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg"
+							 alt="Adobe InDesign" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>InDesign</span>
 					</div>
 
 					<!-- Adobe Premiere Pro -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/adobepremierepro/efa8b0" alt="Adobe Premiere Pro" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Adobe_Premiere_Pro_CC_icon.svg"
+							 alt="Adobe Premiere Pro" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>Premiere Pro</span>
 					</div>
 
 					<!-- Adobe After Effects -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/adobeaftereffects/efa8b0" alt="Adobe After Effects" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Adobe_After_Effects_CC_icon.svg"
+							 alt="Adobe After Effects" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>After Effects</span>
 					</div>
 
 					<!-- Figma -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/figma/efa8b0" alt="Figma" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+							 alt="Figma" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>Figma</span>
 					</div>
 
 					<!-- Canva -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/canva/efa8b0" alt="Canva" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Canva_Logo.svg"
+							 alt="Canva" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>Canva</span>
 					</div>
 
 					<!-- CapCut -->
 					<div class="software-item">
-						<img src="https://cdn.simpleicons.org/capcut/efa8b0" alt="CapCut" class="software-item-icon" width="32" height="32" loading="lazy" />
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Capcut-icon.svg"
+							 alt="CapCut" class="software-item-icon software-custom-icon"
+							 width="32" height="32" loading="lazy" />
 						<span>CapCut</span>
 					</div>
 
