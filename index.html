@@ -62,16 +62,89 @@
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 
 		/* ── Slideshow ── */
-		.slideshow-container { position: relative; max-width: 850px; margin: 2.5em auto 0; display: flex; align-items: center; }
-		.slideshow-wrapper { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; width: 100%; scrollbar-width: none; -ms-overflow-style: none; border-radius: 8px; box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+		.slideshow-outer { max-width: 850px; margin: 2.5em auto 0; }
+		.slideshow-container { position: relative; display: flex; align-items: center; gap: 0; }
+		.slideshow-wrapper {
+			display: flex;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			-webkit-overflow-scrolling: touch;
+			width: 100%;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+			border-radius: 10px;
+			box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+			background: #1a2535;
+		}
 		.slideshow-wrapper::-webkit-scrollbar { display: none; }
-		.slide { flex: 0 0 100%; scroll-snap-align: center; position: relative; background: #1a2535; border-radius: 8px; overflow: hidden; aspect-ratio: 16/9; }
-		.slide img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; }
-		.slide-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: rgba(139,153,173,0.45); font-family: 'Montserrat', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.9em; }
-		.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(18,24,33,0.85); color: #efa8b0; border: 1px solid rgba(239,168,176,0.3); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; transition: background 0.3s ease, border-color 0.3s ease; font-size: 1.2em; backdrop-filter: blur(4px); }
-		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; }
-		.prev-btn { left: -22px; }
-		.next-btn { right: -22px; }
+
+		/* Cada slide ocupa 100% da largura visível */
+		.slide {
+			flex: 0 0 100%;
+			scroll-snap-align: start;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #1a2535;
+			border-radius: 10px;
+			overflow: hidden;
+			/* Altura adaptável: mínimo 200px, máximo 480px em desktop */
+			min-height: 200px;
+			max-height: 480px;
+		}
+		.slide img {
+			/* Imagem ocupa toda a largura disponível */
+			width: 100%;
+			/* Altura automática conforme proporção real da imagem */
+			height: auto;
+			/* Limita a altura para não ficar gigante */
+			max-height: 480px;
+			/* Garante que a imagem inteira aparece, sem cortes */
+			object-fit: contain;
+			display: block;
+			border-radius: 10px;
+		}
+
+		/* Botões de navegação */
+		.slide-btn {
+			flex-shrink: 0;
+			background: rgba(18,24,33,0.85);
+			color: #efa8b0;
+			border: 1px solid rgba(239,168,176,0.3);
+			border-radius: 50%;
+			width: 44px;
+			height: 44px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			z-index: 2;
+			transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+			font-size: 1.1em;
+			backdrop-filter: blur(4px);
+			margin: 0 10px;
+		}
+		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.08); }
+
+		/* Indicadores de pontos */
+		.slideshow-dots {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+			margin-top: 16px;
+		}
+		.dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: rgba(139,153,173,0.35);
+			border: none;
+			cursor: pointer;
+			padding: 0;
+			transition: background 0.3s ease, transform 0.2s ease;
+		}
+		.dot.active { background: #efa8b0; transform: scale(1.3); }
 
 		/* ── Cards de Vídeo ── */
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8em; margin-top: 1.5em; }
@@ -87,14 +160,19 @@
 		.button { display: inline-block; padding: 0.75em 2em; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease; border: 2px solid #efa8b0; color: #efa8b0; background: transparent; text-decoration: none; }
 		.button:hover { background: rgba(239,168,176,0.12); color: #f0c4ca; }
 
+		/* ── Responsivo ── */
 		@media screen and (max-width: 768px) {
 			.expertise-columns { grid-template-columns: 1fr; }
 			#header h1 { font-size: 1.8em; }
-			.prev-btn { left: 10px; }
-			.next-btn { right: 10px; }
+			.slide { max-height: 280px; }
+			.slide img { max-height: 280px; }
+			.slide-btn { width: 36px; height: 36px; font-size: 0.95em; margin: 0 6px; }
 		}
 		@media screen and (max-width: 480px) {
 			.software-item { flex: 0 1 100px; }
+			.slide { max-height: 220px; }
+			.slide img { max-height: 220px; }
+			.slide-btn { width: 32px; height: 32px; font-size: 0.85em; margin: 0 4px; }
 		}
 	</style>
 </head>
@@ -240,36 +318,34 @@
 					<p>Projetos de identidade visual, editorial e comunicação digital.</p>
 				</header>
 
-				<div class="slideshow-container">
-					<button id="prev-slide" class="slide-btn prev-btn" aria-label="Slide anterior">&#10094;</button>
+				<div class="slideshow-outer">
+					<div class="slideshow-container">
+						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 
-					<div class="slideshow-wrapper" id="design-slideshow">
-
-						<!-- SLIDE 1 -->
-						<div class="slide">
-							<img src="images/project 01.png" alt="Projeto Autoral 01 - Beginners Understanding Shortcuts" />
+						<div class="slideshow-wrapper" id="design-slideshow">
+							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" loading="lazy" /></div>
+							<div class="slide"><img src="images/project 02.png" alt="Projeto 02" loading="lazy" /></div>
+							<div class="slide"><img src="images/project 03.png" alt="Projeto 03" loading="lazy" /></div>
+							<div class="slide"><img src="images/project 04.png" alt="Projeto 04" loading="lazy" /></div>
+							<div class="slide"><img src="images/project 05.png" alt="Projeto 05" loading="lazy" /></div>
+							<div class="slide"><img src="images/project 06.png" alt="Projeto 06" loading="lazy" /></div>
 						</div>
 
-						<!-- SLIDE 2 — substitua pelo seu: <img src="images/project 02.png" alt="..." /> -->
-						<div class="slide">
-							<div class="slide-placeholder" style="background:linear-gradient(135deg,#3a2f4f 0%,#1e1a35 100%);">
-								<span>Imagem Horizontal 02</span>
-							</div>
-						</div>
-
-						<!-- SLIDE 3 — substitua pelo seu: <img src="images/project 03.png" alt="..." /> -->
-						<div class="slide">
-							<div class="slide-placeholder" style="background:linear-gradient(135deg,#2f3c4f 0%,#35242f 100%);">
-								<span>Imagem Horizontal 03</span>
-							</div>
-						</div>
-
+						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
 
-					<button id="next-slide" class="slide-btn next-btn" aria-label="Próximo slide">&#10095;</button>
+					<!-- Indicadores de pontos -->
+					<div class="slideshow-dots" id="slideshow-dots">
+						<button class="dot active" aria-label="Slide 1"></button>
+						<button class="dot" aria-label="Slide 2"></button>
+						<button class="dot" aria-label="Slide 3"></button>
+						<button class="dot" aria-label="Slide 4"></button>
+						<button class="dot" aria-label="Slide 5"></button>
+						<button class="dot" aria-label="Slide 6"></button>
+					</div>
 				</div>
 
-				<p style="margin-top:3em;">
+				<p style="margin-top:2.5em;">
 					<a href="https://www.behance.net/gabrielamorais_" class="button" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance</a>
 				</p>
 			</div>
@@ -326,13 +402,41 @@
 	document.getElementById('footer-year').textContent = new Date().getFullYear();
 
 	document.addEventListener("DOMContentLoaded", function () {
-		const wrapper = document.getElementById('design-slideshow');
-		const prevBtn = document.getElementById('prev-slide');
-		const nextBtn = document.getElementById('next-slide');
-		if (wrapper && prevBtn && nextBtn) {
-			nextBtn.addEventListener('click', () => wrapper.scrollBy({ left: wrapper.clientWidth, behavior: 'smooth' }));
-			prevBtn.addEventListener('click', () => wrapper.scrollBy({ left: -wrapper.clientWidth, behavior: 'smooth' }));
+		const wrapper  = document.getElementById('design-slideshow');
+		const prevBtn  = document.getElementById('prev-slide');
+		const nextBtn  = document.getElementById('next-slide');
+		const dots     = document.querySelectorAll('#slideshow-dots .dot');
+		const slides   = wrapper.querySelectorAll('.slide');
+		const total    = slides.length;
+
+		function updateDots(index) {
+			dots.forEach((d, i) => d.classList.toggle('active', i === index));
 		}
+
+		function getCurrentIndex() {
+			return Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+		}
+
+		nextBtn.addEventListener('click', () => {
+			const next = (getCurrentIndex() + 1) % total;
+			wrapper.scrollTo({ left: next * wrapper.clientWidth, behavior: 'smooth' });
+		});
+
+		prevBtn.addEventListener('click', () => {
+			const prev = (getCurrentIndex() - 1 + total) % total;
+			wrapper.scrollTo({ left: prev * wrapper.clientWidth, behavior: 'smooth' });
+		});
+
+		dots.forEach((dot, i) => {
+			dot.addEventListener('click', () => {
+				wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' });
+			});
+		});
+
+		// Atualiza ponto ativo ao deslizar (touch ou scroll)
+		wrapper.addEventListener('scroll', () => {
+			updateDots(getCurrentIndex());
+		}, { passive: true });
 	});
 </script>
 <script src="assets/js/jquery.min.js"></script>
