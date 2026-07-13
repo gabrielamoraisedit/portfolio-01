@@ -72,7 +72,6 @@
 		   ════════════════════════════════════════ */
 		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0; }
 
-		/* botão | imagem | botão */
 		.slideshow-stage {
 			display: flex;
 			align-items: center;
@@ -117,7 +116,7 @@
 			display: block;
 		}
 
-		/* ── Botões: pequenos, quadrados ── */
+		/* Botões: pequenos, quadrados */
 		.slide-btn {
 			flex-shrink: 0;
 			width: 28px;
@@ -159,8 +158,37 @@
 		.video-card-body h4 { margin: 0 0 0.4em; font-size: 1em; }
 		.video-card-body p { margin: 0; font-size: 0.85em; opacity: 0.8; }
 		.tag { display: inline-block; padding: 0.25em 0.75em; border-radius: 3px; font-size: 0.72em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(239,168,176,0.12); color: #efa8b0; border: 1px solid rgba(239,168,176,0.3); margin-bottom: 0.8em; }
-		.button { display: inline-block; padding: 0.75em 2em; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease; border: 2px solid #efa8b0; color: #efa8b0; background: transparent; text-decoration: none; }
-		.button:hover { background: rgba(239,168,176,0.12); color: #f0c4ca; }
+
+		/* ── Link externo (substituiu o .button com borda) ── */
+		.link-ext {
+			display: inline-flex;
+			align-items: center;
+			gap: 7px;
+			font-family: 'Roboto', sans-serif;
+			font-size: 0.82em;
+			font-weight: 600;
+			letter-spacing: 0.09em;
+			text-transform: uppercase;
+			color: #efa8b0;
+			text-decoration: none;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			padding: 0.3em 0;
+			border-bottom: 1px solid rgba(239,168,176,0.3);
+			transition: color 0.22s ease, border-color 0.22s ease;
+		}
+		.link-ext svg {
+			flex-shrink: 0;
+			transition: transform 0.22s ease;
+		}
+		.link-ext:hover {
+			color: #f5c5cb;
+			border-color: #efa8b0;
+		}
+		.link-ext:hover svg {
+			transform: translate(2px, -2px); /* seta sobe e vai p/ direita */
+		}
 
 		/* ── Responsivo ── */
 		@media screen and (max-width: 768px) {
@@ -323,7 +351,6 @@
 				<div class="slideshow-outer">
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
-
 						<div class="slideshow-wrapper" id="design-slideshow">
 							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 02.png" alt="Projeto 02" loading="lazy" /></div>
@@ -332,10 +359,8 @@
 							<div class="slide"><img src="images/project 05.png" alt="Projeto 05" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 06.png" alt="Projeto 06" loading="lazy" /></div>
 						</div>
-
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
-
 					<div class="slideshow-dots" id="slideshow-dots">
 						<button class="dot active" aria-label="Slide 1"></button>
 						<button class="dot" aria-label="Slide 2"></button>
@@ -347,7 +372,14 @@
 				</div>
 
 				<p style="margin-top:2.5em;">
-					<a href="https://www.behance.net/gabrielamorais_" class="button" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance</a>
+					<a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">
+						Ver portfólio completo no Behance
+						<!-- ícone seta diagonal (link externo) -->
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<line x1="7" y1="17" x2="17" y2="7"/>
+							<polyline points="7 7 17 7 17 17"/>
+						</svg>
+					</a>
 				</p>
 			</div>
 		</section>
@@ -386,7 +418,13 @@
 					</article>
 				</div>
 				<p style="margin-top:2.5em;">
-					<a href="https://www.youtube.com/@gabrielamoraisedit" class="button" target="_blank" rel="noopener noreferrer">Assistir no YouTube</a>
+					<a href="https://www.youtube.com/@gabrielamoraisedit" class="link-ext" target="_blank" rel="noopener noreferrer">
+						Assistir no YouTube
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<line x1="7" y1="17" x2="17" y2="7"/>
+							<polyline points="7 7 17 7 17 17"/>
+						</svg>
+					</a>
 				</p>
 			</div>
 		</section>
@@ -419,25 +457,18 @@
 				 : window.innerWidth <= 768 ? MAX_H_TABLET
 				 : MAX_H_DESKTOP;
 		}
-
 		function applyHeight(img) {
 			if (!img || !img.naturalWidth) return;
 			const ratio  = img.naturalHeight / img.naturalWidth;
 			const availW = wrapper.clientWidth;
-			const idealH = Math.round(availW * ratio);
-			wrapper.style.height = Math.min(idealH, maxAllowed()) + 'px';
+			wrapper.style.height = Math.min(Math.round(availW * ratio), maxAllowed()) + 'px';
 		}
-
 		function adjustForIndex(idx) {
 			const img = imgs[idx];
 			if (!img) return;
-			if (img.complete && img.naturalWidth > 0) {
-				applyHeight(img);
-			} else {
-				img.addEventListener('load', () => applyHeight(img), { once: true });
-			}
+			if (img.complete && img.naturalWidth > 0) applyHeight(img);
+			else img.addEventListener('load', () => applyHeight(img), { once: true });
 		}
-
 		function getCurrentIndex() {
 			return Math.round(wrapper.scrollLeft / wrapper.clientWidth);
 		}
@@ -451,7 +482,6 @@
 		nextBtn.addEventListener('click', () => goTo((getCurrentIndex() + 1) % total));
 		prevBtn.addEventListener('click', () => goTo((getCurrentIndex() - 1 + total) % total));
 		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-
 		wrapper.addEventListener('scroll', () => {
 			const idx = getCurrentIndex();
 			updateDots(idx);
@@ -459,15 +489,10 @@
 		}, { passive: true });
 
 		adjustForIndex(0);
-
 		imgs.forEach((img, i) => {
-			if (!img.complete) {
-				img.addEventListener('load', () => {
-					if (getCurrentIndex() === i) applyHeight(img);
-				}, { once: true });
-			}
+			if (!img.complete)
+				img.addEventListener('load', () => { if (getCurrentIndex() === i) applyHeight(img); }, { once: true });
 		});
-
 		window.addEventListener('resize', () => adjustForIndex(getCurrentIndex()), { passive: true });
 	});
 </script>
