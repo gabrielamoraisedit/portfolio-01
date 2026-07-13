@@ -52,6 +52,11 @@
 		#design    { background: #e8eaed; }
 		#videos    { background: #f0f1f3; }
 
+		/* ── Remove os círculos decorativos do template nas seções ── */
+		#skills::before,  #skills::after,
+		#design::before,  #design::after,
+		#videos::before,  #videos::after { display: none !important; }
+
 		#footer { background: rgba(11,16,25,0.6); }
 		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,0.6); }
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em; }
@@ -72,11 +77,7 @@
 		   ════════════════════════════════════════ */
 		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0; }
 
-		.slideshow-stage {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-		}
+		.slideshow-stage { display: flex; align-items: center; gap: 8px; }
 
 		.slideshow-wrapper {
 			flex: 1;
@@ -116,7 +117,6 @@
 			display: block;
 		}
 
-		/* Botões: pequenos, quadrados */
 		.slide-btn {
 			flex-shrink: 0;
 			width: 28px;
@@ -135,14 +135,8 @@
 			-webkit-backdrop-filter: blur(6px);
 			line-height: 1;
 		}
-		.slide-btn:hover {
-			background: #efa8b0;
-			color: #121821;
-			border-color: #efa8b0;
-			transform: scale(1.06);
-		}
+		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06); }
 
-		/* Indicadores de pontos */
 		.slideshow-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
 		.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(139,153,173,0.4); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease, transform 0.2s ease; }
 		.dot.active { background: #efa8b0; transform: scale(1.35); }
@@ -159,7 +153,7 @@
 		.video-card-body p { margin: 0; font-size: 0.85em; opacity: 0.8; }
 		.tag { display: inline-block; padding: 0.25em 0.75em; border-radius: 3px; font-size: 0.72em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(239,168,176,0.12); color: #efa8b0; border: 1px solid rgba(239,168,176,0.3); margin-bottom: 0.8em; }
 
-		/* ── Link externo (substituiu o .button com borda) ── */
+		/* ── Link externo — azul do site ── */
 		.link-ext {
 			display: inline-flex;
 			align-items: center;
@@ -169,13 +163,13 @@
 			font-weight: 600;
 			letter-spacing: 0.09em;
 			text-transform: uppercase;
-			color: #efa8b0;
+			color: #1c2b41;
 			text-decoration: none;
 			border: none;
 			background: transparent;
 			cursor: pointer;
 			padding: 0.3em 0;
-			border-bottom: 1px solid rgba(239,168,176,0.3);
+			border-bottom: 1px solid rgba(28,43,65,0.3);
 			transition: color 0.22s ease, border-color 0.22s ease;
 		}
 		.link-ext svg {
@@ -183,11 +177,11 @@
 			transition: transform 0.22s ease;
 		}
 		.link-ext:hover {
-			color: #f5c5cb;
-			border-color: #efa8b0;
+			color: #2d4a6e;
+			border-color: #1c2b41;
 		}
 		.link-ext:hover svg {
-			transform: translate(2px, -2px); /* seta sobe e vai p/ direita */
+			transform: translate(2px, -2px);
 		}
 
 		/* ── Responsivo ── */
@@ -374,10 +368,8 @@
 				<p style="margin-top:2.5em;">
 					<a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">
 						Ver portfólio completo no Behance
-						<!-- ícone seta diagonal (link externo) -->
 						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<line x1="7" y1="17" x2="17" y2="7"/>
-							<polyline points="7 7 17 7 17 17"/>
+							<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
 						</svg>
 					</a>
 				</p>
@@ -421,8 +413,7 @@
 					<a href="https://www.youtube.com/@gabrielamoraisedit" class="link-ext" target="_blank" rel="noopener noreferrer">
 						Assistir no YouTube
 						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<line x1="7" y1="17" x2="17" y2="7"/>
-							<polyline points="7 7 17 7 17 17"/>
+							<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
 						</svg>
 					</a>
 				</p>
@@ -448,20 +439,13 @@
 		const imgs    = wrapper.querySelectorAll('.slide img');
 		const total   = dots.length;
 
-		const MAX_H_DESKTOP = 640;
-		const MAX_H_TABLET  = 440;
-		const MAX_H_MOBILE  = 360;
-
+		const MAX_H_DESKTOP = 640, MAX_H_TABLET = 440, MAX_H_MOBILE = 360;
 		function maxAllowed() {
-			return window.innerWidth <= 480 ? MAX_H_MOBILE
-				 : window.innerWidth <= 768 ? MAX_H_TABLET
-				 : MAX_H_DESKTOP;
+			return window.innerWidth <= 480 ? MAX_H_MOBILE : window.innerWidth <= 768 ? MAX_H_TABLET : MAX_H_DESKTOP;
 		}
 		function applyHeight(img) {
 			if (!img || !img.naturalWidth) return;
-			const ratio  = img.naturalHeight / img.naturalWidth;
-			const availW = wrapper.clientWidth;
-			wrapper.style.height = Math.min(Math.round(availW * ratio), maxAllowed()) + 'px';
+			wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxAllowed()) + 'px';
 		}
 		function adjustForIndex(idx) {
 			const img = imgs[idx];
@@ -469,29 +453,18 @@
 			if (img.complete && img.naturalWidth > 0) applyHeight(img);
 			else img.addEventListener('load', () => applyHeight(img), { once: true });
 		}
-		function getCurrentIndex() {
-			return Math.round(wrapper.scrollLeft / wrapper.clientWidth);
-		}
-		function updateDots(idx) {
-			dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-		}
-		function goTo(idx) {
-			wrapper.scrollTo({ left: idx * wrapper.clientWidth, behavior: 'smooth' });
-		}
+		function getCurrentIndex() { return Math.round(wrapper.scrollLeft / wrapper.clientWidth); }
+		function updateDots(idx) { dots.forEach((d, i) => d.classList.toggle('active', i === idx)); }
+		function goTo(idx) { wrapper.scrollTo({ left: idx * wrapper.clientWidth, behavior: 'smooth' }); }
 
 		nextBtn.addEventListener('click', () => goTo((getCurrentIndex() + 1) % total));
 		prevBtn.addEventListener('click', () => goTo((getCurrentIndex() - 1 + total) % total));
 		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-		wrapper.addEventListener('scroll', () => {
-			const idx = getCurrentIndex();
-			updateDots(idx);
-			adjustForIndex(idx);
-		}, { passive: true });
+		wrapper.addEventListener('scroll', () => { const i = getCurrentIndex(); updateDots(i); adjustForIndex(i); }, { passive: true });
 
 		adjustForIndex(0);
 		imgs.forEach((img, i) => {
-			if (!img.complete)
-				img.addEventListener('load', () => { if (getCurrentIndex() === i) applyHeight(img); }, { once: true });
+			if (!img.complete) img.addEventListener('load', () => { if (getCurrentIndex() === i) applyHeight(img); }, { once: true });
 		});
 		window.addEventListener('resize', () => adjustForIndex(getCurrentIndex()), { passive: true });
 	});
