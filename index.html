@@ -16,7 +16,6 @@
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%); opacity: 1; z-index: -1; }
 
-		/* Cor de texto geral (sem span, que tem cores próprias) */
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b; }
 
 		/* ── Header ── */
@@ -47,7 +46,6 @@
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: 0.3em; color: #0b0b0b; }
 		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-family: 'Roboto', sans-serif; font-size: 0.95em; text-align: justify; letter-spacing: -0.01em; margin-left: 0; color: #0b0b0b; }
 
-		/* Cores de fundo das seções */
 		#intro     { background: #f0f1f3; }
 		#skills    { background: #e8eaed; }
 		#expertise { background: #f0f1f3; }
@@ -59,7 +57,7 @@
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em; }
 		.expertise-columns h3 { margin-bottom: 1.2em; padding-bottom: 0.5em; border-bottom: 2px solid rgba(239,168,176,0.3); }
 
-		/* ── Seção Retrátil (Matriz Criativa) ── */
+		/* ── Seção Retrátil ── */
 		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center; }
 		.expertise-details summary::-webkit-details-marker { display: none; }
 		.expertise-summary-content { display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: opacity 0.2s ease; margin: 0; }
@@ -70,53 +68,50 @@
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 
 		/* ════════════════════════════════════════
-		   SLIDESHOW — inteligente & responsivo
+		   SLIDESHOW
 		   ════════════════════════════════════════ */
 		.slideshow-outer {
 			max-width: 100%;
 			margin: 2.5em auto 0;
 		}
 
-		/* Wrapper de posicionamento (para os botões overlay) */
+		/* Stage: flex row — botão | imagem | botão */
 		.slideshow-stage {
-			position: relative;
-			border-radius: 12px;
-			overflow: hidden;
-			box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+			display: flex;
+			align-items: center;
+			gap: 12px; /* espaço entre botão e borda da imagem */
 		}
 
-		/* Faixa de slides deslizável */
+		/* Faixa de slides */
 		.slideshow-wrapper {
+			flex: 1; /* ocupa o espaço restante entre os botões */
 			display: flex;
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
 			scroll-behavior: smooth;
 			-webkit-overflow-scrolling: touch;
-			width: 100%;
-			/* Altura inicial — JavaScript ajusta conforme a imagem */
 			height: 480px;
 			transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 			scrollbar-width: none;
 			-ms-overflow-style: none;
-			background: #e8eaed;
 			border-radius: 12px;
+			box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+			background: #e8eaed;
 		}
 		.slideshow-wrapper::-webkit-scrollbar { display: none; }
 
-		/* Cada slide ocupa 100% da largura visível */
 		.slide {
 			flex: 0 0 100%;
 			scroll-snap-align: start;
 			height: 100%;
-			position: relative;
-			overflow: hidden;
-			background: #e8eaed; /* fundo da seção → sem faixas escuras */
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			background: #e8eaed;
+			overflow: hidden;
+			border-radius: 12px;
 		}
 
-		/* Imagem: sempre visível por inteiro, sem corte */
 		.slide img {
 			max-width: 100%;
 			max-height: 100%;
@@ -124,14 +119,11 @@
 			height: auto;
 			object-fit: contain;
 			display: block;
-			border-radius: 0;
 		}
 
-		/* Botões overlay sobre as imagens */
+		/* Botões laterais — fora da imagem, ao lado dela */
 		.slide-btn {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
+			flex-shrink: 0;
 			background: rgba(18, 24, 33, 0.72);
 			color: #efa8b0;
 			border: 1px solid rgba(239,168,176,0.4);
@@ -142,7 +134,7 @@
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
-			z-index: 10;
+			z-index: 2;
 			transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 			font-size: 1.15em;
 			backdrop-filter: blur(8px);
@@ -152,10 +144,8 @@
 			background: #efa8b0;
 			color: #121821;
 			border-color: #efa8b0;
-			transform: translateY(-50%) scale(1.1);
+			transform: scale(1.1);
 		}
-		#prev-slide { left: 14px; }
-		#next-slide { right: 14px; }
 
 		/* Indicadores de pontos */
 		.slideshow-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
@@ -182,13 +172,13 @@
 			#header h1 { font-size: 1.8em; }
 			.slideshow-wrapper { height: 320px; }
 			.slide-btn { width: 38px; height: 38px; font-size: 1em; }
-			#prev-slide { left: 8px; }
-			#next-slide { right: 8px; }
+			.slideshow-stage { gap: 8px; }
 		}
 		@media screen and (max-width: 480px) {
 			.software-item { flex: 0 1 100px; }
 			.slideshow-wrapper { height: 240px; }
-			.slide-btn { width: 34px; height: 34px; font-size: 0.9em; }
+			.slide-btn { width: 32px; height: 32px; font-size: 0.9em; }
+			.slideshow-stage { gap: 6px; }
 		}
 	</style>
 </head>
@@ -326,7 +316,7 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 4 — Design Gráfico (SLIDESHOW INTELIGENTE) -->
+		<!-- SEÇÃO 4 — Design Gráfico (SLIDESHOW) -->
 		<section id="design" class="main special">
 			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
 				<header class="major">
@@ -335,7 +325,7 @@
 				</header>
 
 				<div class="slideshow-outer">
-					<!-- Stage: posicionamento dos botões overlay -->
+					<!-- botão | imagem | botão -->
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 
@@ -351,7 +341,6 @@
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
 
-					<!-- Indicadores -->
 					<div class="slideshow-dots" id="slideshow-dots">
 						<button class="dot active" aria-label="Slide 1"></button>
 						<button class="dot" aria-label="Slide 2"></button>
@@ -426,26 +415,24 @@
 		const imgs    = wrapper.querySelectorAll('.slide img');
 		const total   = dots.length;
 
-		// ── Altura inteligente: ajusta ao tamanho natural de cada imagem ──
-		const MAX_H_DESKTOP = 640; // px máximo em desktop
-		const MAX_H_MOBILE  = 360; // px máximo em mobile
+		const MAX_H_DESKTOP = 640;
+		const MAX_H_TABLET  = 440;
+		const MAX_H_MOBILE  = 360;
 
 		function maxAllowed() {
 			return window.innerWidth <= 480 ? MAX_H_MOBILE
-				 : window.innerWidth <= 768 ? 440
+				 : window.innerWidth <= 768 ? MAX_H_TABLET
 				 : MAX_H_DESKTOP;
 		}
 
 		function applyHeight(img) {
 			if (!img || !img.naturalWidth) return;
-			const ratio     = img.naturalHeight / img.naturalWidth;
-			const availW    = wrapper.clientWidth;
-			const idealH    = Math.round(availW * ratio);
-			const clamped   = Math.min(idealH, maxAllowed());
-			wrapper.style.height = clamped + 'px';
+			const ratio   = img.naturalHeight / img.naturalWidth;
+			const availW  = wrapper.clientWidth;
+			const idealH  = Math.round(availW * ratio);
+			wrapper.style.height = Math.min(idealH, maxAllowed()) + 'px';
 		}
 
-		// Aplica para o slide atual
 		function adjustForIndex(idx) {
 			const img = imgs[idx];
 			if (!img) return;
@@ -456,7 +443,6 @@
 			}
 		}
 
-		// ── Navegação ──
 		function getCurrentIndex() {
 			return Math.round(wrapper.scrollLeft / wrapper.clientWidth);
 		}
@@ -477,10 +463,8 @@
 			adjustForIndex(idx);
 		}, { passive: true });
 
-		// Inicia com a primeira imagem
 		adjustForIndex(0);
 
-		// Pré-carrega todas para ter altura pronta ao navegar
 		imgs.forEach((img, i) => {
 			if (!img.complete) {
 				img.addEventListener('load', () => {
@@ -489,7 +473,6 @@
 			}
 		});
 
-		// Reajusta ao redimensionar a janela
 		window.addEventListener('resize', () => adjustForIndex(getCurrentIndex()), { passive: true });
 	});
 </script>
