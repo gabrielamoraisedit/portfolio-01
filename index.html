@@ -16,7 +16,7 @@
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%); opacity: 1; z-index: -1; }
 
-		/* ── Cor de texto geral (sem span, que tem cores próprias) ── */
+		/* Cor de texto geral (sem span, que tem cores próprias) */
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b; }
 
 		/* ── Header ── */
@@ -47,12 +47,12 @@
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: 0.3em; color: #0b0b0b; }
 		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-family: 'Roboto', sans-serif; font-size: 0.95em; text-align: justify; letter-spacing: -0.01em; margin-left: 0; color: #0b0b0b; }
 
-		/* ── Cores de fundo das seções ── */
-		#intro   { background: #f0f1f3; }
-		#skills  { background: #e8eaed; }
+		/* Cores de fundo das seções */
+		#intro     { background: #f0f1f3; }
+		#skills    { background: #e8eaed; }
 		#expertise { background: #f0f1f3; }
-		#design  { background: #e8eaed; }
-		#videos  { background: #f0f1f3; }
+		#design    { background: #e8eaed; }
+		#videos    { background: #f0f1f3; }
 
 		#footer { background: rgba(11,16,25,0.6); }
 		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,0.6); }
@@ -69,9 +69,23 @@
 		.expertise-details[open] .expertise-columns { animation: slideDownFade 0.4s ease-out forwards; margin-top: 3em; }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 
-		/* ── Slideshow ── */
-		.slideshow-outer { max-width: 850px; margin: 2.5em auto 0; }
-		.slideshow-container { position: relative; display: flex; align-items: center; }
+		/* ════════════════════════════════════════
+		   SLIDESHOW — inteligente & responsivo
+		   ════════════════════════════════════════ */
+		.slideshow-outer {
+			max-width: 100%;
+			margin: 2.5em auto 0;
+		}
+
+		/* Wrapper de posicionamento (para os botões overlay) */
+		.slideshow-stage {
+			position: relative;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+		}
+
+		/* Faixa de slides deslizável */
 		.slideshow-wrapper {
 			display: flex;
 			overflow-x: auto;
@@ -79,56 +93,74 @@
 			scroll-behavior: smooth;
 			-webkit-overflow-scrolling: touch;
 			width: 100%;
+			/* Altura inicial — JavaScript ajusta conforme a imagem */
+			height: 480px;
+			transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 			scrollbar-width: none;
 			-ms-overflow-style: none;
-			border-radius: 10px;
-			box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+			background: #e8eaed;
+			border-radius: 12px;
 		}
 		.slideshow-wrapper::-webkit-scrollbar { display: none; }
 
+		/* Cada slide ocupa 100% da largura visível */
 		.slide {
 			flex: 0 0 100%;
 			scroll-snap-align: start;
-			position: relative;
-			aspect-ratio: 3 / 2;
-			overflow: hidden;
-			border-radius: 10px;
-			background: #1a2535;
-		}
-		.slide img {
-			position: absolute;
-			inset: 0;
-			width: 100%;
 			height: 100%;
-			object-fit: cover;
-			object-position: center;
-			display: block;
-			border-radius: 10px;
+			position: relative;
+			overflow: hidden;
+			background: #e8eaed; /* fundo da seção → sem faixas escuras */
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
+		/* Imagem: sempre visível por inteiro, sem corte */
+		.slide img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+			display: block;
+			border-radius: 0;
+		}
+
+		/* Botões overlay sobre as imagens */
 		.slide-btn {
-			flex-shrink: 0;
-			background: rgba(18,24,33,0.85);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(18, 24, 33, 0.72);
 			color: #efa8b0;
-			border: 1px solid rgba(239,168,176,0.3);
+			border: 1px solid rgba(239,168,176,0.4);
 			border-radius: 50%;
-			width: 44px;
-			height: 44px;
+			width: 46px;
+			height: 46px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
-			z-index: 2;
-			transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-			font-size: 1.1em;
-			backdrop-filter: blur(4px);
-			margin: 0 10px;
+			z-index: 10;
+			transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+			font-size: 1.15em;
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
 		}
-		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.08); }
+		.slide-btn:hover {
+			background: #efa8b0;
+			color: #121821;
+			border-color: #efa8b0;
+			transform: translateY(-50%) scale(1.1);
+		}
+		#prev-slide { left: 14px; }
+		#next-slide { right: 14px; }
 
-		.slideshow-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
-		.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(139,153,173,0.35); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease, transform 0.2s ease; }
-		.dot.active { background: #efa8b0; transform: scale(1.3); }
+		/* Indicadores de pontos */
+		.slideshow-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+		.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(139,153,173,0.4); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease, transform 0.2s ease; }
+		.dot.active { background: #efa8b0; transform: scale(1.35); }
 
 		/* ── Cards de Vídeo ── */
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8em; margin-top: 1.5em; }
@@ -148,11 +180,15 @@
 		@media screen and (max-width: 768px) {
 			.expertise-columns { grid-template-columns: 1fr; }
 			#header h1 { font-size: 1.8em; }
-			.slide-btn { width: 36px; height: 36px; font-size: 0.95em; margin: 0 6px; }
+			.slideshow-wrapper { height: 320px; }
+			.slide-btn { width: 38px; height: 38px; font-size: 1em; }
+			#prev-slide { left: 8px; }
+			#next-slide { right: 8px; }
 		}
 		@media screen and (max-width: 480px) {
 			.software-item { flex: 0 1 100px; }
-			.slide-btn { width: 32px; height: 32px; font-size: 0.85em; margin: 0 4px; }
+			.slideshow-wrapper { height: 240px; }
+			.slide-btn { width: 34px; height: 34px; font-size: 0.9em; }
 		}
 	</style>
 </head>
@@ -290,7 +326,7 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 4 — Design Gráfico (SLIDESHOW) -->
+		<!-- SEÇÃO 4 — Design Gráfico (SLIDESHOW INTELIGENTE) -->
 		<section id="design" class="main special">
 			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
 				<header class="major">
@@ -299,8 +335,10 @@
 				</header>
 
 				<div class="slideshow-outer">
-					<div class="slideshow-container">
+					<!-- Stage: posicionamento dos botões overlay -->
+					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
+
 						<div class="slideshow-wrapper" id="design-slideshow">
 							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 02.png" alt="Projeto 02" loading="lazy" /></div>
@@ -309,8 +347,11 @@
 							<div class="slide"><img src="images/project 05.png" alt="Projeto 05" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 06.png" alt="Projeto 06" loading="lazy" /></div>
 						</div>
+
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
+
+					<!-- Indicadores -->
 					<div class="slideshow-dots" id="slideshow-dots">
 						<button class="dot active" aria-label="Slide 1"></button>
 						<button class="dot" aria-label="Slide 2"></button>
@@ -382,29 +423,74 @@
 		const prevBtn = document.getElementById('prev-slide');
 		const nextBtn = document.getElementById('next-slide');
 		const dots    = document.querySelectorAll('#slideshow-dots .dot');
+		const imgs    = wrapper.querySelectorAll('.slide img');
 		const total   = dots.length;
 
+		// ── Altura inteligente: ajusta ao tamanho natural de cada imagem ──
+		const MAX_H_DESKTOP = 640; // px máximo em desktop
+		const MAX_H_MOBILE  = 360; // px máximo em mobile
+
+		function maxAllowed() {
+			return window.innerWidth <= 480 ? MAX_H_MOBILE
+				 : window.innerWidth <= 768 ? 440
+				 : MAX_H_DESKTOP;
+		}
+
+		function applyHeight(img) {
+			if (!img || !img.naturalWidth) return;
+			const ratio     = img.naturalHeight / img.naturalWidth;
+			const availW    = wrapper.clientWidth;
+			const idealH    = Math.round(availW * ratio);
+			const clamped   = Math.min(idealH, maxAllowed());
+			wrapper.style.height = clamped + 'px';
+		}
+
+		// Aplica para o slide atual
+		function adjustForIndex(idx) {
+			const img = imgs[idx];
+			if (!img) return;
+			if (img.complete && img.naturalWidth > 0) {
+				applyHeight(img);
+			} else {
+				img.addEventListener('load', () => applyHeight(img), { once: true });
+			}
+		}
+
+		// ── Navegação ──
 		function getCurrentIndex() {
 			return Math.round(wrapper.scrollLeft / wrapper.clientWidth);
 		}
-		function updateDots(index) {
-			dots.forEach((d, i) => d.classList.toggle('active', i === index));
+		function updateDots(idx) {
+			dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+		}
+		function goTo(idx) {
+			wrapper.scrollTo({ left: idx * wrapper.clientWidth, behavior: 'smooth' });
 		}
 
-		nextBtn.addEventListener('click', () => {
-			const next = (getCurrentIndex() + 1) % total;
-			wrapper.scrollTo({ left: next * wrapper.clientWidth, behavior: 'smooth' });
+		nextBtn.addEventListener('click', () => goTo((getCurrentIndex() + 1) % total));
+		prevBtn.addEventListener('click', () => goTo((getCurrentIndex() - 1 + total) % total));
+		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+		wrapper.addEventListener('scroll', () => {
+			const idx = getCurrentIndex();
+			updateDots(idx);
+			adjustForIndex(idx);
+		}, { passive: true });
+
+		// Inicia com a primeira imagem
+		adjustForIndex(0);
+
+		// Pré-carrega todas para ter altura pronta ao navegar
+		imgs.forEach((img, i) => {
+			if (!img.complete) {
+				img.addEventListener('load', () => {
+					if (getCurrentIndex() === i) applyHeight(img);
+				}, { once: true });
+			}
 		});
-		prevBtn.addEventListener('click', () => {
-			const prev = (getCurrentIndex() - 1 + total) % total;
-			wrapper.scrollTo({ left: prev * wrapper.clientWidth, behavior: 'smooth' });
-		});
-		dots.forEach((dot, i) => {
-			dot.addEventListener('click', () => {
-				wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' });
-			});
-		});
-		wrapper.addEventListener('scroll', () => updateDots(getCurrentIndex()), { passive: true });
+
+		// Reajusta ao redimensionar a janela
+		window.addEventListener('resize', () => adjustForIndex(getCurrentIndex()), { passive: true });
 	});
 </script>
 <script src="assets/js/jquery.min.js"></script>
