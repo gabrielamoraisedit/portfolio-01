@@ -70,21 +70,17 @@
 		/* ════════════════════════════════════════
 		   SLIDESHOW
 		   ════════════════════════════════════════ */
-		.slideshow-outer {
-			max-width: 100%;
-			margin: 2.5em auto 0;
-		}
+		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0; }
 
-		/* Stage: flex row — botão | imagem | botão */
+		/* botão | imagem | botão */
 		.slideshow-stage {
 			display: flex;
 			align-items: center;
-			gap: 12px; /* espaço entre botão e borda da imagem */
+			gap: 8px;
 		}
 
-		/* Faixa de slides */
 		.slideshow-wrapper {
-			flex: 1; /* ocupa o espaço restante entre os botões */
+			flex: 1;
 			display: flex;
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
@@ -121,30 +117,30 @@
 			display: block;
 		}
 
-		/* Botões laterais — fora da imagem, ao lado dela */
+		/* ── Botões: pequenos, quadrados ── */
 		.slide-btn {
 			flex-shrink: 0;
-			background: rgba(18, 24, 33, 0.72);
+			width: 28px;
+			height: 56px;
+			border-radius: 5px;
+			background: rgba(18, 24, 33, 0.55);
 			color: #efa8b0;
-			border: 1px solid rgba(239,168,176,0.4);
-			border-radius: 50%;
-			width: 46px;
-			height: 46px;
+			border: 1px solid rgba(239,168,176,0.25);
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
-			z-index: 2;
-			transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
-			font-size: 1.15em;
-			backdrop-filter: blur(8px);
-			-webkit-backdrop-filter: blur(8px);
+			font-size: 0.8em;
+			transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+			backdrop-filter: blur(6px);
+			-webkit-backdrop-filter: blur(6px);
+			line-height: 1;
 		}
 		.slide-btn:hover {
 			background: #efa8b0;
 			color: #121821;
 			border-color: #efa8b0;
-			transform: scale(1.1);
+			transform: scale(1.06);
 		}
 
 		/* Indicadores de pontos */
@@ -171,14 +167,14 @@
 			.expertise-columns { grid-template-columns: 1fr; }
 			#header h1 { font-size: 1.8em; }
 			.slideshow-wrapper { height: 320px; }
-			.slide-btn { width: 38px; height: 38px; font-size: 1em; }
-			.slideshow-stage { gap: 8px; }
+			.slide-btn { width: 24px; height: 48px; font-size: 0.75em; }
+			.slideshow-stage { gap: 6px; }
 		}
 		@media screen and (max-width: 480px) {
 			.software-item { flex: 0 1 100px; }
 			.slideshow-wrapper { height: 240px; }
-			.slide-btn { width: 32px; height: 32px; font-size: 0.9em; }
-			.slideshow-stage { gap: 6px; }
+			.slide-btn { width: 20px; height: 40px; font-size: 0.7em; }
+			.slideshow-stage { gap: 4px; }
 		}
 	</style>
 </head>
@@ -325,7 +321,6 @@
 				</header>
 
 				<div class="slideshow-outer">
-					<!-- botão | imagem | botão -->
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 
@@ -427,9 +422,9 @@
 
 		function applyHeight(img) {
 			if (!img || !img.naturalWidth) return;
-			const ratio   = img.naturalHeight / img.naturalWidth;
-			const availW  = wrapper.clientWidth;
-			const idealH  = Math.round(availW * ratio);
+			const ratio  = img.naturalHeight / img.naturalWidth;
+			const availW = wrapper.clientWidth;
+			const idealH = Math.round(availW * ratio);
 			wrapper.style.height = Math.min(idealH, maxAllowed()) + 'px';
 		}
 
