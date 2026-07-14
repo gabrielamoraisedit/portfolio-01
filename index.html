@@ -123,7 +123,6 @@
 		.sec-c { max-width: 1120px; margin: 0 auto; padding: 3em 2em; text-align: center }
 		#intro     { background: #f0f1f3 }
 		#skills    { background: #e8eaed }
-		#expertise { background: #f0f1f3 }
 		#design    { background: #e8eaed }
 		#videos    { background: #f0f1f3 }
 		#skills::before, #skills::after,
@@ -156,7 +155,7 @@
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
 		.languages { font-size: .95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0 }
 
-		/* EXPERTISE */
+		/* EXPERTISE (Matriz Criativa agora integrada na seção #intro) */
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: .3em }
 		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-size: .95em; text-align: justify; letter-spacing: -.01em; margin-left: 0 }
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em }
@@ -253,7 +252,6 @@
 		<ul>
 			<li><a href="#intro" class="active">Sobre Mim</a></li>
 			<li><a href="#skills">Kit de Ferramentas</a></li>
-			<li><a href="#expertise">Matriz Criativa</a></li>
 			<li><a href="#design">Design Gráfico</a></li>
 			<li><a href="#videos">Edição de Vídeo</a></li>
 		</ul>
@@ -261,13 +259,52 @@
 
 	<div id="main">
 
-		<!-- SEÇÃO 1 — Sobre Mim -->
+		<!-- SEÇÃO 1 — Sobre Mim (inclui agora a Matriz Criativa) -->
 		<section id="intro" class="main">
 			<div class="sec">
 				<header class="major"><h2>Olá, boas-vindas!</h2></header>
 				<p>Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 				<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
+
+				<!-- Matriz Criativa Integrada diretamente na seção Sobre Mim -->
+				<div style="margin-top: 3.5em;">
+					<details class="expertise-details">
+						<summary>
+							<header class="major" style="margin-bottom:0">
+								<h2 class="expertise-summary-content">Matriz Criativa <span class="toggle-icon">+</span></h2>
+							</header>
+						</summary>
+						<div class="expertise-columns">
+							<div>
+								<h3>Áreas do Conhecimento</h3>
+								<dl class="expertise-list">
+									<dt>Identidade Visual</dt>
+									<dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
+									<dt>Design Editorial</dt>
+									<dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
+									<dt>Edição de Vídeo</dt>
+									<dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
+									<dt>Comunicação Digital</dt>
+									<dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
+								</dl>
+							</div>
+							<div>
+								<h3>Processo Criativo</h3>
+								<dl class="creative-process-list">
+									<dt>Briefing &amp; Pesquisa</dt>
+									<dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual.</dd>
+									<dt>Conceituação</dt>
+									<dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
+									<dt>Execução &amp; Refinamento</dt>
+									<dd>Produção do projeto com atenção aos detalhes técnicos (tipografia, grid, paleta e consistência) seguida de ciclos de revisão até a entrega impecável.</dd>
+									<dt>Entrega &amp; Aplicação</dt>
+									<dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente.</dd>
+								</dl>
+							</div>
+						</div>
+					</details>
+				</div>
 			</div>
 		</section>
 
@@ -319,48 +356,7 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 3 — Matriz Criativa -->
-		<section id="expertise" class="main">
-			<div class="sec">
-				<details class="expertise-details">
-					<summary>
-						<header class="major" style="margin-bottom:0">
-							<h2 class="expertise-summary-content">Matriz Criativa <span class="toggle-icon">+</span></h2>
-						</header>
-					</summary>
-					<div class="expertise-columns">
-						<div>
-							<h3>Áreas do Conhecimento</h3>
-							<dl class="expertise-list">
-								<dt>Identidade Visual</dt>
-								<dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
-								<dt>Design Editorial</dt>
-								<dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
-								<dt>Edição de Vídeo</dt>
-								<dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
-								<dt>Comunicação Digital</dt>
-								<dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
-							</dl>
-						</div>
-						<div>
-							<h3>Processo Criativo</h3>
-							<dl class="creative-process-list">
-								<dt>Briefing &amp; Pesquisa</dt>
-								<dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual.</dd>
-								<dt>Conceituação</dt>
-								<dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
-								<dt>Execução &amp; Refinamento</dt>
-								<dd>Produção do projeto com atenção aos detalhes técnicos (tipografia, grid, paleta e consistência) seguida de ciclos de revisão até a entrega impecável.</dd>
-								<dt>Entrega &amp; Aplicação</dt>
-								<dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente.</dd>
-							</dl>
-						</div>
-					</div>
-				</details>
-			</div>
-		</section>
-
-		<!-- SEÇÃO 4 — Design Gráfico -->
+		<!-- SEÇÃO 3 — Design Gráfico -->
 		<section id="design" class="main special">
 			<div class="sec-c">
 				<header class="major">
@@ -391,7 +387,7 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 5 — Edição de Vídeo -->
+		<!-- SEÇÃO 4 — Edição de Vídeo -->
 		<section id="videos" class="main special">
 			<div class="sec-c">
 				<header class="major">
@@ -404,7 +400,7 @@
 						<div class="video-card-body">
 							<span class="tag">Motion Graphics</span>
 							<h4>Animação de Marca — Vídeo 01</h4>
-							<p>Animação de logotipo e elements de identidade visual com After Effects para abertura de conteúdo.</p>
+							<p>Animação de logotipo e elementos de identidade visual com After Effects para abertura de conteúdo.</p>
 						</div>
 					</article>
 					<article class="video-card">
