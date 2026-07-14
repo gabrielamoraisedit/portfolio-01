@@ -10,7 +10,7 @@
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 	<style>
 		/* BASE */
 		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b }
@@ -30,6 +30,14 @@
 		#header, #header .logo, #header h1, #header > p,
 		#header .icons, #header .icons li, #header .icons li a { opacity: 1 !important; transform: none !important; visibility: visible !important }
 		#header h1, #header > p { color: #8b99ad !important }
+
+		/* Título principal em IBM Plex Mono */
+		#header h1 {
+			font-family: 'IBM Plex Mono', monospace !important;
+			font-size: 2em;
+			letter-spacing: 0.18em;
+			font-weight: 600;
+		}
 
 		/* LAYOUT DAS SEÇÕES */
 		.sec   { max-width: 900px; margin: 0 auto; padding: 3em 2em }
@@ -101,7 +109,7 @@
 		/* RESPONSIVO */
 		@media (max-width: 768px) {
 			.expertise-columns { grid-template-columns: 1fr }
-			#header h1 { font-size: 1.8em }
+			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
 			.slideshow-wrapper { height: 320px }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
@@ -119,7 +127,7 @@
 
 	<header id="header" class="alt">
 		<span class="logo"><img src="images/logo.svg" alt="Logo" /></span>
-		<h1>Gabriela Pacheco de Morais</h1>
+		<h1>PORTFÓLIO</h1>
 		<p>Publicidade e Propaganda &bull; Design Gráfico &bull; Edição de Vídeos</p>
 		<ul class="icons">
 			<li><a href="https://www.linkedin.com/in/gabriela-morais/" class="icon brands fa-linkedin alt" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
@@ -323,9 +331,8 @@
 	document.addEventListener('DOMContentLoaded', function () {
 		const wrapper = document.getElementById('design-slideshow');
 		const imgs    = wrapper.querySelectorAll('.slide img');
-		const slides  = wrapper.querySelectorAll('.slide');
-		const total   = slides.length;
-		const MAX     = [360, 440, 640]; // mobile, tablet, desktop
+		const total   = wrapper.querySelectorAll('.slide').length;
+		const MAX     = [360, 440, 640];
 
 		function maxH() { return window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2] }
 
