@@ -52,7 +52,7 @@
 		#design    { background: #e8eaed; }
 		#videos    { background: #f0f1f3; }
 
-		/* ── Remove os círculos decorativos do template nas seções ── */
+		/* ── Remove os círculos decorativos do template ── */
 		#skills::before,  #skills::after,
 		#design::before,  #design::after,
 		#videos::before,  #videos::after { display: none !important; }
@@ -137,10 +137,6 @@
 		}
 		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06); }
 
-		.slideshow-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
-		.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(139,153,173,0.4); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease, transform 0.2s ease; }
-		.dot.active { background: #efa8b0; transform: scale(1.35); }
-
 		/* ── Cards de Vídeo ── */
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8em; margin-top: 1.5em; }
 		.video-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,153,173,0.12); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
@@ -172,17 +168,9 @@
 			border-bottom: 1px solid rgba(28,43,65,0.3);
 			transition: color 0.22s ease, border-color 0.22s ease;
 		}
-		.link-ext svg {
-			flex-shrink: 0;
-			transition: transform 0.22s ease;
-		}
-		.link-ext:hover {
-			color: #2d4a6e;
-			border-color: #1c2b41;
-		}
-		.link-ext:hover svg {
-			transform: translate(2px, -2px);
-		}
+		.link-ext svg { flex-shrink: 0; transition: transform 0.22s ease; }
+		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41; }
+		.link-ext:hover svg { transform: translate(2px, -2px); }
 
 		/* ── Responsivo ── */
 		@media screen and (max-width: 768px) {
@@ -355,14 +343,7 @@
 						</div>
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
-					<div class="slideshow-dots" id="slideshow-dots">
-						<button class="dot active" aria-label="Slide 1"></button>
-						<button class="dot" aria-label="Slide 2"></button>
-						<button class="dot" aria-label="Slide 3"></button>
-						<button class="dot" aria-label="Slide 4"></button>
-						<button class="dot" aria-label="Slide 5"></button>
-						<button class="dot" aria-label="Slide 6"></button>
-					</div>
+					<!-- dots removidos completamente -->
 				</div>
 
 				<p style="margin-top:2.5em;">
@@ -435,9 +416,8 @@
 		const wrapper = document.getElementById('design-slideshow');
 		const prevBtn = document.getElementById('prev-slide');
 		const nextBtn = document.getElementById('next-slide');
-		const dots    = document.querySelectorAll('#slideshow-dots .dot');
 		const imgs    = wrapper.querySelectorAll('.slide img');
-		const total   = dots.length;
+		const total   = wrapper.querySelectorAll('.slide').length;
 
 		const MAX_H_DESKTOP = 640, MAX_H_TABLET = 440, MAX_H_MOBILE = 360;
 		function maxAllowed() {
@@ -454,13 +434,11 @@
 			else img.addEventListener('load', () => applyHeight(img), { once: true });
 		}
 		function getCurrentIndex() { return Math.round(wrapper.scrollLeft / wrapper.clientWidth); }
-		function updateDots(idx) { dots.forEach((d, i) => d.classList.toggle('active', i === idx)); }
 		function goTo(idx) { wrapper.scrollTo({ left: idx * wrapper.clientWidth, behavior: 'smooth' }); }
 
 		nextBtn.addEventListener('click', () => goTo((getCurrentIndex() + 1) % total));
 		prevBtn.addEventListener('click', () => goTo((getCurrentIndex() - 1 + total) % total));
-		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-		wrapper.addEventListener('scroll', () => { const i = getCurrentIndex(); updateDots(i); adjustForIndex(i); }, { passive: true });
+		wrapper.addEventListener('scroll', () => adjustForIndex(getCurrentIndex()), { passive: true });
 
 		adjustForIndex(0);
 		imgs.forEach((img, i) => {
