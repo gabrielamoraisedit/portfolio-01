@@ -18,6 +18,12 @@
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
 
+		/* Ampliação do Escopo do Site */
+		#wrapper {
+			max-width: 82em !important;
+			width: 100% !important;
+		}
+
 		/* TIPOGRAFIA */
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
@@ -103,8 +109,8 @@
 		}
 
 		/* LAYOUT DAS SEÇÕES */
-		.sec   { max-width: 900px; margin: 0 auto; padding: 3em 2em }
-		.sec-c { max-width: 900px; margin: 0 auto; padding: 3em 2em; text-align: center }
+		.sec   { max-width: 1120px; margin: 0 auto; padding: 3em 2em }
+		.sec-c { max-width: 1120px; margin: 0 auto; padding: 3em 2em; text-align: center }
 		#intro     { background: #f0f1f3 }
 		#skills    { background: #e8eaed }
 		#expertise { background: #f0f1f3 }
@@ -275,7 +281,6 @@
 						<span>Canva</span>
 					</div>
 					<div class="software-item">
-						<!-- Retornado o SVG original e completo do CapCut para exibição perfeita -->
 						<svg class="software-item-icon" viewBox="0 0 512 509.659" xmlns="http://www.w3.org/2000/svg" aria-label="CapCut">
 							<path fill="none" d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z"/>
 							<path fill="#1c2b41" fill-rule="nonzero" d="M116.97-.001h278.06C459.366-.001 512 52.633 512 116.969v275.722c0 64.335-52.634 116.969-116.97 116.969H116.97C52.636 509.66 0 457.026 0 392.691V116.969C0 52.633 52.636-.001 116.97-.001zm278.06 4.953H116.97C55.364 4.952 4.953 55.363 4.953 116.969v275.722c0 61.605 50.411 112.017 112.017 112.017h278.06c61.607 0 112.017-50.411 112.017-112.017V116.969c0-61.607-50.41-112.017-112.017-112.017z"/>
@@ -340,7 +345,8 @@
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 						<div class="slideshow-wrapper" id="design-slideshow">
-							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" loading="lazy" /></div>
+							<!-- Removido o lazy loading do primeiro slide para otimização de LCP -->
+							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" /></div>
 							<div class="slide"><img src="images/project 02.png" alt="Projeto 02" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 03.png" alt="Projeto 03" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 04.png" alt="Projeto 04" loading="lazy" /></div>
@@ -416,7 +422,10 @@
 		const wrapper = document.getElementById('design-slideshow');
 		const imgs    = wrapper.querySelectorAll('.slide img');
 		const total   = wrapper.querySelectorAll('.slide').length;
-		const MAX     = [360, 440, 640];
+		const MAX     = [360, 480, 680];
+		
+		let currentIdx = 0;
+		let scrollTimeout;
 
 		function maxH() { return window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2] }
 
@@ -431,17 +440,47 @@
 			img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true });
 		}
 
-		function idx() { return Math.round(wrapper.scrollLeft / wrapper.clientWidth) }
-		function goTo(i) { wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }) }
+		function getCalculatedIndex() { 
+			return Math.round(wrapper.scrollLeft / wrapper.clientWidth); 
+		}
+		
+		function goTo(i) { 
+			currentIdx = i;
+			wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); 
+		}
 
-		document.getElementById('next-slide').addEventListener('click', () => goTo((idx() + 1) % total));
-		document.getElementById('prev-slide').addEventListener('click', () => goTo((idx() - 1 + total) % total));
-		wrapper.addEventListener('scroll', () => adjustFor(idx()), { passive: true });
-		window.addEventListener('resize',  () => adjustFor(idx()), { passive: true });
+		document.getElementById('next-slide').addEventListener('click', () => goTo((getCalculatedIndex() + 1) % total));
+		document.getElementById('prev-slide').addEventListener('click', () => goTo((getCalculatedIndex() - 1 + total) % total));
+		
+		// Evento de Scroll Otimizado (Debounce de 40ms para evitar reflows de altura excessivos)
+		wrapper.addEventListener('scroll', () => {
+			clearTimeout(scrollTimeout);
+			scrollTimeout = setTimeout(() => {
+				const nextActiveIdx = getCalculatedIndex();
+				if (currentIdx !== nextActiveIdx) {
+					currentIdx = nextActiveIdx;
+					adjustFor(currentIdx);
+				}
+			}, 40);
+		}, { passive: true });
 
+		// Evento de Resize Otimizado com retenção de foco do Slide
+		window.addEventListener('resize', () => {
+			// Desativa temporariamente o scroll-behavior smooth e o snap para ajustar a posição sem flickeio
+			wrapper.style.scrollBehavior = 'auto';
+			wrapper.scrollLeft = currentIdx * wrapper.clientWidth;
+			wrapper.style.scrollBehavior = 'smooth';
+			adjustFor(currentIdx);
+		}, { passive: true });
+
+		// Inicialização
 		adjustFor(0);
 		imgs.forEach((img, i) => {
-			if (!img.complete) img.addEventListener('load', () => { if (idx() === i) applyHeight(img) }, { once: true });
+			if (!img.complete) {
+				img.addEventListener('load', () => { 
+					if (getCalculatedIndex() === i) applyHeight(img); 
+				}, { once: true });
+			}
 		});
 	});
 </script>
