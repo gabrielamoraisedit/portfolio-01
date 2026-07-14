@@ -12,179 +12,105 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 	<style>
-		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b; }
-		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%) !important; min-height: 100vh; }
-		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f 0%, #121821 100%); opacity: 1; z-index: -1; }
+		/* BASE */
+		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b }
+		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f, #121821) !important; min-height: 100vh }
+		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
+		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
 
-		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b; }
+		/* TIPOGRAFIA */
+		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
+		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
+		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em }
+		header p { font-size: 1em }
+		p { font-size: 0.95em; line-height: 1.6 }
+		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,.02); padding: 1.2em 1.8em; max-width: 750px; margin: 2em auto; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -.01em }
 
-		/* ── Header ── */
-		#header, #header .logo, #header h1, #header > p, #header .icons, #header .icons li, #header .icons li a {
-			opacity: 1 !important; transform: none !important; visibility: visible !important;
+		/* HEADER */
+		#header, #header .logo, #header h1, #header > p,
+		#header .icons, #header .icons li, #header .icons li a { opacity: 1 !important; transform: none !important; visibility: visible !important }
+		#header h1, #header > p { color: #8b99ad !important }
+
+		/* LAYOUT DAS SEÇÕES */
+		.sec   { max-width: 900px; margin: 0 auto; padding: 3em 2em }
+		.sec-c { max-width: 900px; margin: 0 auto; padding: 3em 2em; text-align: center }
+		#intro     { background: #f0f1f3 }
+		#skills    { background: #e8eaed }
+		#expertise { background: #f0f1f3 }
+		#design    { background: #e8eaed }
+		#videos    { background: #f0f1f3 }
+		#skills::before, #skills::after,
+		#design::before, #design::after,
+		#videos::before, #videos::after { display: none !important }
+		#footer { background: rgba(11,16,25,.6) }
+		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
+
+		/* SOFTWARES */
+		.software-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em; margin-top: 1.5em }
+		.software-item { flex: 0 1 130px; padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
+		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
+		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
+		.software-item span { font-size: .75em; font-weight: 500; display: block }
+		.languages { font-size: .95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0 }
+
+		/* EXPERTISE */
+		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: .3em }
+		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-size: .95em; text-align: justify; letter-spacing: -.01em; margin-left: 0 }
+		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em }
+		.expertise-columns h3 { margin-bottom: 1.2em; padding-bottom: .5em; border-bottom: 2px solid rgba(239,168,176,.3) }
+
+		/* RETRÁTIL */
+		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
+		.expertise-details summary::-webkit-details-marker { display: none }
+		.expertise-summary-content { display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: opacity .2s; margin: 0 }
+		.expertise-summary-content:hover { opacity: .7 }
+		.toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 2px solid #efa8b0; color: #efa8b0 !important; border-radius: 50%; font-size: 22px; transition: transform .3s, background .3s, color .3s; font-family: sans-serif; line-height: 0 }
+		.expertise-details[open] .toggle-icon { transform: rotate(45deg); background: #efa8b0; color: #121821 !important }
+		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
+		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
+
+		/* SLIDESHOW */
+		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0 }
+		.slideshow-stage { display: flex; align-items: center; gap: 8px }
+		.slideshow-wrapper { flex: 1; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; height: 480px; transition: height .38s cubic-bezier(.4,0,.2,1); scrollbar-width: none; -ms-overflow-style: none; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.28); background: #e8eaed }
+		.slideshow-wrapper::-webkit-scrollbar { display: none }
+		.slide { flex: 0 0 100%; scroll-snap-align: start; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8eaed; overflow: hidden; border-radius: 12px }
+		.slide img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block }
+		.slide-btn { flex-shrink: 0; width: 28px; height: 56px; border-radius: 5px; background: rgba(18,24,33,.55); color: #efa8b0; border: 1px solid rgba(239,168,176,.25); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: .8em; transition: background .2s, border-color .2s, transform .15s; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
+		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06) }
+		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
+
+		/* VÍDEOS */
+		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.8em; margin-top: 1.5em }
+		.video-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,153,173,.12); border-radius: 8px; overflow: hidden; transition: transform .3s, box-shadow .3s, border-color .3s }
+		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.4); border-color: rgba(239,168,176,.35) }
+		.video-card-thumbnail { position: relative; background: #0b101a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center }
+		.video-card-thumbnail::before { content: ''; display: block; width: 3.5em; height: 3.5em; background: rgba(239,168,176,.2); border: 2px solid rgba(239,168,176,.5); border-radius: 50% }
+		.video-card-thumbnail::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .6em 0 .6em 1.1em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em }
+		.video-card-body { padding: 1.2em 1.4em 1.4em }
+		.video-card-body h4 { margin: 0 0 .4em; font-size: 1em }
+		.video-card-body p { margin: 0; font-size: .85em; opacity: .8 }
+		.tag { display: inline-block; padding: .25em .75em; border-radius: 3px; font-size: .72em; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; background: rgba(239,168,176,.12); color: #efa8b0; border: 1px solid rgba(239,168,176,.3); margin-bottom: .8em }
+
+		/* LINK EXTERNO */
+		.link-ext { display: inline-flex; align-items: center; gap: 7px; font-size: .82em; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #1c2b41; text-decoration: none; cursor: pointer; padding: .3em 0; border-bottom: 1px solid rgba(28,43,65,.3); transition: color .22s, border-color .22s }
+		.link-ext svg { flex-shrink: 0; transition: transform .22s }
+		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 }
+		.link-ext:hover svg { transform: translate(2px,-2px) }
+
+		/* RESPONSIVO */
+		@media (max-width: 768px) {
+			.expertise-columns { grid-template-columns: 1fr }
+			#header h1 { font-size: 1.8em }
+			.slideshow-wrapper { height: 320px }
+			.slide-btn { width: 24px; height: 48px; font-size: .75em }
+			.slideshow-stage { gap: 6px }
 		}
-		#header h1, #header > p { color: #8b99ad !important; }
-
-		h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2em; }
-		h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6em; }
-		h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3em; }
-		h4,h5,h6 { font-family: 'Montserrat', sans-serif; font-size: 1.1em; }
-		header h1, header p { font-family: 'Montserrat', sans-serif; }
-		header p { font-size: 1em; }
-		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em; }
-		section header h2 { font-family: 'Montserrat', sans-serif; }
-		p { font-size: 0.95em; line-height: 1.6; }
-		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,0.02); padding: 1.2em 1.8em; max-width: 750px; margin: 2em auto; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -0.01em; color: #0b0b0b; }
-
-		/* ── Grid de softwares ── */
-		.software-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em; margin-top: 1.5em; }
-		.software-item { flex: 0 1 130px; padding: 1em 0.5em; background: rgba(255,255,255,0.03); border-radius: 6px; transition: background 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-		.software-item:hover { background: rgba(255,255,255,0.10); transform: translateY(-4px); }
-		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: 0.8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,0.45)); }
-		.software-item span { font-size: 0.75em; font-weight: 500; display: block; font-family: 'Roboto', sans-serif; color: #0b0b0b; }
-
-		.languages { font-size: 0.95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0; color: #0b0b0b; }
-		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: 0.3em; color: #0b0b0b; }
-		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-family: 'Roboto', sans-serif; font-size: 0.95em; text-align: justify; letter-spacing: -0.01em; margin-left: 0; color: #0b0b0b; }
-
-		#intro     { background: #f0f1f3; }
-		#skills    { background: #e8eaed; }
-		#expertise { background: #f0f1f3; }
-		#design    { background: #e8eaed; }
-		#videos    { background: #f0f1f3; }
-
-		/* ── Remove os círculos decorativos do template ── */
-		#skills::before,  #skills::after,
-		#design::before,  #design::after,
-		#videos::before,  #videos::after { display: none !important; }
-
-		#footer { background: rgba(11,16,25,0.6); }
-		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,0.6); }
-		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em; }
-		.expertise-columns h3 { margin-bottom: 1.2em; padding-bottom: 0.5em; border-bottom: 2px solid rgba(239,168,176,0.3); }
-
-		/* ── Seção Retrátil ── */
-		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center; }
-		.expertise-details summary::-webkit-details-marker { display: none; }
-		.expertise-summary-content { display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: opacity 0.2s ease; margin: 0; }
-		.expertise-summary-content:hover { opacity: 0.7; }
-		.toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 2px solid #efa8b0; color: #efa8b0 !important; border-radius: 50%; font-size: 22px; font-weight: 400; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; font-family: sans-serif; line-height: 0; }
-		.expertise-details[open] .toggle-icon { transform: rotate(45deg); background: #efa8b0; color: #121821 !important; }
-		.expertise-details[open] .expertise-columns { animation: slideDownFade 0.4s ease-out forwards; margin-top: 3em; }
-		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
-
-		/* ════════════════════════════════════════
-		   SLIDESHOW
-		   ════════════════════════════════════════ */
-		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0; }
-
-		.slideshow-stage { display: flex; align-items: center; gap: 8px; }
-
-		.slideshow-wrapper {
-			flex: 1;
-			display: flex;
-			overflow-x: auto;
-			scroll-snap-type: x mandatory;
-			scroll-behavior: smooth;
-			-webkit-overflow-scrolling: touch;
-			height: 480px;
-			transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-			scrollbar-width: none;
-			-ms-overflow-style: none;
-			border-radius: 12px;
-			box-shadow: 0 16px 48px rgba(0,0,0,0.28);
-			background: #e8eaed;
-		}
-		.slideshow-wrapper::-webkit-scrollbar { display: none; }
-
-		.slide {
-			flex: 0 0 100%;
-			scroll-snap-align: start;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background: #e8eaed;
-			overflow: hidden;
-			border-radius: 12px;
-		}
-
-		.slide img {
-			max-width: 100%;
-			max-height: 100%;
-			width: auto;
-			height: auto;
-			object-fit: contain;
-			display: block;
-		}
-
-		.slide-btn {
-			flex-shrink: 0;
-			width: 28px;
-			height: 56px;
-			border-radius: 5px;
-			background: rgba(18, 24, 33, 0.55);
-			color: #efa8b0;
-			border: 1px solid rgba(239,168,176,0.25);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			font-size: 0.8em;
-			transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-			backdrop-filter: blur(6px);
-			-webkit-backdrop-filter: blur(6px);
-			line-height: 1;
-		}
-		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06); }
-
-		/* ── Cards de Vídeo ── */
-		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8em; margin-top: 1.5em; }
-		.video-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,153,173,0.12); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); border-color: rgba(239,168,176,0.35); }
-		.video-card-thumbnail { position: relative; background: #0b101a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; }
-		.video-card-thumbnail::before { content: ''; display: block; width: 3.5em; height: 3.5em; background: rgba(239,168,176,0.2); border: 2px solid rgba(239,168,176,0.5); border-radius: 50%; }
-		.video-card-thumbnail::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: 0.6em 0 0.6em 1.1em; border-color: transparent transparent transparent #efa8b0; margin-left: 0.2em; }
-		.video-card-body { padding: 1.2em 1.4em 1.4em; }
-		.video-card-body h4 { margin: 0 0 0.4em; font-size: 1em; }
-		.video-card-body p { margin: 0; font-size: 0.85em; opacity: 0.8; }
-		.tag { display: inline-block; padding: 0.25em 0.75em; border-radius: 3px; font-size: 0.72em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(239,168,176,0.12); color: #efa8b0; border: 1px solid rgba(239,168,176,0.3); margin-bottom: 0.8em; }
-
-		/* ── Link externo — azul do site ── */
-		.link-ext {
-			display: inline-flex;
-			align-items: center;
-			gap: 7px;
-			font-family: 'Roboto', sans-serif;
-			font-size: 0.82em;
-			font-weight: 600;
-			letter-spacing: 0.09em;
-			text-transform: uppercase;
-			color: #1c2b41;
-			text-decoration: none;
-			border: none;
-			background: transparent;
-			cursor: pointer;
-			padding: 0.3em 0;
-			border-bottom: 1px solid rgba(28,43,65,0.3);
-			transition: color 0.22s ease, border-color 0.22s ease;
-		}
-		.link-ext svg { flex-shrink: 0; transition: transform 0.22s ease; }
-		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41; }
-		.link-ext:hover svg { transform: translate(2px, -2px); }
-
-		/* ── Responsivo ── */
-		@media screen and (max-width: 768px) {
-			.expertise-columns { grid-template-columns: 1fr; }
-			#header h1 { font-size: 1.8em; }
-			.slideshow-wrapper { height: 320px; }
-			.slide-btn { width: 24px; height: 48px; font-size: 0.75em; }
-			.slideshow-stage { gap: 6px; }
-		}
-		@media screen and (max-width: 480px) {
-			.software-item { flex: 0 1 100px; }
-			.slideshow-wrapper { height: 240px; }
-			.slide-btn { width: 20px; height: 40px; font-size: 0.7em; }
-			.slideshow-stage { gap: 4px; }
+		@media (max-width: 480px) {
+			.software-item { flex: 0 1 100px }
+			.slideshow-wrapper { height: 240px }
+			.slide-btn { width: 20px; height: 40px; font-size: .7em }
+			.slideshow-stage { gap: 4px }
 		}
 	</style>
 </head>
@@ -217,19 +143,17 @@
 
 		<!-- SEÇÃO 1 — Sobre Mim -->
 		<section id="intro" class="main">
-			<div style="max-width:900px;margin:0 auto;padding:3em 2em;">
-				<header class="major">
-					<h2>Olá, boas-vindas!</h2>
-				</header>
+			<div class="sec">
+				<header class="major"><h2>Olá, boas-vindas!</h2></header>
 				<p>Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 				<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 			</div>
 		</section>
 
-		<!-- SEÇÃO 2 — Kit Técnico de Softwares -->
+		<!-- SEÇÃO 2 — Kit Técnico -->
 		<section id="skills" class="main special">
-			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
+			<div class="sec-c">
 				<header class="major">
 					<h2>Meu Kit Técnico de Softwares</h2>
 					<p>Tecnologias que venho aprimorando com o passar dos anos…</p>
@@ -248,15 +172,11 @@
 						<span>InDesign</span>
 					</div>
 					<div class="software-item">
-						<svg class="software-item-icon" viewBox="0 0 24 24" fill="#1c2b41" xmlns="http://www.w3.org/2000/svg" aria-label="Adobe Premiere Pro">
-							<path d="M10.15 8.42a2.93 2.93 0 00-1.18-.2 13.9 13.9 0 00-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03a1.45 1.45 0 00-.93-1.46zM19.75.3H4.25A4.25 4.25 0 000 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.09 11.65c-.4.56-.96.98-1.61 1.22-.68.25-1.43.34-2.25.34l-.5-.01-.43-.01v3.21a.12.12 0 01-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01.76-.02.87-.02.91-.01c.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.15.42.23.85.23 1.3 0 .86-.2 1.57-.6 2.13zm6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 00-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 01-.16-.12v-5.58l-.01-.75-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 01.07-.11h1.78c.1 0 .18.07.2.16a3.03 3.03 0 01.13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 011.52-.39c.07-.01.13.04.14.11v.04z"/>
-						</svg>
+						<img src="https://api.iconify.design/simple-icons:adobepremierepro.svg?color=%231c2b41" alt="Adobe Premiere Pro" class="software-item-icon" loading="eager" />
 						<span>Premiere Pro</span>
 					</div>
 					<div class="software-item">
-						<svg class="software-item-icon" viewBox="0 0 24 24" fill="#1c2b41" xmlns="http://www.w3.org/2000/svg" aria-label="Adobe After Effects">
-							<path d="M8.54 10.73c-.1-.31-.19-.61-.29-.92s-.19-.6-.27-.89c-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.13.51-.29.98-.44 1.4h2.54c-.06-.21-.14-.46-.23-.72-.09-.27-.18-.56-.27-.86zm8.58-.29c-.55-.03-1.07.26-1.33.76-.12.23-.19.47-.22.72h2.109c.26 0 .45 0 .57-.01.08-.01.16-.03.23-.08v-.1c0-.13-.021-.25-.061-.37-.178-.56-.708-.94-1.298-.92zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.04 16.511h-2.09c-.07.01-.14-.041-.16-.11l-.82-2.4H5.92l-.76 2.36c-.02.09-.1.15-.19.14H3.09c-.11 0-.14-.06-.11-.18L6.2 7.39c.03-.1.06-.19.1-.31.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.07 0 .12.03.13.08l3.65 10.25c.03.11.001.161-.1.161zm7.851-3.991c-.021.189-.031.33-.041.42-.01.07-.069.13-.14.13-.06 0-.17.01-.33.021-.159.02-.35.029-.579.029-.23 0-.471-.04-.73-.04h-3.17c.039.31.14.62.31.89.181.271.431.48.729.601.4.17.841.26 1.281.25.35-.011.699-.04 1.039-.11.311-.039.61-.119.891-.23.05-.039.08-.02.08.08v1.531c0 .039-.01.08-.021.119-.021.03-.04.051-.069.07-.32.14-.65.24-1 .3-.471.09-.94.13-1.42.12-.761 0-1.4-.12-1.92-.35-.49-.211-.921-.541-1.261-.95-.319-.39-.55-.83-.69-1.31-.14-.471-.209-.961-.209-1.461 0-.539.08-1.07.25-1.59.16-.5.41-.96.75-1.37.33-.4.739-.72 1.209-.95.471-.23 1.03-.31 1.67-.31.531-.01 1.06.09 1.55.31.41.18.77.45 1.05.8.26.34.47.72.601 1.14.129.4.189.81.189 1.22 0 .24-.01.45-.019.64z"/>
-						</svg>
+						<img src="https://api.iconify.design/simple-icons:adobeaftereffects.svg?color=%231c2b41" alt="Adobe After Effects" class="software-item-icon" loading="eager" />
 						<span>After Effects</span>
 					</div>
 					<div class="software-item">
@@ -264,29 +184,23 @@
 						<span>Figma</span>
 					</div>
 					<div class="software-item">
-						<svg class="software-item-icon" viewBox="0 0 24 24" fill="#1c2b41" xmlns="http://www.w3.org/2000/svg" aria-label="Canva">
-							<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.962 7.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z"/>
-						</svg>
+						<img src="https://api.iconify.design/simple-icons:canva.svg?color=%231c2b41" alt="Canva" class="software-item-icon" loading="eager" />
 						<span>Canva</span>
 					</div>
 					<div class="software-item">
-						<svg class="software-item-icon" viewBox="0 0 512 509.659" xmlns="http://www.w3.org/2000/svg" aria-label="CapCut">
-							<path fill="none" d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z"/>
-							<path fill="#1c2b41" fill-rule="nonzero" d="M116.97-.001h278.06C459.366-.001 512 52.633 512 116.969v275.722c0 64.335-52.634 116.969-116.97 116.969H116.97C52.636 509.66 0 457.026 0 392.691V116.969C0 52.633 52.636-.001 116.97-.001zm278.06 4.953H116.97C55.364 4.952 4.953 55.363 4.953 116.969v275.722c0 61.605 50.411 112.017 112.017 112.017h278.06c61.607 0 112.017-50.411 112.017-112.017V116.969c0-61.607-50.41-112.017-112.017-112.017z"/>
-							<path fill="#1c2b41" fill-rule="nonzero" d="M109.095 181.505c2.223-19.532 18.316-34.578 37.955-35.483l167.194-.001a40.612 40.612 0 0130.095 17.427 42.152 42.152 0 016.39 14.915l49.135-24.364a2.185 2.185 0 013.141 1.674v27.628l.001.096a4.571 4.571 0 01-2.837 4.229 177620.936 177620.936 0 00-135.63 67.336l135.324 66.948a4.695 4.695 0 013.142 4.08v27.685a2.266 2.266 0 01-3.613 1.821c-16.12-8.162-32.464-15.854-48.462-24.18a63.503 63.503 0 01-4.282 11.225 40.813 40.813 0 01-26.098 20.135 44.994 44.994 0 01-11.221.919l-155.833.003c-3.51 0-7.04 0-10.53-.266-18.089-2.705-32.049-17.363-33.869-35.565v-26.77a5.935 5.935 0 014.08-4.879c27.791-13.732 55.521-27.587 83.353-41.258a32412.61 32412.61 0 00-84.17-41.748 5.41 5.41 0 01-3.223-4.918c-.042-8.876-.185-17.792-.042-26.689zm30.975.184c-1.674 3.367-.898 7.263-1.041 10.896 30.608 15.12 60.99 30.321 91.536 45.339 30.185-14.963 60.384-29.927 90.596-44.89 0-2.714.123-5.428 0-8.162a10.203 10.203 0 00-10.096-8.734h-.106l-161.565.001a10.082 10.082 0 00-9.345 5.55h.021zm-1.041 135.406c.142 3.673-.654 7.631 1.122 11.039a10.204 10.204 0 009.284 5.405l161.667.002.081-.001c3.618 0 6.961-1.94 8.754-5.081 2.04-3.57 1.102-7.855 1.305-11.773-30.26-14.936-60.48-30.118-90.801-44.89a43915.126 43915.126 0 00-91.432 45.299h.02z"/>
-						</svg>
+						<img src="https://api.iconify.design/simple-icons:capcut.svg?color=%231c2b41" alt="CapCut" class="software-item-icon" loading="eager" />
 						<span>CapCut</span>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SEÇÃO 3 — Matriz Criativa (RETRÁTIL) -->
+		<!-- SEÇÃO 3 — Matriz Criativa -->
 		<section id="expertise" class="main">
-			<div style="max-width:900px;margin:0 auto;padding:3em 2em;">
+			<div class="sec">
 				<details class="expertise-details">
 					<summary>
-						<header class="major" style="margin-bottom: 0;">
+						<header class="major" style="margin-bottom:0">
 							<h2 class="expertise-summary-content">Matriz Criativa <span class="toggle-icon">+</span></h2>
 						</header>
 					</summary>
@@ -308,13 +222,13 @@
 							<h3>Processo Criativo</h3>
 							<dl class="creative-process-list">
 								<dt>Briefing &amp; Pesquisa</dt>
-								<dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual. O diagnóstico preciso define a direção criativa.</dd>
+								<dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual.</dd>
 								<dt>Conceituação</dt>
 								<dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
 								<dt>Execução &amp; Refinamento</dt>
 								<dd>Produção do projeto com atenção aos detalhes técnicos (tipografia, grid, paleta e consistência) seguida de ciclos de revisão até a entrega impecável.</dd>
 								<dt>Entrega &amp; Aplicação</dt>
-								<dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente em todos os contextos.</dd>
+								<dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente.</dd>
 							</dl>
 						</div>
 					</div>
@@ -322,14 +236,14 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 4 — Design Gráfico (SLIDESHOW) -->
+		<!-- SEÇÃO 4 — Design Gráfico -->
 		<section id="design" class="main special">
-			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
+			<div class="sec-c">
 				<header class="major">
 					<h2>Design Gráfico</h2>
 					<p>Projetos de identidade visual, editorial e comunicação digital.</p>
 				</header>
-
+				<p class="slideshow-label">Posters &amp; Displays Horizontais</p>
 				<div class="slideshow-outer">
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
@@ -343,15 +257,11 @@
 						</div>
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
-					<!-- dots removidos completamente -->
 				</div>
-
-				<p style="margin-top:2.5em;">
+				<p style="margin-top:2.5em">
 					<a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">
 						Ver portfólio completo no Behance
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-						</svg>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
 					</a>
 				</p>
 			</div>
@@ -359,14 +269,14 @@
 
 		<!-- SEÇÃO 5 — Edição de Vídeo -->
 		<section id="videos" class="main special">
-			<div style="max-width:900px;margin:0 auto;padding:3em 2em;text-align:center;">
+			<div class="sec-c">
 				<header class="major">
 					<h2>Edição de Vídeo</h2>
 					<p>Conteúdo audiovisual para plataformas digitais e projetos criativos.</p>
 				</header>
 				<div class="video-grid">
 					<article class="video-card">
-						<div class="video-card-thumbnail" role="img" aria-label="Thumbnail — Motion Graphics"></div>
+						<div class="video-card-thumbnail" role="img" aria-label="Motion Graphics"></div>
 						<div class="video-card-body">
 							<span class="tag">Motion Graphics</span>
 							<h4>Animação de Marca — Vídeo 01</h4>
@@ -374,7 +284,7 @@
 						</div>
 					</article>
 					<article class="video-card">
-						<div class="video-card-thumbnail" role="img" aria-label="Thumbnail — Edição Narrativa"></div>
+						<div class="video-card-thumbnail" role="img" aria-label="Edição Narrativa"></div>
 						<div class="video-card-body">
 							<span class="tag">Edição</span>
 							<h4>Edição Narrativa — Vídeo 02</h4>
@@ -382,7 +292,7 @@
 						</div>
 					</article>
 					<article class="video-card">
-						<div class="video-card-thumbnail" role="img" aria-label="Thumbnail — Reels e Short-form"></div>
+						<div class="video-card-thumbnail" role="img" aria-label="Reels e Short-form"></div>
 						<div class="video-card-body">
 							<span class="tag">Short-form</span>
 							<h4>Reels &amp; TikTok — Vídeo 03</h4>
@@ -390,12 +300,10 @@
 						</div>
 					</article>
 				</div>
-				<p style="margin-top:2.5em;">
+				<p style="margin-top:2.5em">
 					<a href="https://www.youtube.com/@gabrielamoraisedit" class="link-ext" target="_blank" rel="noopener noreferrer">
 						Assistir no YouTube
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-						</svg>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
 					</a>
 				</p>
 			</div>
@@ -412,39 +320,38 @@
 <script>
 	document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener('DOMContentLoaded', function () {
 		const wrapper = document.getElementById('design-slideshow');
-		const prevBtn = document.getElementById('prev-slide');
-		const nextBtn = document.getElementById('next-slide');
 		const imgs    = wrapper.querySelectorAll('.slide img');
-		const total   = wrapper.querySelectorAll('.slide').length;
+		const slides  = wrapper.querySelectorAll('.slide');
+		const total   = slides.length;
+		const MAX     = [360, 440, 640]; // mobile, tablet, desktop
 
-		const MAX_H_DESKTOP = 640, MAX_H_TABLET = 440, MAX_H_MOBILE = 360;
-		function maxAllowed() {
-			return window.innerWidth <= 480 ? MAX_H_MOBILE : window.innerWidth <= 768 ? MAX_H_TABLET : MAX_H_DESKTOP;
-		}
+		function maxH() { return window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2] }
+
 		function applyHeight(img) {
 			if (!img || !img.naturalWidth) return;
-			wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxAllowed()) + 'px';
+			wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxH()) + 'px';
 		}
-		function adjustForIndex(idx) {
+
+		function adjustFor(idx) {
 			const img = imgs[idx];
 			if (!img) return;
-			if (img.complete && img.naturalWidth > 0) applyHeight(img);
-			else img.addEventListener('load', () => applyHeight(img), { once: true });
+			img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true });
 		}
-		function getCurrentIndex() { return Math.round(wrapper.scrollLeft / wrapper.clientWidth); }
-		function goTo(idx) { wrapper.scrollTo({ left: idx * wrapper.clientWidth, behavior: 'smooth' }); }
 
-		nextBtn.addEventListener('click', () => goTo((getCurrentIndex() + 1) % total));
-		prevBtn.addEventListener('click', () => goTo((getCurrentIndex() - 1 + total) % total));
-		wrapper.addEventListener('scroll', () => adjustForIndex(getCurrentIndex()), { passive: true });
+		function idx() { return Math.round(wrapper.scrollLeft / wrapper.clientWidth) }
+		function goTo(i) { wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }) }
 
-		adjustForIndex(0);
+		document.getElementById('next-slide').addEventListener('click', () => goTo((idx() + 1) % total));
+		document.getElementById('prev-slide').addEventListener('click', () => goTo((idx() - 1 + total) % total));
+		wrapper.addEventListener('scroll', () => adjustFor(idx()), { passive: true });
+		window.addEventListener('resize',  () => adjustFor(idx()), { passive: true });
+
+		adjustFor(0);
 		imgs.forEach((img, i) => {
-			if (!img.complete) img.addEventListener('load', () => { if (getCurrentIndex() === i) applyHeight(img); }, { once: true });
+			if (!img.complete) img.addEventListener('load', () => { if (idx() === i) applyHeight(img) }, { once: true });
 		});
-		window.addEventListener('resize', () => adjustForIndex(getCurrentIndex()), { passive: true });
 	});
 </script>
 <script src="assets/js/jquery.min.js"></script>
