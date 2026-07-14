@@ -11,48 +11,33 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 	<style>
-		/* BASE */
 		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b }
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f, #121821) !important; min-height: 100vh }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
 		#wrapper { max-width: 82em !important; width: 100% !important }
-
-		/* NAVEGAÇÃO */
 		#nav ul { display: flex !important; justify-content: center !important; max-width: 100% !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important }
-
-		/* TIPOGRAFIA */
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
 		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em }
 		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
-		
-		/* Faixa de destaque para a frase foco */
 		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: center !important; border: none !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 95% !important; width: max-content !important; margin: 1.8em auto !important; border-radius: 6px; line-height: 1.5; letter-spacing: -0.01em }
-
-		/* HEADER */
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
 		#header h1, #header > p { color: #8b99ad !important }
 		#header h1 { font-family: 'IBM Plex Mono', monospace !important; font-size: 2em; letter-spacing: 0.18em; font-weight: 600 }
 		.header-author { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.25em; color: #e8eaed !important; margin: 0.8em 0 0.4em 0 !important; letter-spacing: 0.22em; text-transform: uppercase }
-
-		/* BOTÕES HEADER */
 		.header-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2em; margin: 2.5em 0 0 0; padding: 0; list-style: none }
 		.header-buttons li { padding: 0 }
 		.header-buttons a { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease }
 		.header-buttons a:hover { background: rgba(239, 168, 176, 0.05); border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
 		.header-buttons .icon { border: 0; padding: 0; width: auto; height: auto; line-height: 1; font-size: 1.2em; color: inherit !important; display: inline-block }
 		.header-buttons .icon:before { display: inline-block; vertical-align: middle; font-size: inherit }
-
-		/* LAYOUT DAS SEÇÕES */
 		.sec { max-width: 1120px; margin: 0 auto; padding: 3em 2em }
 		.sec-c { max-width: 1120px; margin: 0 auto; padding: 3em 2em; text-align: center }
-		#intro { background: #f0f1f3 } #skills, #design { background: #e8eaed } #videos { background: #f0f1f3 }
+		#intro { background: #f0f1f3; padding-top: 1.5em !important; padding-bottom: 1.5em !important }
+		#skills, #design { background: #e8eaed } #videos { background: #f0f1f3 }
 		#skills::before, #skills::after, #design::before, #design::after, #videos::before, #videos::after { display: none !important }
 		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
-
-		/* INTRO DIAGRAMAÇÃO & REDUÇÃO DE ESPAÇOS */
-		#intro { padding-top: 1.5em !important; padding-bottom: 1.5em !important }
 		#intro .sec { padding-top: 1em !important; padding-bottom: 1.2em !important }
 		.intro-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3.5em; align-items: start; margin-bottom: 2.5em }
 		.intro-left { text-align: left }
@@ -61,23 +46,17 @@
 		.intro-right { text-align: left }
 		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: justify !important }
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
-
-		/* SOFTWARES */
 		.software-grid { display: grid; grid-template-columns: repeat(4, 130px); justify-content: center; gap: 1.5em; margin-top: 1.5em }
 		.software-item { padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
 		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
 		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
-
-		/* EXPERTISE & CERTIFICAÇÕES */
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5em; margin-top: 1.5em; text-align: left !important }
 		.expertise-columns h3 { font-family: 'Montserrat', sans-serif; font-size: 1.1em; font-weight: 700; color: #1c2b41; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5em; padding-bottom: 0.6em; border-bottom: 2px solid rgba(28, 43, 65, 0.1) }
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 0.92em; font-weight: 700; color: #1a222d; margin-bottom: 0.2em; line-height: 1.4 }
 		.expertise-list dd, .creative-process-list dd { font-family: 'Roboto', sans-serif; font-size: 0.86em; color: #4e5a6a; margin-bottom: 1.4em; margin-left: 0; line-height: 1.5 }
 		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
 		.expertise-details summary::-webkit-details-marker { display: none }
-		
-		/* Botões retráteis */
 		.toggle-btn-custom { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: #1c2b41 !important; border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer }
 		.toggle-btn-custom .click-icon { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.3s ease; flex-shrink: 0 }
 		.expertise-details summary:hover .toggle-btn-custom { background: #24354f !important; border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
@@ -85,8 +64,6 @@
 		.expertise-details[open] .toggle-btn-custom .click-icon { transform: rotate(90deg) }
 		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
-
-		/* SLIDESHOW */
 		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0 }
 		.slideshow-stage { display: flex; align-items: center; gap: 8px }
 		.slideshow-wrapper { flex: 1; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; height: 480px; transition: height .38s cubic-bezier(.4,0,.2,1); scrollbar-width: none; -ms-overflow-style: none; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.28); background: #e8eaed }
@@ -96,8 +73,6 @@
 		.slide-btn { flex-shrink: 0; width: 28px; height: 56px; border-radius: 5px; background: rgba(18,24,33,.55); color: #efa8b0; border: 1px solid rgba(239,168,176,.25); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: .8em; transition: background .2s, border-color .2s, transform .15s; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
 		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06) }
 		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
-
-		/* VÍDEOS */
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.8em; margin-top: 1.5em }
 		.video-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,153,173,.12); border-radius: 8px; overflow: hidden; transition: transform .3s, box-shadow .3s, border-color .3s }
 		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.4); border-color: rgba(239,168,176,.35) }
@@ -106,13 +81,9 @@
 		.video-card-thumbnail::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .6em 0 .6em 1.1em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em }
 		.video-card-body { padding: 1.2em 1.4em 1.4em } .video-card-body h4 { margin: 0 0 .4em; font-size: 1em } .video-card-body p { margin: 0; font-size: .85em; opacity: .8 }
 		.tag { display: inline-block; padding: .25em .75em; border-radius: 3px; font-size: .72em; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; background: rgba(239,168,176,.12); color: #efa8b0; border: 1px solid rgba(239,168,176,.3); margin-bottom: .8em }
-
-		/* LINK EXTERNO */
 		.link-ext { display: inline-flex; align-items: center; gap: 7px; font-size: .82em; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #1c2b41; text-decoration: none; cursor: pointer; padding: .3em 0; border-bottom: 1px solid rgba(28,43,65,.3); transition: color .22s, border-color .22s }
 		.link-ext svg { flex-shrink: 0; transition: transform .22s }
 		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 } .link-ext:hover svg { transform: translate(2px,-2px) }
-
-		/* RESPONSIVO */
 		@media (max-width: 768px) {
 			blockquote { width: auto !important; font-size: 0.78em !important }
 			.intro-grid { grid-template-columns: 1fr; gap: 1.5em; margin-bottom: 2em }
@@ -121,7 +92,7 @@
 			.intro-bio { font-size: 1.05em !important; text-align: justify !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
-			.slideshow-wrapper { height: 320px }
+			.slideshow-wrapper { height: 320px; }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
 			.header-buttons { gap: 0.8em }
@@ -163,14 +134,10 @@
 
 	<div id="main">
 
-		<!-- SEÇÃO 1 — Sobre Mim -->
 		<section id="intro" class="main">
 			<div class="sec">
-				<!-- Estrutura de Grade Diagramada -->
 				<div class="intro-grid">
-					<div class="intro-left">
-						<header class="major"><h2>Olá, boas-vindas!</h2></header>
-					</div>
+					<div class="intro-left"><header class="major"><h2>Olá, boas-vindas!</h2></header></div>
 					<div class="intro-right">
 						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
 						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
@@ -179,17 +146,9 @@
 
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 
-				<!-- Painéis Collapsible Integrados (com espaçamento reduzido) -->
 				<div style="margin-top: 1.5em; text-align: center;">
-					
-					<!-- Painel 1: Matriz Criativa -->
 					<details class="expertise-details">
-						<summary>
-							<span class="toggle-btn-custom">
-								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-								Matriz Criativa
-							</span>
-						</summary>
+						<summary><span class="toggle-btn-custom"><svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>Matriz Criativa</span></summary>
 						<div class="expertise-columns">
 							<div>
 								<h3>Áreas do Conhecimento</h3>
@@ -212,20 +171,19 @@
 						</div>
 					</details>
 
-					<!-- Painel 2: Destaques & Cursos -->
 					<details class="expertise-details" style="margin-top: 1.5em;">
-						<summary>
-							<span class="toggle-btn-custom">
-								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-								Destaques &amp; Cursos
-							</span>
-						</summary>
+						<summary><span class="toggle-btn-custom"><svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>Destaques &amp; Cursos</span></summary>
 						<div class="expertise-columns">
 							<div>
 								<h3>Destaques Acadêmicos</h3>
-								<dl class="expertise-list">
+								<dl class="expertise-list" style="margin-bottom: 2em;">
 									<dt>Visita técnica à agência GALERIA</dt><dd>Apresentações de Estratégias de Marketing e Inovações - 2025</dd>
 									<dt>Visita técnica ao escritório da Adobe Brasil</dt><dd>Ferramentas Adobe, Estratégias de Vendas e Marketing - 2025</dd>
+								</dl>
+								<h3>Experiência Profissional</h3>
+								<dl class="expertise-list">
+									<dt><strong>Fundace FEARP USP</strong> - Estágio em Criação de Conteúdo</dt><dd>Edição de Vídeo &amp; Design Gráfico.</dd>
+									<dt><strong>Clínica doqt</strong> - Estágio de Marketing</dt><dd>Assistência de Marketing, Social Media, Edição de Vídeo &amp; Design Gráfico.</dd>
 								</dl>
 							</div>
 							<div>
@@ -246,13 +204,9 @@
 			</div>
 		</section>
 
-		<!-- SEÇÃO 2 — Kit Técnico -->
 		<section id="skills" class="main special">
 			<div class="sec-c">
-				<header class="major">
-					<h2>Meu Kit Técnico de Softwares</h2>
-					<p>Tecnologias que venho aprimorando com o passar dos anos…</p>
-				</header>
+				<header class="major"><h2>Meu Kit Técnico de Softwares</h2><p>Tecnologias que venho aprimorando com o passar dos anos…</p></header>
 				<div class="software-grid">
 					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobephotoshop.svg?color=%231c2b41" alt="Adobe Photoshop" class="software-item-icon" loading="eager" /><span>Photoshop</span></div>
 					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobeillustrator.svg?color=%231c2b41" alt="Adobe Illustrator" class="software-item-icon" loading="eager" /><span>Illustrator</span></div>
@@ -261,25 +215,14 @@
 					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobeaftereffects.svg?color=%231c2b41" alt="Adobe After Effects" class="software-item-icon" loading="eager" /><span>After Effects</span></div>
 					<div class="software-item"><img src="https://api.iconify.design/simple-icons:figma.svg?color=%231c2b41" alt="Figma" class="software-item-icon" loading="eager" /><span>Figma</span></div>
 					<div class="software-item"><img src="https://api.iconify.design/simple-icons:canva.svg?color=%231c2b41" alt="Canva" class="software-item-icon" loading="eager" /><span>Canva</span></div>
-					<div class="software-item">
-						<svg class="software-item-icon" viewBox="0 0 512 509.659" xmlns="http://www.w3.org/2000/svg" aria-label="CapCut">
-							<path fill="none" d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z"/>
-							<path fill="#1c2b41" fill-rule="nonzero" d="M116.97-.001h278.06C459.366-.001 512 52.633 512 116.969v275.722c0 64.335-52.634 116.969-116.97 116.969H116.97C52.636 509.66 0 457.026 0 392.691V116.969C0 52.633 52.636-.001 116.97-.001zm278.06 4.953H116.97C55.364 4.952 4.953 55.363 4.953 116.969v275.722c0 61.605 50.411 112.017 112.017 112.017h278.06c61.607 0 112.017-50.411 112.017-112.017V116.969c0-61.607-50.41-112.017-112.017-112.017z"/>
-							<path fill="#1c2b41" fill-rule="nonzero" d="M109.095 181.505c2.223-19.532 18.316-34.578 37.955-35.483l167.194-.001a40.612 40.612 0 0130.095 17.427 42.152 42.152 0 016.39 14.915l49.135-24.364a2.185 2.185 0 013.141 1.674v27.628l.001.096a4.571 4.571 0 01-2.837 4.229 177620.936 177620.936 0 00-135.63 67.336l135.324 66.948a4.695 4.695 0 013.142 4.08v27.685a2.266 2.266 0 01-3.613 1.821c-16.12-8.162-32.464-15.854-48.462-24.18a63.503 63.503 0 01-4.282 11.225 40.813 40.813 0 01-26.098 20.135 44.994 44.994 0 01-11.221.919l-155.833.003c-3.51 0-7.04 0-10.53-.266-18.089-2.705-32.049-17.363-33.869-35.565v-26.77a5.935 5.935 0 014.08-4.879c27.791-13.732 55.521-27.587 83.353-41.258a32412.61 32412.61 0 00-84.17-41.748 5.41 5.41 0 01-3.223-4.918c-.042-8.876-.185-17.792-.042-26.689zm30.975.184c-1.674 3.367-.898 7.263-1.041 10.896 30.608 15.12 60.99 30.321 91.536 45.339 30.185-14.963 60.384-29.927 90.596-44.89 0-2.714.123-5.428 0-8.162a10.203 10.203 0 00-10.096-8.734h-.106l-161.565.001a10.082 10.082 0 00-9.345 5.55h.021zm-1.041 135.406c.142 3.673-.654 7.631 1.122 11.039a10.204 10.204 0 009.284 5.405l161.667.002.081-.001c3.618 0 6.961-1.94 8.754-5.081 2.04-3.57 1.102-7.855 1.305-11.773-30.26-14.936-60.48-30.118-90.801-44.89a43915.126 43915.126 0 00-91.432 45.299h.02z"/>
-						</svg>
-						<span>CapCut</span>
-					</div>
+					<div class="software-item"><svg class="software-item-icon" viewBox="0 0 512 509.659" xmlns="http://www.w3.org/2000/svg" aria-label="CapCut"><path fill="none" d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z"/><path fill="#1c2b41" fill-rule="nonzero" d="M116.97-.001h278.06C459.366-.001 512 52.633 512 116.969v275.722c0 64.335-52.634 116.969-116.97 116.969H116.97C52.636 509.66 0 457.026 0 392.691V116.969C0 52.633 52.636-.001 116.97-.001zm278.06 4.953H116.97C55.364 4.952 4.953 55.363 4.953 116.969v275.722c0 61.605 50.411 112.017 112.017 112.017h278.06c61.607 0 112.017-50.411 112.017-112.017V116.969c0-61.607-50.41-112.017-112.017-112.017z"/><path fill="#1c2b41" fill-rule="nonzero" d="M109.095 181.505c2.223-19.532 18.316-34.578 37.955-35.483l167.194-.001a40.612 40.612 0 0130.095 17.427 42.152 42.152 0 016.39 14.915l49.135-24.364a2.185 2.185 0 013.141 1.674v27.628l.001.096a4.571 4.571 0 01-2.837 4.229 177620.936 177620.936 0 00-135.63 67.336l135.324 66.948a4.695 4.695 0 013.142 4.08v27.685a2.266 2.266 0 01-3.613 1.821c-16.12-8.162-32.464-15.854-48.462-24.18a63.503 63.503 0 01-4.282 11.225 40.813 40.813 0 01-26.098 20.135 44.994 44.994 0 01-11.221.919l-155.833.003c-3.51 0-7.04 0-10.53-.266-18.089-2.705-32.049-17.363-33.869-35.565v-26.77a5.935 5.935 0 014.08-4.879c27.791-13.732 55.521-27.587 83.353-41.258a32412.61 32412.61 0 00-84.17-41.748 5.41 5.41 0 01-3.223-4.918c-.042-8.876-.185-17.792-.042-26.689zm30.975.184c-1.674 3.367-.898 7.263-1.041 10.896 30.608 15.12 60.99 30.321 91.536 45.339 30.185-14.963 60.384-29.927 90.596-44.89 0-2.714.123-5.428 0-8.162a10.203 10.203 0 00-10.096-8.734h-.106l-161.565.001a10.082 10.082 0 00-9.345 5.55h.021zm-1.041 135.406c.142 3.673-.654 7.631 1.122 11.039a10.204 10.204 0 009.284 5.405l161.667.002.081-.001c3.618 0 6.961-1.94 8.754-5.081 2.04-3.57 1.102-7.855 1.305-11.773-30.26-14.936-60.48-30.118-90.801-44.89a43915.126 43915.126 0 00-91.432 45.299h.02z"/></svg><span>CapCut</span></div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SEÇÃO 3 — Design Gráfico -->
 		<section id="design" class="main special">
 			<div class="sec-c">
-				<header class="major">
-					<h2>Design Gráfico</h2>
-					<p>Projetos de identidade visual, editorial e comunicação digital.</p>
-				</header>
+				<header class="major"><h2>Design Gráfico</h2><p>Projetos de identidade visual, editorial e comunicação digital.</p></header>
 				<p class="slideshow-label">Posters &amp; Displays Horizontais</p>
 				<div class="slideshow-outer">
 					<div class="slideshow-stage">
@@ -295,54 +238,28 @@
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
 				</div>
-				<p style="margin-top:2.5em">
-					<a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">
-						Ver portfólio completo no Behance
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-					</a>
-				</p>
+				<p style="margin-top:2.5em"><a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
 			</div>
 		</section>
 
-		<!-- SEÇÃO 4 — Edição de Vídeo -->
 		<section id="videos" class="main special">
 			<div class="sec-c">
-				<header class="major">
-					<h2>Edição de Vídeo</h2>
-					<p>Conteúdo audiovisual para plataformas digitais e projetos criativos.</p>
-				</header>
+				<header class="major"><h2>Edição de Vídeo</h2><p>Conteúdo audiovisual para plataformas digitais e projetos criativos.</p></header>
 				<div class="video-grid">
 					<article class="video-card">
 						<div class="video-card-thumbnail" role="img" aria-label="Motion Graphics"></div>
-						<div class="video-card-body">
-							<span class="tag">Motion Graphics</span>
-							<h4>Animação de Marca — Vídeo 01</h4>
-							<p>Animação de logotipo e elementos de identidade visual com After Effects para abertura de conteúdo.</p>
-						</div>
+						<div class="video-card-body"><span class="tag">Motion Graphics</span><h4>Animação de Marca — Vídeo 01</h4><p>Animação de logotipo e elementos de identidade visual com After Effects para abertura de conteúdo.</p></div>
 					</article>
 					<article class="video-card">
 						<div class="video-card-thumbnail" role="img" aria-label="Edição Narrativa"></div>
-						<div class="video-card-body">
-							<span class="tag">Edição</span>
-							<h4>Edição Narrativa — Vídeo 02</h4>
-							<p>Edição de conteúdo narrative com ritmo, cortes dinâmicos, colorização e trilha sonora sincronizada.</p>
-						</div>
+						<div class="video-card-body"><span class="tag">Edição</span><h4>Edição Narrativa — Vídeo 02</h4><p>Edição de conteúdo narrative com ritmo, cortes dinâmicos, colorização e trilha sonora sincronizada.</p></div>
 					</article>
 					<article class="video-card">
 						<div class="video-card-thumbnail" role="img" aria-label="Reels e Short-form"></div>
-						<div class="video-card-body">
-							<span class="tag">Short-form</span>
-							<h4>Reels &amp; TikTok — Vídeo 03</h4>
-							<p>Criação e edição de conteúdo vertical para Instagram Reels e TikTok com legendas animadas e efeitos.</p>
-						</div>
+						<div class="video-card-body"><span class="tag">Short-form</span><h4>Reels &amp; TikTok — Vídeo 03</h4><p>Criação e edição de conteúdo vertical para Instagram Reels e TikTok com legendas animadas e efeitos.</p></div>
 					</article>
 				</div>
-				<p style="margin-top:2.5em">
-					<a href="https://www.youtube.com/@gabrielamoraisedit" class="link-ext" target="_blank" rel="noopener noreferrer">
-						Assistir no YouTube
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-					</a>
-				</p>
+				<p style="margin-top:2.5em"><a href="https://www.youtube.com/@gabrielamoraisedit" class="link-ext" target="_blank" rel="noopener noreferrer">Assistir no YouTube <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
 			</div>
 		</section>
 
@@ -356,7 +273,6 @@
 
 <script>
 	document.getElementById('footer-year').textContent = new Date().getFullYear();
-
 	document.addEventListener('DOMContentLoaded', () => {
 		const wrapper = document.getElementById('design-slideshow'), imgs = wrapper.querySelectorAll('.slide img'), total = imgs.length, MAX = [360, 480, 680];
 		let currentIdx = 0, scrollTimeout;
@@ -365,18 +281,15 @@
 		const adjustFor = (idx) => { const img = imgs[idx]; if (img) img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true }); };
 		const getIdx = () => Math.round(wrapper.scrollLeft / wrapper.clientWidth);
 		const goTo = (i) => { currentIdx = i; wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); };
-
 		document.getElementById('next-slide').addEventListener('click', () => goTo((getIdx() + 1) % total));
 		document.getElementById('prev-slide').addEventListener('click', () => goTo((getIdx() - 1 + total) % total));
 		wrapper.addEventListener('scroll', () => {
 			clearTimeout(scrollTimeout);
 			scrollTimeout = setTimeout(() => { const next = getIdx(); if (currentIdx !== next) { currentIdx = next; adjustFor(currentIdx); } }, 40);
 		}, { passive: true });
-
 		window.addEventListener('resize', () => {
 			wrapper.style.scrollBehavior = 'auto'; wrapper.scrollLeft = currentIdx * wrapper.clientWidth; wrapper.style.scrollBehavior = 'smooth'; adjustFor(currentIdx);
 		}, { passive: true });
-
 		adjustFor(0);
 		imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyHeight(img); }, { once: true }); });
 	});
@@ -388,6 +301,5 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
