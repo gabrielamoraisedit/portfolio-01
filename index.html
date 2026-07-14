@@ -164,52 +164,46 @@
 		/* RETRÁTIL & BOTÃO CUSTOMIZADO MATRIZ CRIATIVA */
 		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
 		.expertise-details summary::-webkit-details-marker { display: none }
-		.expertise-summary-content { display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: opacity .2s; margin: 0 }
-		.expertise-summary-content:hover { opacity: .7 }
 		
-		/* Novo design retangular discreto para o botão de toggle */
+		/* Botão "Matriz Criativa" identico aos do Header */
 		.toggle-btn-custom {
 			display: inline-flex;
 			align-items: center;
-			gap: 8px;
-			padding: 0.5em 1.2em;
-			background: rgba(28, 43, 65, 0.03);
-			border: 1px solid rgba(28, 43, 65, 0.15);
+			gap: 10px;
+			padding: 0.8em 1.6em;
+			background: #1c2b41 !important; /* Cor escura premium do site */
+			border: 1px solid rgba(139, 153, 173, 0.15);
 			border-radius: 5px;
-			color: #1c2b41 !important;
+			color: #8b99ad !important;
 			font-family: 'Montserrat', sans-serif;
-			font-size: 0.5em;
+			font-size: 0.78em;
 			font-weight: 700;
 			letter-spacing: 0.08em;
 			text-transform: uppercase;
 			transition: all 0.3s ease;
-			vertical-align: middle;
-			margin-left: 12px;
+			cursor: pointer;
 		}
 		.toggle-btn-custom .click-icon {
 			width: 14px;
 			height: 14px;
 			stroke: currentColor;
 			transition: transform 0.3s ease;
+			flex-shrink: 0;
 		}
-		/* Hover e foco ativo */
+		/* Estados de Hover e Aberto */
 		.expertise-details summary:hover .toggle-btn-custom {
-			background: rgba(239, 168, 176, 0.05);
+			background: #24354f !important;
 			border-color: #efa8b0;
 			color: #efa8b0 !important;
-			transform: translateY(-1px);
+			transform: translateY(-2px);
 		}
 		.expertise-details[open] .toggle-btn-custom {
-			background: rgba(239, 168, 176, 0.08);
+			background: #1c2b41 !important;
 			border-color: #efa8b0;
 			color: #efa8b0 !important;
 		}
-		/* Dinâmica de texto Abrir/Fechar via CSS puro */
-		.toggle-text::after {
-			content: "Abrir";
-		}
-		.expertise-details[open] .toggle-text::after {
-			content: "Fechar";
+		.expertise-details[open] .toggle-btn-custom .click-icon {
+			transform: scale(0.9) rotate(-15deg);
 		}
 		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
@@ -311,22 +305,17 @@
 				<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 
 				<!-- Matriz Criativa Integrada diretamente na seção Sobre Mim -->
-				<div style="margin-top: 3.5em;">
+				<div style="margin-top: 3.5em; text-align: center;">
 					<details class="expertise-details">
 						<summary>
-							<header class="major" style="margin-bottom:0">
-								<h2 class="expertise-summary-content">
-									Matriz Criativa
-									<!-- Botão retangular customizado com ícone SVG de clique e texto dinâmico -->
-									<span class="toggle-btn-custom">
-										<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-											<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
-											<path d="M13 3l3 3M19 9l3 3" />
-										</svg>
-										<span class="toggle-text"></span>
-									</span>
-								</h2>
-							</header>
+							<!-- Apenas o botão customizado "Matriz Criativa", cobrindo o texto com o ícone de clique -->
+							<span class="toggle-btn-custom">
+								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
+									<path d="M13 3l3 3M19 9l3 3" />
+								</svg>
+								Matriz Criativa
+							</span>
 						</summary>
 						<div class="expertise-columns">
 							<div>
