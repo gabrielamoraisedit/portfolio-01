@@ -17,11 +17,11 @@
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
 		#wrapper { max-width: 82em !important; width: 100% !important }
 		
-		/* Menu Navegação Centralizado e IBM Plex Mono */
-		#nav { display: flex !important; justify-content: center !important; width: 100% !important }
-		#nav ul { display: flex !important; justify-content: center !important; align-items: center !important; max-width: 100% !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; list-style: none !important }
-		#nav li { padding: 0 !important; margin: 0 !important }
-		#nav a, nav a { font-family: 'IBM Plex Mono', monospace !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; font-size: 0.82em !important }
+		/* Menu Navegação Centralizado e IBM Plex Mono (Resolução Definitiva de Alinhamento) */
+		#nav { display: block !important; text-align: center !important; width: 100% !important; background: rgba(255, 255, 255, 0.95) !important }
+		#nav ul { display: block !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; list-style: none !important }
+		#nav li { display: inline-block !important; padding: 0 !important; margin: 0 !important }
+		#nav a, nav a { display: inline-block !important; padding: 1em 1.4em !important; font-family: 'IBM Plex Mono', monospace !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; font-size: 0.82em !important }
 
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
@@ -97,13 +97,14 @@
 			.intro-bio { font-size: 1.05em !important; text-align: justify !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
-			.slideshow-wrapper { height: 320px; }
+			.slideshow-wrapper { height: 320px }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
 			.header-buttons { gap: 0.8em }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
 			.software-grid { max-width: 380px !important; gap: 1.2em !important }
 			.software-item { width: 110px !important }
+			#nav a, nav a { padding: 0.8em 1em !important; font-size: 0.75em !important }
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
@@ -113,6 +114,7 @@
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
 			.software-grid { max-width: 250px !important; gap: 1em !important }
 			.software-item { width: 110px !important }
+			#nav a, nav a { padding: 0.8em 0.6em !important; font-size: 0.7em !important }
 		}
 	</style>
 </head>
@@ -153,6 +155,7 @@
 					</div>
 				</div>
 
+				<!-- Faixa Foco -->
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 
 				<!-- Painéis Collapsible Integrados (com espaçamento reduzido) -->
@@ -313,12 +316,31 @@
 		imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyHeight(img); }, { once: true }); });
 	});
 </script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script>
+	(function () {
+		var navLinks = document.querySelectorAll('#nav ul li a');
+		var sections = [];
+		navLinks.forEach(function (link) {
+			var id = link.getAttribute('href');
+			if (id && id.startsWith('#')) {
+				var section = document.querySelector(id);
+				if (section) sections.push({ link: link, section: section });
+			}
+		});
+		function onScroll() {
+			var scrollY = window.scrollY || window.pageYOffset;
+			var windowH = window.innerHeight;
+			var active = null;
+			sections.forEach(function (item) {
+				if (scrollY >= item.section.offsetTop - windowH * 0.35) active = item;
+			});
+			navLinks.forEach(function (l) { l.classList.remove('active'); });
+			if (active) active.link.classList.add('active');
+			else if (sections.length > 0) sections[0].link.classList.add('active');
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	})();
+</script>
 </body>
 </html>
