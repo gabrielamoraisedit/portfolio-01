@@ -8,8 +8,7 @@
 	<meta name="author" content="Gabriela Pacheco de Morais" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 	<style>
 		/* BASE */
@@ -17,195 +16,61 @@
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f, #121821) !important; min-height: 100vh }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
+		#wrapper { max-width: 82em !important; width: 100% !important }
 
-		/* Ampliação do Escopo do Site */
-		#wrapper {
-			max-width: 82em !important;
-			width: 100% !important;
-		}
-
-		/* Centralização Definitiva e Dinâmica das Abas */
-		#nav ul {
-			display: flex !important;
-			justify-content: center !important;
-			max-width: 100% !important;
-			width: 100% !important;
-			margin: 0 auto !important;
-			padding: 0 !important;
-		}
+		/* NAVEGAÇÃO */
+		#nav ul { display: flex !important; justify-content: center !important; max-width: 100% !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important }
 
 		/* TIPOGRAFIA */
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
 		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em }
-		header p { font-size: 1em }
-		p { font-size: 0.95em; line-height: 1.6 }
+		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
 		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,.02); padding: 1.2em 1.8em; max-width: 750px; margin: 2em auto; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -.01em }
 
 		/* HEADER */
-		#header, #header .logo, #header h1, #header > p,
-		#header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
+		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
 		#header h1, #header > p { color: #8b99ad !important }
+		#header h1 { font-family: 'IBM Plex Mono', monospace !important; font-size: 2em; letter-spacing: 0.18em; font-weight: 600 }
+		.header-author { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.25em; color: #e8eaed !important; margin: 0.8em 0 0.4em 0 !important; letter-spacing: 0.22em; text-transform: uppercase }
 
-		/* Título principal em IBM Plex Mono */
-		#header h1 {
-			font-family: 'IBM Plex Mono', monospace !important;
-			font-size: 2em;
-			letter-spacing: 0.18em;
-			font-weight: 600;
-		}
-
-		/* Estilo destacado do Nome do Autor */
-		.header-author {
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-			font-size: 1.25em;
-			color: #e8eaed !important;
-			margin: 0.8em 0 0.4em 0 !important;
-			letter-spacing: 0.22em;
-			text-transform: uppercase;
-		}
-
-		/* Botões retangulares do Header */
-		.header-buttons {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 1.2em;
-			margin: 2.5em 0 0 0;
-			padding: 0;
-			list-style: none;
-		}
-		.header-buttons li {
-			padding: 0;
-		}
-		.header-buttons a {
-			display: inline-flex;
-			align-items: center;
-			gap: 10px;
-			padding: 0.8em 1.6em;
-			background: rgba(255, 255, 255, 0.02);
-			border: 1px solid rgba(139, 153, 173, 0.15);
-			border-radius: 5px;
-			color: #8b99ad !important;
-			text-decoration: none;
-			font-family: 'Montserrat', sans-serif;
-			font-size: 0.78em;
-			font-weight: 700;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-			transition: all 0.3s ease;
-		}
-		.header-buttons a:hover {
-			background: rgba(239, 168, 176, 0.05);
-			border-color: #efa8b0;
-			color: #efa8b0 !important;
-			transform: translateY(-2px);
-		}
-		.header-buttons .icon {
-			border: 0;
-			padding: 0;
-			width: auto;
-			height: auto;
-			line-height: 1;
-			font-size: 1.2em;
-			color: inherit !important;
-			display: inline-block;
-		}
-		.header-buttons .icon:before {
-			display: inline-block;
-			vertical-align: middle;
-			font-size: inherit;
-		}
+		/* BOTÕES HEADER */
+		.header-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2em; margin: 2.5em 0 0 0; padding: 0; list-style: none }
+		.header-buttons li { padding: 0 }
+		.header-buttons a { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease }
+		.header-buttons a:hover { background: rgba(239, 168, 176, 0.05); border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
+		.header-buttons .icon { border: 0; padding: 0; width: auto; height: auto; line-height: 1; font-size: 1.2em; color: inherit !important; display: inline-block }
+		.header-buttons .icon:before { display: inline-block; vertical-align: middle; font-size: inherit }
 
 		/* LAYOUT DAS SEÇÕES */
-		.sec   { max-width: 1120px; margin: 0 auto; padding: 3em 2em }
+		.sec { max-width: 1120px; margin: 0 auto; padding: 3em 2em }
 		.sec-c { max-width: 1120px; margin: 0 auto; padding: 3em 2em; text-align: center }
-		#intro     { background: #f0f1f3 }
-		#skills    { background: #e8eaed }
-		#design    { background: #e8eaed }
-		#videos    { background: #f0f1f3 }
-		#skills::before, #skills::after,
-		#design::before, #design::after,
-		#videos::before, #videos::after { display: none !important }
-		#footer { background: rgba(11,16,25,.6) }
-		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
+		#intro { background: #f0f1f3 } #skills, #design { background: #e8eaed } #videos { background: #f0f1f3 }
+		#skills::before, #skills::after, #design::before, #design::after, #videos::before, #videos::after { display: none !important }
+		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
 
-		/* SOFTWARES — Grid Fixa 4x2 */
-		.software-grid {
-			display: grid;
-			grid-template-columns: repeat(4, 130px);
-			justify-content: center;
-			gap: 1.5em;
-			margin-top: 1.5em;
-		}
-		.software-item {
-			padding: 1em .5em;
-			background: rgba(255,255,255,.03);
-			border-radius: 6px;
-			transition: background .3s, transform .3s;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-		}
+		/* SOFTWARES */
+		.software-grid { display: grid; grid-template-columns: repeat(4, 130px); justify-content: center; gap: 1.5em; margin-top: 1.5em }
+		.software-item { padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
 		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
 		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
 		.languages { font-size: .95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0 }
 
-		/* EXPERTISE */
+		/* EXPERTISE & ACORDEÕES */
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: .3em }
 		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-size: .95em; text-align: justify; letter-spacing: -.01em; margin-left: 0 }
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em }
 		.expertise-columns h3 { margin-bottom: 1.2em; padding-bottom: .5em; border-bottom: 2px solid rgba(239,168,176,.3) }
-
-		/* RETRÁTIL & BOTÃO CUSTOMIZADO MATRIZ CRIATIVA */
 		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
 		.expertise-details summary::-webkit-details-marker { display: none }
 		
-		/* Botão "Matriz Criativa" idêntico aos do Header */
-		.toggle-btn-custom {
-			display: inline-flex;
-			align-items: center;
-			gap: 10px;
-			padding: 0.8em 1.6em;
-			background: #1c2b41 !important; /* Cor escura premium do site */
-			border: 1px solid rgba(139, 153, 173, 0.15);
-			border-radius: 5px;
-			color: #8b99ad !important;
-			font-family: 'Montserrat', sans-serif;
-			font-size: 0.78em;
-			font-weight: 700;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-			transition: all 0.3s ease;
-			cursor: pointer;
-		}
-		.toggle-btn-custom .click-icon {
-			width: 14px;
-			height: 14px;
-			stroke: currentColor;
-			transition: transform 0.3s ease;
-			flex-shrink: 0;
-		}
-		/* Estados de Hover e Aberto */
-		.expertise-details summary:hover .toggle-btn-custom {
-			background: #24354f !important;
-			border-color: #efa8b0;
-			color: #efa8b0 !important;
-			transform: translateY(-2px);
-		}
-		.expertise-details[open] .toggle-btn-custom {
-			background: #1c2b41 !important;
-			border-color: #efa8b0;
-			color: #efa8b0 !important;
-		}
-		/* Rotação suave da seta indicando abertura do painel */
-		.expertise-details[open] .toggle-btn-custom .click-icon {
-			transform: rotate(90deg);
-		}
+		/* Botões retráteis "Matriz Criativa" e "Destaques & Cursos" */
+		.toggle-btn-custom { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: #1c2b41 !important; border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer }
+		.toggle-btn-custom .click-icon { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.3s ease; flex-shrink: 0 }
+		.expertise-details summary:hover .toggle-btn-custom { background: #24354f !important; border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
+		.expertise-details[open] .toggle-btn-custom { background: #1c2b41 !important; border-color: #efa8b0; color: #efa8b0 !important }
+		.expertise-details[open] .toggle-btn-custom .click-icon { transform: rotate(90deg) }
 		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
 
@@ -227,34 +92,31 @@
 		.video-card-thumbnail { position: relative; background: #0b101a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center }
 		.video-card-thumbnail::before { content: ''; display: block; width: 3.5em; height: 3.5em; background: rgba(239,168,176,.2); border: 2px solid rgba(239,168,176,.5); border-radius: 50% }
 		.video-card-thumbnail::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .6em 0 .6em 1.1em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em }
-		.video-card-body { padding: 1.2em 1.4em 1.4em }
-		.video-card-body h4 { margin: 0 0 .4em; font-size: 1em }
-		.video-card-body p { margin: 0; font-size: .85em; opacity: .8 }
+		.video-card-body { padding: 1.2em 1.4em 1.4em } .video-card-body h4 { margin: 0 0 .4em; font-size: 1em } .video-card-body p { margin: 0; font-size: .85em; opacity: .8 }
 		.tag { display: inline-block; padding: .25em .75em; border-radius: 3px; font-size: .72em; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; background: rgba(239,168,176,.12); color: #efa8b0; border: 1px solid rgba(239,168,176,.3); margin-bottom: .8em }
 
 		/* LINK EXTERNO */
 		.link-ext { display: inline-flex; align-items: center; gap: 7px; font-size: .82em; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #1c2b41; text-decoration: none; cursor: pointer; padding: .3em 0; border-bottom: 1px solid rgba(28,43,65,.3); transition: color .22s, border-color .22s }
 		.link-ext svg { flex-shrink: 0; transition: transform .22s }
-		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 }
-		.link-ext:hover svg { transform: translate(2px,-2px) }
+		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 } .link-ext:hover svg { transform: translate(2px,-2px) }
 
 		/* RESPONSIVO */
 		@media (max-width: 768px) {
 			.expertise-columns { grid-template-columns: 1fr }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
-			.slideshow-wrapper { height: 320px; }
+			.slideshow-wrapper { height: 320px }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
-			.header-buttons { gap: 0.8em; }
-			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em; }
+			.header-buttons { gap: 0.8em }
+			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
 			.software-grid { grid-template-columns: repeat(4, 110px); gap: 1.2em }
 		}
 		@media (max-width: 480px) {
-			.slideshow-wrapper { height: 240px; }
+			.slideshow-wrapper { height: 240px }
 			.slide-btn { width: 20px; height: 40px; font-size: .7em }
 			.slideshow-stage { gap: 4px }
-			.header-buttons { gap: 0.6em; }
-			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em; }
+			.header-buttons { gap: 0.6em }
+			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
 			.software-grid { grid-template-columns: repeat(2, 110px); gap: 1em }
 		}
 	</style>
@@ -266,23 +128,10 @@
 		<h1>PORTFÓLIO</h1>
 		<p class="header-author">Gabriela Pacheco de Morais</p>
 		<p>Design &bull; Edição de Vídeo &bull; Estratégia Criativa &bull; Marketing</p>
-		
 		<ul class="header-buttons">
-			<li>
-				<a href="https://www.linkedin.com/in/gabriela-morais/" target="_blank" rel="noopener noreferrer">
-					<span class="icon brands fa-linkedin"></span> LinkedIn
-				</a>
-			</li>
-			<li>
-				<a href="https://www.behance.net/gabrielamorais_" target="_blank" rel="noopener noreferrer">
-					<span class="icon brands fa-behance"></span> Behance
-				</a>
-			</li>
-			<li>
-				<a href="https://www.youtube.com/@gabrielamoraisedit" target="_blank" rel="noopener noreferrer">
-					<span class="icon brands fa-youtube"></span> Canal no Youtube
-				</a>
-			</li>
+			<li><a href="https://www.linkedin.com/in/gabriela-morais/" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-linkedin"></span> LinkedIn</a></li>
+			<li><a href="https://www.behance.net/gabrielamorais_" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-behance"></span> Behance</a></li>
+			<li><a href="https://www.youtube.com/@gabrielamoraisedit" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-youtube"></span> Canal no Youtube</a></li>
 		</ul>
 	</header>
 
@@ -305,17 +154,14 @@
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 				<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 
-				<!-- Conteiners Retráteis da seção Sobre Mim -->
+				<!-- Painéis Collapsible Integrados -->
 				<div style="margin-top: 3.5em; text-align: center;">
 					
-					<!-- Primeiro Acordeão: Matriz Criativa -->
+					<!-- Painel 1: Matriz Criativa -->
 					<details class="expertise-details">
 						<summary>
 							<span class="toggle-btn-custom">
-								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-									<line x1="5" y1="12" x2="19" y2="12"></line>
-									<polyline points="12 5 19 12 12 19"></polyline>
-								</svg>
+								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 								Matriz Criativa
 							</span>
 						</summary>
@@ -323,40 +169,29 @@
 							<div>
 								<h3>Áreas do Conhecimento</h3>
 								<dl class="expertise-list">
-									<dt>Identidade Visual</dt>
-									<dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
-									<dt>Design Editorial</dt>
-									<dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
-									<dt>Edição de Vídeo</dt>
-									<dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
-									<dt>Comunicação Digital</dt>
-									<dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
+									<dt>Identidade Visual</dt><dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
+									<dt>Design Editorial</dt><dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
+									<dt>Edição de Vídeo</dt><dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
+									<dt>Comunicação Digital</dt><dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
 								</dl>
 							</div>
 							<div>
 								<h3>Processo Criativo</h3>
 								<dl class="creative-process-list">
-									<dt>Briefing &amp; Pesquisa</dt>
-									<dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual.</dd>
-									<dt>Conceituação</dt>
-									<dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
-									<dt>Execução &amp; Refinamento</dt>
-									<dd>Produção do projeto com atenção aos detalhes técnicos (tipografia, grid, paleta e consistência) seguida de ciclos de revisão até a entrega impecável.</dd>
-									<dt>Entrega &amp; Aplicação</dt>
-									<dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente.</dd>
+									<dt>Briefing &amp; Pesquisa</dt><dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual.</dd>
+									<dt>Conceituação</dt><dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
+									<dt>Execução &amp; Refinamento</dt><dd>Produção do projeto com atenção aos detalhes técnicos (tipografia, grid, paleta e consistência) seguida de ciclos de revisão até a entrega impecável.</dd>
+									<dt>Entrega &amp; Aplicação</dt><dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente.</dd>
 								</dl>
 							</div>
 						</div>
 					</details>
 
-					<!-- Segundo Acordeão: Destaques & Cursos -->
+					<!-- Painel 2: Destaques & Cursos -->
 					<details class="expertise-details" style="margin-top: 1.5em;">
 						<summary>
 							<span class="toggle-btn-custom">
-								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-									<line x1="5" y1="12" x2="19" y2="12"></line>
-									<polyline points="12 5 19 12 12 19"></polyline>
-								</svg>
+								<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 								Destaques &amp; Cursos
 							</span>
 						</summary>
@@ -364,34 +199,24 @@
 							<div>
 								<h3>Destaques Acadêmicos</h3>
 								<dl class="expertise-list">
-									<dt>Visita técnica à agência GALERIA</dt>
-									<dd>Apresentações de Estratégias de Marketing e Inovações - 2025</dd>
-									<dt>Visita técnica ao escritório da Adobe Brasil</dt>
-									<dd>Ferramentas Adobe, Estratégias de Vendas e Marketing - 2025</dd>
+									<dt>Visita técnica à agência GALERIA</dt><dd>Apresentações de Estratégias de Marketing e Inovações - 2025</dd>
+									<dt>Visita técnica ao escritório da Adobe Brasil</dt><dd>Ferramentas Adobe, Estratégias de Vendas e Marketing - 2025</dd>
 								</dl>
 							</div>
 							<div>
 								<h3>Cursos &amp; Certificações</h3>
 								<dl class="creative-process-list">
-									<dt>Interpretação do Direito e Direito do Consumidor</dt>
-									<dd>OAB/BA - 2022</dd>
-									<dt>Introdução às Relações de Consumo e aos Direitos Básicos</dt>
-									<dd>FGV - 2023</dd>
-									<dt>Democracia Digital</dt>
-									<dd>FGV - 2023</dd>
-									<dt>Basic Principles of Digital Marketing</dt>
-									<dd>Google Career Certificates - 2024</dd>
-									<dt>The Importance of Interpersonal Skills</dt>
-									<dd>The Open University - 2024</dd>
-									<dt>Storytelling for Digital Marketing</dt>
-									<dd>Santander Open Academy - 2024</dd>
-									<dt>Workshop: Vídeos Gerados com IA</dt>
-									<dd>Orgânica Cursos LTDA - 2025</dd>
+									<dt>Interpretação do Direito e Direito do Consumidor</dt><dd>OAB/BA - 2022</dd>
+									<dt>Introdução às Relações de Consumo e aos Direitos Básicos</dt><dd>FGV - 2023</dd>
+									<dt>Democracia Digital</dt><dd>FGV - 2023</dd>
+									<dt>Basic Principles of Digital Marketing</dt><dd>Google Career Certificates - 2024</dd>
+									<dt>The Importance of Interpersonal Skills</dt><dd>The Open University - 2024</dd>
+									<dt>Storytelling for Digital Marketing</dt><dd>Santander Open Academy - 2024</dd>
+									<dt>Workshop: Vídeos Gerados com IA</dt><dd>Orgânica Cursos LTDA - 2025</dd>
 								</dl>
 							</div>
 						</div>
 					</details>
-
 				</div>
 			</div>
 		</section>
@@ -404,34 +229,13 @@
 					<p>Tecnologias que venho aprimorando com o passar dos anos…</p>
 				</header>
 				<div class="software-grid">
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:adobephotoshop.svg?color=%231c2b41" alt="Adobe Photoshop" class="software-item-icon" loading="eager" />
-						<span>Photoshop</span>
-					</div>
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:adobeillustrator.svg?color=%231c2b41" alt="Adobe Illustrator" class="software-item-icon" loading="eager" />
-						<span>Illustrator</span>
-					</div>
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:adobeindesign.svg?color=%231c2b41" alt="Adobe InDesign" class="software-item-icon" loading="eager" />
-						<span>InDesign</span>
-					</div>
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:adobepremierepro.svg?color=%231c2b41" alt="Adobe Premiere Pro" class="software-item-icon" loading="eager" />
-						<span>Premiere Pro</span>
-					</div>
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:adobeaftereffects.svg?color=%231c2b41" alt="Adobe After Effects" class="software-item-icon" loading="eager" />
-						<span>After Effects</span>
-					</div>
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:figma.svg?color=%231c2b41" alt="Figma" class="software-item-icon" loading="eager" />
-						<span>Figma</span>
-					</div>
-					<div class="software-item">
-						<img src="https://api.iconify.design/simple-icons:canva.svg?color=%231c2b41" alt="Canva" class="software-item-icon" loading="eager" />
-						<span>Canva</span>
-					</div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobephotoshop.svg?color=%231c2b41" alt="Adobe Photoshop" class="software-item-icon" loading="eager" /><span>Photoshop</span></div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobeillustrator.svg?color=%231c2b41" alt="Adobe Illustrator" class="software-item-icon" loading="eager" /><span>Illustrator</span></div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobeindesign.svg?color=%231c2b41" alt="Adobe InDesign" class="software-item-icon" loading="eager" /><span>InDesign</span></div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobepremierepro.svg?color=%231c2b41" alt="Adobe Premiere Pro" class="software-item-icon" loading="eager" /><span>Premiere Pro</span></div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:adobeaftereffects.svg?color=%231c2b41" alt="Adobe After Effects" class="software-item-icon" loading="eager" /><span>After Effects</span></div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:figma.svg?color=%231c2b41" alt="Figma" class="software-item-icon" loading="eager" /><span>Figma</span></div>
+					<div class="software-item"><img src="https://api.iconify.design/simple-icons:canva.svg?color=%231c2b41" alt="Canva" class="software-item-icon" loading="eager" /><span>Canva</span></div>
 					<div class="software-item">
 						<svg class="software-item-icon" viewBox="0 0 512 509.659" xmlns="http://www.w3.org/2000/svg" aria-label="CapCut">
 							<path fill="none" d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z"/>
@@ -528,66 +332,28 @@
 <script>
 	document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-	document.addEventListener('DOMContentLoaded', function () {
-		const wrapper = document.getElementById('design-slideshow');
-		const imgs    = wrapper.querySelectorAll('.slide img');
-		const total   = wrapper.querySelectorAll('.slide').length;
-		const MAX     = [360, 480, 680];
+	document.addEventListener('DOMContentLoaded', () => {
+		const wrapper = document.getElementById('design-slideshow'), imgs = wrapper.querySelectorAll('.slide img'), total = imgs.length, MAX = [360, 480, 680];
+		let currentIdx = 0, scrollTimeout;
+		const maxH = () => window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2];
+		const applyHeight = (img) => { if (img && img.naturalWidth) wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxH()) + 'px'; };
+		const adjustFor = (idx) => { const img = imgs[idx]; if (img) img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true }); };
+		const getIdx = () => Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+		const goTo = (i) => { currentIdx = i; wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); };
 
-		let currentIdx = 0;
-		let scrollTimeout;
-
-		function maxH() { return window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2] }
-
-		function applyHeight(img) {
-			if (!img || !img.naturalWidth) return;
-			wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxH()) + 'px';
-		}
-
-		function adjustFor(idx) {
-			const img = imgs[idx];
-			if (!img) return;
-			img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true });
-		}
-
-		function getCalculatedIndex() { 
-			return Math.round(wrapper.scrollLeft / wrapper.clientWidth); 
-		}
-		
-		function goTo(i) { 
-			currentIdx = i;
-			wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); 
-		}
-
-		document.getElementById('next-slide').addEventListener('click', () => goTo((getCalculatedIndex() + 1) % total));
-		document.getElementById('prev-slide').addEventListener('click', () => goTo((getCalculatedIndex() - 1 + total) % total));
-		
+		document.getElementById('next-slide').addEventListener('click', () => goTo((getIdx() + 1) % total));
+		document.getElementById('prev-slide').addEventListener('click', () => goTo((getIdx() - 1 + total) % total));
 		wrapper.addEventListener('scroll', () => {
 			clearTimeout(scrollTimeout);
-			scrollTimeout = setTimeout(() => {
-				const nextActiveIdx = getCalculatedIndex();
-				if (currentIdx !== nextActiveIdx) {
-					currentIdx = nextActiveIdx;
-					adjustFor(currentIdx);
-				}
-			}, 40);
+			scrollTimeout = setTimeout(() => { const next = getIdx(); if (currentIdx !== next) { currentIdx = next; adjustFor(currentIdx); } }, 40);
 		}, { passive: true });
 
 		window.addEventListener('resize', () => {
-			wrapper.style.scrollBehavior = 'auto';
-			wrapper.scrollLeft = currentIdx * wrapper.clientWidth;
-			wrapper.style.scrollBehavior = 'smooth';
-			adjustFor(currentIdx);
+			wrapper.style.scrollBehavior = 'auto'; wrapper.scrollLeft = currentIdx * wrapper.clientWidth; wrapper.style.scrollBehavior = 'smooth'; adjustFor(currentIdx);
 		}, { passive: true });
 
 		adjustFor(0);
-		imgs.forEach((img, i) => {
-			if (!img.complete) {
-				img.addEventListener('load', () => { 
-					if (getCalculatedIndex() === i) applyHeight(img); 
-				}, { once: true });
-			}
-		});
+		imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyHeight(img); }, { once: true }); });
 	});
 </script>
 <script src="assets/js/jquery.min.js"></script>
