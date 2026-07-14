@@ -49,15 +49,22 @@
 		#skills::before, #skills::after, #design::before, #design::after, #videos::before, #videos::after { display: none !important }
 		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
 
+		/* INTRO DIAGRAMAÇÃO (Grade 2 Colunas) */
+		.intro-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3.5em; align-items: start; margin-bottom: 2.5em }
+		.intro-left { text-align: left }
+		.intro-left h2 { margin-bottom: 0.5em }
+		.intro-right { text-align: left }
+		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 }
+		.languages { font-size: .95em; font-weight: 500; text-align: left; margin-top: 1.5em; margin-bottom: 0 }
+
 		/* SOFTWARES */
 		.software-grid { display: grid; grid-template-columns: repeat(4, 130px); justify-content: center; gap: 1.5em; margin-top: 1.5em }
 		.software-item { padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
 		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
 		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
-		.languages { font-size: .95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0 }
 
-		/* DIAGRAMAÇÃO & TIPOGRAFIA DOS ACORDEÕES */
+		/* EXPERTISE & CERTIFICAÇÕES */
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5em; margin-top: 1.5em; text-align: left !important }
 		.expertise-columns h3 { font-family: 'Montserrat', sans-serif; font-size: 1.1em; font-weight: 700; color: #1c2b41; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5em; padding-bottom: 0.6em; border-bottom: 2px solid rgba(28, 43, 65, 0.1) }
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 0.92em; font-weight: 700; color: #1a222d; margin-bottom: 0.2em; line-height: 1.4 }
@@ -65,7 +72,7 @@
 		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
 		.expertise-details summary::-webkit-details-marker { display: none }
 		
-		/* Botões retráteis "Matriz Criativa" e "Destaques & Cursos" */
+		/* Botões retráteis */
 		.toggle-btn-custom { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: #1c2b41 !important; border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer }
 		.toggle-btn-custom .click-icon { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.3s ease; flex-shrink: 0 }
 		.expertise-details summary:hover .toggle-btn-custom { background: #24354f !important; border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
@@ -102,6 +109,10 @@
 
 		/* RESPONSIVO */
 		@media (max-width: 768px) {
+			.intro-grid { grid-template-columns: 1fr; gap: 1.5em; margin-bottom: 2em }
+			.intro-left, .intro-right { text-align: center }
+			.languages { text-align: center !important; margin-top: 1em }
+			.intro-bio { font-size: 1.05em !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
 			.slideshow-wrapper { height: 320px }
@@ -149,10 +160,18 @@
 		<!-- SEÇÃO 1 — Sobre Mim -->
 		<section id="intro" class="main">
 			<div class="sec">
-				<header class="major"><h2>Olá, boas-vindas!</h2></header>
-				<p>Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+				<!-- Nova Estrutura de Grade Diagramada -->
+				<div class="intro-grid">
+					<div class="intro-left">
+						<header class="major"><h2>Olá, boas-vindas!</h2></header>
+						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
+					</div>
+					<div class="intro-right">
+						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+					</div>
+				</div>
+
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
-				<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 
 				<!-- Painéis Collapsible Integrados -->
 				<div style="margin-top: 3.5em; text-align: center;">
