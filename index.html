@@ -122,9 +122,25 @@
 		#footer { background: rgba(11,16,25,.6) }
 		#footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
 
-		/* SOFTWARES */
-		.software-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em; margin-top: 1.5em }
-		.software-item { flex: 0 1 130px; padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
+		/* SOFTWARES — Grid Fixa 4x2 */
+		.software-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 130px);
+			justify-content: center;
+			gap: 1.5em;
+			margin-top: 1.5em;
+		}
+		.software-item {
+			padding: 1em .5em;
+			background: rgba(255,255,255,.03);
+			border-radius: 6px;
+			transition: background .3s, transform .3s;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
 		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
 		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
@@ -184,14 +200,15 @@
 			.slideshow-stage { gap: 6px }
 			.header-buttons { gap: 0.8em; }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em; }
+			.software-grid { grid-template-columns: repeat(4, 110px); gap: 1.2em } /* Grid mantido em 4 colunas em tablets */
 		}
 		@media (max-width: 480px) {
-			.software-item { flex: 0 1 100px }
 			.slideshow-wrapper { height: 240px; }
 			.slide-btn { width: 20px; height: 40px; font-size: .7em }
 			.slideshow-stage { gap: 4px }
 			.header-buttons { gap: 0.6em; }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em; }
+			.software-grid { grid-template-columns: repeat(2, 110px); gap: 1em } /* Grid quebra para 2x4 em celulares */
 		}
 	</style>
 </head>
@@ -345,7 +362,6 @@
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 						<div class="slideshow-wrapper" id="design-slideshow">
-							<!-- Removido o lazy loading do primeiro slide para otimização de LCP -->
 							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" /></div>
 							<div class="slide"><img src="images/project 02.png" alt="Projeto 02" loading="lazy" /></div>
 							<div class="slide"><img src="images/project 03.png" alt="Projeto 03" loading="lazy" /></div>
@@ -423,7 +439,7 @@
 		const imgs    = wrapper.querySelectorAll('.slide img');
 		const total   = wrapper.querySelectorAll('.slide').length;
 		const MAX     = [360, 480, 680];
-		
+
 		let currentIdx = 0;
 		let scrollTimeout;
 
@@ -452,7 +468,6 @@
 		document.getElementById('next-slide').addEventListener('click', () => goTo((getCalculatedIndex() + 1) % total));
 		document.getElementById('prev-slide').addEventListener('click', () => goTo((getCalculatedIndex() - 1 + total) % total));
 		
-		// Evento de Scroll Otimizado (Debounce de 40ms para evitar reflows de altura excessivos)
 		wrapper.addEventListener('scroll', () => {
 			clearTimeout(scrollTimeout);
 			scrollTimeout = setTimeout(() => {
@@ -464,16 +479,13 @@
 			}, 40);
 		}, { passive: true });
 
-		// Evento de Resize Otimizado com retenção de foco do Slide
 		window.addEventListener('resize', () => {
-			// Desativa temporariamente o scroll-behavior smooth e o snap para ajustar a posição sem flickeio
 			wrapper.style.scrollBehavior = 'auto';
 			wrapper.scrollLeft = currentIdx * wrapper.clientWidth;
 			wrapper.style.scrollBehavior = 'smooth';
 			adjustFor(currentIdx);
 		}, { passive: true });
 
-		// Inicialização
 		adjustFor(0);
 		imgs.forEach((img, i) => {
 			if (!img.complete) {
