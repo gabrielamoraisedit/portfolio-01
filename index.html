@@ -16,10 +16,15 @@
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
 		#wrapper { max-width: 82em !important; width: 100% !important }
-		#nav ul { display: flex !important; justify-content: center !important; max-width: 100% !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important }
+		
+		/* Menu Navegação Centralizado e IBM Plex Mono */
+		#nav { display: flex !important; justify-content: center !important; width: 100% !important }
+		#nav ul { display: flex !important; justify-content: center !important; align-items: center !important; max-width: 100% !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; list-style: none !important }
+		#nav li { padding: 0 !important; margin: 0 !important }
+		#nav a, nav a { font-family: 'IBM Plex Mono', monospace !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; font-size: 0.82em !important }
+
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
-		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em }
 		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
 		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: center !important; border: none !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 95% !important; width: max-content !important; margin: 1.8em auto !important; border-radius: 6px; line-height: 1.5; letter-spacing: -0.01em }
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
@@ -92,7 +97,7 @@
 			.intro-bio { font-size: 1.05em !important; text-align: justify !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
-			.slideshow-wrapper { height: 320px }
+			.slideshow-wrapper { height: 320px; }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
 			.header-buttons { gap: 0.8em }
@@ -163,7 +168,7 @@
 									<dt>Identidade Visual</dt><dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
 									<dt>Design Editorial</dt><dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
 									<dt>Edição de Vídeo</dt><dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
-									<dt>Comunicação Digital</dt><dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objectives estratégicos da marca.</dd>
+									<dt>Comunicação Digital</dt><dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
 								</dl>
 							</div>
 							<div>
