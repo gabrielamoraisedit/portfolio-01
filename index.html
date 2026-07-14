@@ -26,7 +26,7 @@
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
 		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em }
 		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
-		blockquote { font-size: 1.05em; font-style: italic; text-align: left; border-left: 4px solid #efa8b0; border-bottom: none; background: rgba(255,255,255,.02); padding: 1.2em 1.8em; max-width: 750px; margin: 1.5em auto !important; border-radius: 0 8px 8px 0; line-height: 1.7; letter-spacing: -.01em }
+		blockquote { font-size: 1.05em; font-style: italic; text-align: center !important; border-left: none !important; background: rgba(255,255,255,.02); padding: 1.2em 1.8em; max-width: 750px; margin: 1.5em auto !important; border-radius: 8px; line-height: 1.7; letter-spacing: -.01em }
 
 		/* HEADER */
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
@@ -55,8 +55,8 @@
 		.intro-left h2 { display: inline-block !important; font-family: 'IBM Plex Mono', monospace !important; font-size: 1.8em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; margin-bottom: 0.5em }
 		#intro .major h2::after { width: 100% !important; max-width: 100% !important }
 		.intro-right { text-align: left }
-		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 }
-		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.5em; margin-bottom: 0 }
+		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: justify !important }
+		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
 
 		/* SOFTWARES */
 		.software-grid { display: grid; grid-template-columns: repeat(4, 130px); justify-content: center; gap: 1.5em; margin-top: 1.5em }
@@ -113,7 +113,7 @@
 			.intro-grid { grid-template-columns: 1fr; gap: 1.5em; margin-bottom: 2em }
 			.intro-left, .intro-right { text-align: center }
 			.languages { text-align: center !important; margin-top: 1em }
-			.intro-bio { font-size: 1.05em !important }
+			.intro-bio { font-size: 1.05em !important; text-align: justify !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
 			.slideshow-wrapper { height: 320px }
@@ -165,10 +165,10 @@
 				<div class="intro-grid">
 					<div class="intro-left">
 						<header class="major"><h2>Olá, boas-vindas!</h2></header>
-						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 					</div>
 					<div class="intro-right">
-						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos. Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 					</div>
 				</div>
 
@@ -293,7 +293,7 @@
 				<p style="margin-top:2.5em">
 					<a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">
 						Ver portfólio completo no Behance
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7" y1="17" x2="17" y2="7"/></svg>
 					</a>
 				</p>
 			</div>
