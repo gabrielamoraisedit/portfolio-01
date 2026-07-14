@@ -155,19 +155,62 @@
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
 		.languages { font-size: .95em; font-weight: 500; text-align: center; margin-top: 2em; margin-bottom: 0 }
 
-		/* EXPERTISE (Matriz Criativa agora integrada na seção #intro) */
+		/* EXPERTISE */
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 600; margin-bottom: .3em }
 		.expertise-list dd, .creative-process-list dd { margin-bottom: 1.5em; font-size: .95em; text-align: justify; letter-spacing: -.01em; margin-left: 0 }
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1em }
 		.expertise-columns h3 { margin-bottom: 1.2em; padding-bottom: .5em; border-bottom: 2px solid rgba(239,168,176,.3) }
 
-		/* RETRÁTIL */
+		/* RETRÁTIL & BOTÃO CUSTOMIZADO MATRIZ CRIATIVA */
 		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
 		.expertise-details summary::-webkit-details-marker { display: none }
 		.expertise-summary-content { display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: opacity .2s; margin: 0 }
 		.expertise-summary-content:hover { opacity: .7 }
-		.toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 2px solid #efa8b0; color: #efa8b0 !important; border-radius: 50%; font-size: 22px; transition: transform .3s, background .3s, color .3s; font-family: sans-serif; line-height: 0 }
-		.expertise-details[open] .toggle-icon { transform: rotate(45deg); background: #efa8b0; color: #121821 !important }
+		
+		/* Novo design retangular discreto para o botão de toggle */
+		.toggle-btn-custom {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 0.5em 1.2em;
+			background: rgba(28, 43, 65, 0.03);
+			border: 1px solid rgba(28, 43, 65, 0.15);
+			border-radius: 5px;
+			color: #1c2b41 !important;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 0.5em;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			transition: all 0.3s ease;
+			vertical-align: middle;
+			margin-left: 12px;
+		}
+		.toggle-btn-custom .click-icon {
+			width: 14px;
+			height: 14px;
+			stroke: currentColor;
+			transition: transform 0.3s ease;
+		}
+		/* Hover e foco ativo */
+		.expertise-details summary:hover .toggle-btn-custom {
+			background: rgba(239, 168, 176, 0.05);
+			border-color: #efa8b0;
+			color: #efa8b0 !important;
+			transform: translateY(-1px);
+		}
+		.expertise-details[open] .toggle-btn-custom {
+			background: rgba(239, 168, 176, 0.08);
+			border-color: #efa8b0;
+			color: #efa8b0 !important;
+		}
+		/* Dinâmica de texto Abrir/Fechar via CSS puro */
+		.toggle-text::after {
+			content: "Abrir";
+		}
+		.expertise-details[open] .toggle-text::after {
+			content: "Fechar";
+		}
 		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
 
@@ -259,7 +302,7 @@
 
 	<div id="main">
 
-		<!-- SEÇÃO 1 — Sobre Mim (inclui agora a Matriz Criativa) -->
+		<!-- SEÇÃO 1 — Sobre Mim -->
 		<section id="intro" class="main">
 			<div class="sec">
 				<header class="major"><h2>Olá, boas-vindas!</h2></header>
@@ -272,7 +315,17 @@
 					<details class="expertise-details">
 						<summary>
 							<header class="major" style="margin-bottom:0">
-								<h2 class="expertise-summary-content">Matriz Criativa <span class="toggle-icon">+</span></h2>
+								<h2 class="expertise-summary-content">
+									Matriz Criativa
+									<!-- Botão retangular customizado com ícone SVG de clique e texto dinâmico -->
+									<span class="toggle-btn-custom">
+										<svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+											<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
+											<path d="M13 3l3 3M19 9l3 3" />
+										</svg>
+										<span class="toggle-text"></span>
+									</span>
+								</h2>
 							</header>
 						</summary>
 						<div class="expertise-columns">
