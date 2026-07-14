@@ -26,7 +26,9 @@
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
 		nav a { font-family: 'Roboto', sans-serif; font-size: 0.95em }
 		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
-		blockquote { font-size: 1.05em; font-style: italic; text-align: center !important; border-left: none !important; background: rgba(255,255,255,.02); padding: 1.2em 1.8em; max-width: 750px; margin: 1.5em auto !important; border-radius: 8px; line-height: 1.7; letter-spacing: -.01em }
+		
+		/* Faixa de destaque para a frase foco */
+		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: center !important; border: none !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 95% !important; width: max-content !important; margin: 1.8em auto !important; border-radius: 6px; line-height: 1.5; letter-spacing: -0.01em }
 
 		/* HEADER */
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
@@ -110,6 +112,7 @@
 
 		/* RESPONSIVO */
 		@media (max-width: 768px) {
+			blockquote { width: auto !important; font-size: 0.78em !important }
 			.intro-grid { grid-template-columns: 1fr; gap: 1.5em; margin-bottom: 2em }
 			.intro-left, .intro-right { text-align: center }
 			.languages { text-align: center !important; margin-top: 1em }
@@ -293,7 +296,7 @@
 				<p style="margin-top:2.5em">
 					<a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">
 						Ver portfólio completo no Behance
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7" y1="17" x2="17" y2="7"/></svg>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
 					</a>
 				</p>
 			</div>
