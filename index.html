@@ -66,13 +66,18 @@
 			text-transform: uppercase !important;
 			font-size: 0.82em !important;
 			color: rgba(28, 43, 65, 0.75) !important;
-			border-bottom: 2px solid transparent !important;
-			transition: color 0.2s ease, border-color 0.2s ease !important;
+			border-bottom: none !important;
+			transition: color 0.2s ease !important;
 		}
 		#nav a:hover, #nav a.active {
 			color: #1c2b41 !important;
-			border-bottom-color: #efa8b0 !important;
 			background: transparent !important;
+			border-bottom: none !important;
+		}
+
+		/* Correção do espaçamento em branco abaixo do menu */
+		#nav + #main {
+			padding-top: 0 !important;
 		}
 
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
@@ -202,7 +207,7 @@
 				<div class="intro-grid">
 					<div class="intro-left"><header class="major"><h2>Olá, boas-vindas!</h2></header></div>
 					<div class="intro-right">
-						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
 						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 					</div>
 				</div>
