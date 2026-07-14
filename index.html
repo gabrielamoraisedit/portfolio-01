@@ -28,7 +28,7 @@
 
 		/* HEADER */
 		#header, #header .logo, #header h1, #header > p,
-		#header .icons, #header .icons li, #header .icons li a { opacity: 1 !important; transform: none !important; visibility: visible !important }
+		#header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
 		#header h1, #header > p { color: #8b99ad !important }
 
 		/* Título principal em IBM Plex Mono */
@@ -46,8 +46,60 @@
 			font-size: 1.25em;
 			color: #e8eaed !important;
 			margin: 0.8em 0 0.4em 0 !important;
-			letter-spacing: 0.22em; /* Espaçamento horizontal ampliado para as letras */
+			letter-spacing: 0.22em;
 			text-transform: uppercase;
+		}
+
+		/* Botões retangulares do Header */
+		.header-buttons {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 1.2em;
+			margin: 2.5em 0 0 0;
+			padding: 0;
+			list-style: none;
+		}
+		.header-buttons li {
+			padding: 0;
+		}
+		.header-buttons a {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			padding: 0.8em 1.6em;
+			background: rgba(255, 255, 255, 0.02);
+			border: 1px solid rgba(139, 153, 173, 0.15);
+			border-radius: 5px;
+			color: #8b99ad !important;
+			text-decoration: none;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 0.78em;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			transition: all 0.3s ease;
+		}
+		.header-buttons a:hover {
+			background: rgba(239, 168, 176, 0.05);
+			border-color: #efa8b0;
+			color: #efa8b0 !important;
+			transform: translateY(-2px);
+		}
+		.header-buttons .icon {
+			border: 0;
+			padding: 0;
+			width: auto;
+			height: auto;
+			line-height: 1;
+			font-size: 1.2em;
+			color: inherit !important;
+			display: inline-block;
+		}
+		.header-buttons .icon:before {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: inherit;
 		}
 
 		/* LAYOUT DAS SEÇÕES */
@@ -124,12 +176,16 @@
 			.slideshow-wrapper { height: 320px; }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
+			.header-buttons { gap: 0.8em; }
+			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em; }
 		}
 		@media (max-width: 480px) {
 			.software-item { flex: 0 1 100px }
 			.slideshow-wrapper { height: 240px; }
 			.slide-btn { width: 20px; height: 40px; font-size: .7em }
 			.slideshow-stage { gap: 4px }
+			.header-buttons { gap: 0.6em; }
+			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em; }
 		}
 	</style>
 </head>
@@ -140,10 +196,24 @@
 		<h1>PORTFÓLIO</h1>
 		<p class="header-author">Gabriela Pacheco de Morais</p>
 		<p>Design &bull; Edição de Vídeo &bull; Estratégia Criativa &bull; Marketing</p>
-		<ul class="icons">
-			<li><a href="https://www.linkedin.com/in/gabriela-morais/" class="icon brands fa-linkedin alt" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-			<li><a href="https://www.behance.net/gabrielamorais_" class="icon brands fa-behance alt" target="_blank" rel="noopener noreferrer"><span class="label">Behance</span></a></li>
-			<li><a href="https://www.youtube.com/@gabrielamoraisedit" class="icon brands fa-youtube alt" target="_blank" rel="noopener noreferrer"><span class="label">YouTube</span></a></li>
+		
+		<!-- Botões retangulares customizados com ícone + nome do app -->
+		<ul class="header-buttons">
+			<li>
+				<a href="https://www.linkedin.com/in/gabriela-morais/" target="_blank" rel="noopener noreferrer">
+					<span class="icon brands fa-linkedin"></span> LinkedIn
+				</a>
+			</li>
+			<li>
+				<a href="https://www.behance.net/gabrielamorais_" target="_blank" rel="noopener noreferrer">
+					<span class="icon brands fa-behance"></span> Behance
+				</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/@gabrielamoraisedit" target="_blank" rel="noopener noreferrer">
+					<span class="icon brands fa-youtube"></span> Canal no Youtube
+				</a>
+			</li>
 		</ul>
 	</header>
 
