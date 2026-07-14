@@ -18,10 +18,62 @@
 		#wrapper { max-width: 82em !important; width: 100% !important }
 		
 		/* Menu Navegação Centralizado e IBM Plex Mono (Resolução Definitiva de Alinhamento) */
-		#nav { display: block !important; text-align: center !important; width: 100% !important; background: rgba(255, 255, 255, 0.95) !important }
-		#nav ul { display: block !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; list-style: none !important }
-		#nav li { display: inline-block !important; padding: 0 !important; margin: 0 !important }
-		#nav a, nav a { display: inline-block !important; padding: 1em 1.4em !important; font-family: 'IBM Plex Mono', monospace !important; font-weight: 600 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; font-size: 0.82em !important }
+		#nav {
+			position: sticky !important;
+			top: 0 !important;
+			left: 0 !important;
+			right: 0 !important;
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 auto !important;
+			background: rgba(255, 255, 255, 0.95) !important;
+			z-index: 10000 !important;
+			display: block !important;
+			text-align: center !important;
+			box-shadow: 0 1px 0 0 rgba(0,0,0,0.05) !important;
+		}
+		#nav.alt {
+			position: fixed !important;
+			top: 0 !important;
+			left: 50% !important;
+			transform: translateX(-50%) !important;
+			width: 100% !important;
+			max-width: 82em !important;
+			border-radius: 0 !important;
+			margin: 0 !important;
+			padding: 0.5em 1em !important;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+		}
+		#nav ul {
+			display: block !important;
+			text-align: center !important;
+			width: 100% !important;
+			margin: 0 auto !important;
+			padding: 0 !important;
+			list-style: none !important;
+		}
+		#nav li {
+			display: inline-block !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		#nav a, nav a {
+			display: inline-block !important;
+			padding: 1em 1.4em !important;
+			font-family: 'IBM Plex Mono', monospace !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase !important;
+			font-size: 0.82em !important;
+			color: rgba(28, 43, 65, 0.75) !important;
+			border-bottom: 2px solid transparent !important;
+			transition: color 0.2s ease, border-color 0.2s ease !important;
+		}
+		#nav a:hover, #nav a.active {
+			color: #1c2b41 !important;
+			border-bottom-color: #efa8b0 !important;
+			background: transparent !important;
+		}
 
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
