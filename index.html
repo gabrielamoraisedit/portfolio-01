@@ -46,8 +46,8 @@
 		.intro-right { text-align: left }
 		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: justify !important }
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
-		.software-grid { display: grid; grid-template-columns: repeat(5, 130px); justify-content: center; gap: 1.5em; margin-top: 1.5em }
-		.software-item { padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
+		.software-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 1.5em !important; margin-top: 1.5em !important; max-width: 730px; margin-left: auto; margin-right: auto }
+		.software-item { width: 130px; padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
 		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
 		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
@@ -97,7 +97,8 @@
 			.slideshow-stage { gap: 6px }
 			.header-buttons { gap: 0.8em }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
-			.software-grid { grid-template-columns: repeat(3, 110px); gap: 1.2em }
+			.software-grid { max-width: 380px !important; gap: 1.2em !important }
+			.software-item { width: 110px !important }
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
@@ -105,7 +106,8 @@
 			.slideshow-stage { gap: 4px }
 			.header-buttons { gap: 0.6em }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
-			.software-grid { grid-template-columns: repeat(2, 110px); gap: 1em }
+			.software-grid { max-width: 250px !important; gap: 1em !important }
+			.software-item { width: 110px !important }
 		}
 	</style>
 </head>
@@ -146,7 +148,6 @@
 					</div>
 				</div>
 
-				<!-- Faixa Foco -->
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 
 				<!-- Painéis Collapsible Integrados (com espaçamento reduzido) -->
@@ -162,7 +163,7 @@
 									<dt>Identidade Visual</dt><dd>Desenvolvimento de marcas coesas, desde o conceito até a aplicação em materiais digitais e impressos, com atenção à coerência e longevidade da identidade.</dd>
 									<dt>Design Editorial</dt><dd>Criação de layouts para publicações, apresentações institucionais e materiais de comunicação com foco em hierarquia visual e legibilidade.</dd>
 									<dt>Edição de Vídeo</dt><dd>Produção e pós-produção de conteúdo audiovisual para plataformas digitais, com domínio de corte, colorização e motion graphics básico.</dd>
-									<dt>Comunicação Digital</dt><dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objetivos estratégicos da marca.</dd>
+									<dt>Comunicação Digital</dt><dd>Planejamento e execução de conteúdo para redes sociais, articulando storytelling visual com os objectives estratégicos da marca.</dd>
 								</dl>
 							</div>
 							<div>
