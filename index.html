@@ -83,7 +83,10 @@
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
 		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
-		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: center !important; border: none !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 95% !important; width: max-content !important; margin: 1.8em auto !important; border-radius: 6px; line-height: 1.5; letter-spacing: -0.01em }
+		
+		/* Blockquote alinhado à esquerda estilo minimalista */
+		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: left !important; border: none !important; border-left: 4px solid #efa8b0 !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 100% !important; width: max-content !important; margin: 1.8em 0 !important; border-radius: 0 6px 6px 0; line-height: 1.5; letter-spacing: -0.01em }
+		
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
 		#header h1, #header > p { color: #8b99ad !important }
 		#header h1 { font-family: 'IBM Plex Mono', monospace !important; font-size: 2em; letter-spacing: 0.18em; font-weight: 600 }
@@ -104,13 +107,13 @@
 		#skills::before, #skills::after, #design::before, #design::after, #videos::before, #videos::after { display: none !important }
 		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
 		#intro .sec { padding-top: 1em !important; padding-bottom: 1.2em !important }
-		.intro-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3.5em; align-items: start; margin-bottom: 2.5em }
-		.intro-left { text-align: left }
-		.intro-left h2 { display: inline-block !important; font-family: 'IBM Plex Mono', monospace !important; font-size: 1.8em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; margin-bottom: 0.5em }
-		#intro .major h2::after { width: 100% !important; max-width: 100% !important }
-		.intro-right { text-align: left }
-		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: justify !important }
+		
+		/* Layout de introdução alinhado à esquerda */
+		.intro-content { text-align: left; max-width: 850px; margin-bottom: 1.5em }
+		.intro-title h2 { display: inline-block !important; font-family: 'IBM Plex Mono', monospace !important; font-size: 1.8em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; margin-bottom: 0.5em }
+		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: left !important }
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
+		
 		.software-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 1.5em !important; margin-top: 1.5em !important; max-width: 730px; margin-left: auto; margin-right: auto }
 		.software-item { width: 130px; padding: 1em .5em; background: rgba(255,255,255,.03); border-radius: 6px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center }
 		.software-item:hover { background: rgba(255,255,255,.1); transform: translateY(-4px) }
@@ -120,7 +123,7 @@
 		.expertise-columns h3 { font-family: 'Montserrat', sans-serif; font-size: 1.1em; font-weight: 700; color: #1c2b41; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5em; padding-bottom: 0.6em; border-bottom: 2px solid rgba(28, 43, 65, 0.1) }
 		.expertise-list dt, .creative-process-list dt { font-family: 'Montserrat', sans-serif; font-size: 0.92em; font-weight: 700; color: #1a222d; margin-bottom: 0.2em; line-height: 1.4 }
 		.expertise-list dd, .creative-process-list dd { font-family: 'Roboto', sans-serif; font-size: 0.86em; color: #4e5a6a; margin-bottom: 1.4em; margin-left: 0; line-height: 1.5 }
-		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: center }
+		.expertise-details summary { list-style: none; cursor: pointer; outline: none; user-select: none; -webkit-tap-highlight-color: transparent; text-align: left }
 		.expertise-details summary::-webkit-details-marker { display: none }
 		.toggle-btn-custom { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: #1c2b41 !important; border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer }
 		.toggle-btn-custom .click-icon { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.3s ease; flex-shrink: 0 }
@@ -206,20 +209,20 @@
 		<!-- SEÇÃO 1 — Sobre Mim -->
 		<section id="intro" class="main">
 			<div class="sec">
-				<!-- Estrutura de Grade Diagramada -->
-				<div class="intro-grid">
-					<div class="intro-left"><header class="major"><h2>Olá, boas-vindas!</h2></header></div>
-					<div class="intro-right">
-						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
-						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
-					</div>
+				<!-- Estrutura de Introdução Empilhada à Esquerda -->
+				<div class="intro-content">
+					<header class="major intro-title" style="text-align: left !important;">
+						<h2>Olá, boas-vindas!</h2>
+					</header>
+					<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+					<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 				</div>
 
-				<!-- Faixa Foco -->
+				<!-- Faixa Foco Alinhada à Esquerda -->
 				<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
 
-				<!-- Painéis Collapsible Integrados (com espaçamento reduzido) -->
-				<div style="margin-top: 1.5em; text-align: center;">
+				<!-- Painéis Collapsible Integrados (Alinhados à Esquerda) -->
+				<div style="margin-top: 1.5em; text-align: left;">
 					
 					<!-- Painel 1: Matriz Criativa -->
 					<details class="expertise-details">
