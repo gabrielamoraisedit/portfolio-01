@@ -15,7 +15,7 @@
 		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f, #121821) !important; min-height: 100vh }
 		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
-		#wrapper { max-width: 82em !important; width: 100% !important }
+		#wrapper { max-width: 100% !important; width: 100% !important }
 		
 		/* Menu Navegação Centralizado e IBM Plex Mono (Resolução Definitiva de Alinhamento) */
 		#nav {
@@ -35,10 +35,10 @@
 		#nav.alt {
 			position: fixed !important;
 			top: 0 !important;
-			left: 50% !important;
-			transform: translateX(-50%) !important;
+			left: 0 !important;
+			transform: none !important;
 			width: 100% !important;
-			max-width: 82em !important;
+			max-width: 100% !important;
 			border-radius: 0 !important;
 			margin: 0 !important;
 			padding: 0.5em 1em !important;
@@ -94,8 +94,11 @@
 		.header-buttons a:hover { background: rgba(239, 168, 176, 0.05); border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
 		.header-buttons .icon { border: 0; padding: 0; width: auto; height: auto; line-height: 1; font-size: 1.2em; color: inherit !important; display: inline-block }
 		.header-buttons .icon:before { display: inline-block; vertical-align: middle; font-size: inherit }
-		.sec { max-width: 1120px; margin: 0 auto; padding: 3em 2em }
-		.sec-c { max-width: 1120px; margin: 0 auto; padding: 3em 2em; text-align: center }
+		
+		/* Expansão das seções internas para preencher melhor a tela */
+		.sec { max-width: 1200px !important; margin: 0 auto; padding: 3em 2em }
+		.sec-c { max-width: 1200px !important; margin: 0 auto; padding: 3em 2em; text-align: center }
+		
 		#intro { background: #f0f1f3; padding-top: 1.5em !important; padding-bottom: 1.5em !important }
 		#skills, #design { background: #e8eaed } #videos { background: #f0f1f3 }
 		#skills::before, #skills::after, #design::before, #design::after, #videos::before, #videos::after { display: none !important }
@@ -207,7 +210,7 @@
 				<div class="intro-grid">
 					<div class="intro-left"><header class="major"><h2>Olá, boas-vindas!</h2></header></div>
 					<div class="intro-right">
-						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
+						<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, focada no aprimoramento contínuo em Design Gráfico e edição de vídeos.<br>Sou apaixonada por transformar conceitos estratégicos em inovações digitais e projetos visuais tangíveis que comunicam com precisão, clareza e impacto.</p>
 						<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
 					</div>
 				</div>
