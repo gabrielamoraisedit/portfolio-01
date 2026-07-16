@@ -102,17 +102,23 @@
 		.sec { max-width: 1200px !important; margin: 0 auto; padding: 3em 2em }
 		.sec-c { max-width: 1200px !important; margin: 0 auto; padding: 3em 2em; text-align: center }
 		
-		#intro { background: #f0f1f3; padding-top: 1.5em !important; padding-bottom: 1.5em !important }
 		#design { background: #e8eaed } #videos { background: #f0f1f3 }
 		#design::before, #design::after, #videos::before, #videos::after { display: none !important }
 		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
-		#intro .sec { padding-top: 2em !important; padding-bottom: 2em !important }
 		
-		/* Nova estrutura diagramada lado a lado (Split Layout) */
+		/* Seção de Introdução e Kit de Ferramentas Otimizada */
+		#intro { background: #f0f1f3 }
+		#intro .sec {
+			max-width: 1350px !important; /* Desloca o bloco esquerdo mais para a esquerda e o direito mais para a direita */
+			padding-top: 2.2em !important;
+			padding-bottom: 2.2em !important;
+		}
+		
+		/* Estrutura diagramada horizontal (Split Layout) */
 		.intro-split-grid {
 			display: grid;
-			grid-template-columns: 1.15fr 0.85fr;
-			gap: 4.5em;
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: 4em;
 			align-items: start;
 			text-align: left;
 		}
@@ -128,16 +134,16 @@
 		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: left !important }
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
 		
-		/* Grid de softwares otimizada para o Split Layout */
+		/* Grid de softwares horizontal (repeat 5 colunas no Desktop) */
 		.software-grid-split {
-			display: flex !important;
-			flex-wrap: wrap !important;
-			justify-content: flex-start !important;
-			gap: 1em !important;
+			display: grid !important;
+			grid-template-columns: repeat(5, 1fr) !important;
+			gap: 0.8em !important;
 			margin-top: 1.5em !important;
 		}
 		.software-item {
-			width: 105px !important;
+			width: 100% !important;
+			max-width: 110px;
 			padding: 0.8em 0.3em;
 			background: rgba(28, 43, 65, 0.04);
 			border-radius: 6px;
@@ -147,6 +153,7 @@
 			align-items: center;
 			justify-content: center;
 			text-align: center;
+			margin: 0 auto;
 		}
 		.software-item:hover {
 			background: rgba(28, 43, 65, 0.08);
@@ -189,13 +196,16 @@
 		.link-ext svg { flex-shrink: 0; transition: transform .22s }
 		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 } .link-ext:hover svg { transform: translate(2px,-2px) }
 		
-		@media (max-width: 980px) {
+		@media (max-width: 1200px) {
 			.intro-split-grid {
 				grid-template-columns: 1fr;
 				gap: 3.5em;
 			}
+			#intro .sec {
+				max-width: 1000px !important;
+			}
 			.software-grid-split {
-				justify-content: center !important;
+				grid-template-columns: repeat(5, 1fr) !important;
 			}
 		}
 		@media (max-width: 768px) {
@@ -210,6 +220,9 @@
 			.header-buttons { gap: 0.8em }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
 			#nav a, nav a { padding: 0.8em 1em !important; font-size: 0.75em !important }
+			.software-grid-split {
+				grid-template-columns: repeat(3, 1fr) !important;
+			}
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
@@ -217,9 +230,11 @@
 			.slideshow-stage { gap: 4px }
 			.header-buttons { gap: 0.6em }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
-			.software-grid-split { gap: 0.8em !important }
 			.software-item { width: 95px !important }
 			#nav a, nav a { padding: 0.8em 0.6em !important; font-size: 0.7em !important }
+			.software-grid-split {
+				grid-template-columns: repeat(2, 1fr) !important;
+			}
 		}
 	</style>
 </head>
@@ -248,12 +263,12 @@
 
 	<div id="main">
 
-		<!-- SEÇÃO 1 — Sobre Mim & Kit Técnico (Merged Split Layout) -->
+		<!-- SEÇÃO 1 — Sobre Mim & Kit Técnico (Split Layout Otimizado) -->
 		<section id="intro" class="main">
 			<div class="sec">
 				<div class="intro-split-grid">
 					
-					<!-- Coluna Esquerda: Biografia, Foco e Painéis -->
+					<!-- Coluna Esquerda: Biografia, Foco e Painéis (Deslocados mais para a esquerda) -->
 					<div class="intro-left-col">
 						<div class="intro-content">
 							<header class="major intro-title" style="text-align: left !important; margin-bottom: 1.5em;">
@@ -325,7 +340,7 @@
 						</div>
 					</div>
 					
-					<!-- Coluna Direita: Kit de Softwares (Ativado por ID para Navegação Suave) -->
+					<!-- Coluna Direita: Kit de Softwares (Expandido Horizontalmente com 5 Colunas) -->
 					<div class="intro-right-col" id="skills">
 						<header class="major intro-title" style="text-align: left !important; margin-bottom: 1.5em;">
 							<h2>Meu Kit Técnico</h2>
@@ -379,7 +394,7 @@
 				<div class="video-grid">
 					<article class="video-card">
 						<div class="video-card-thumbnail" role="img" aria-label="Motion Graphics"></div>
-						<div class="video-card-body"><span class="tag">Motion Graphics</span><h4>Animação de Marca — Vídeo 01</h4><p>Animação de logotipo e elements de identidade visual com After Effects para abertura de conteúdo.</p></div>
+						<div class="video-card-body"><span class="tag">Motion Graphics</span><h4>Animação de Marca — Vídeo 01</h4><p>Animação de logotipo e elementos de identidade visual com After Effects para abertura de conteúdo.</p></div>
 					</article>
 					<article class="video-card">
 						<div class="video-card-thumbnail" role="img" aria-label="Edição Narrativa"></div>
