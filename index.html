@@ -91,7 +91,18 @@
 		.intro-content { text-align: left; margin-bottom: 1.5em }
 		.intro-title { text-align: center !important; margin-bottom: 1.5em !important }
 		.intro-title h2 { display: inline-block !important; font-family: 'IBM Plex Mono', monospace !important; font-size: 2.2em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; margin-bottom: 0.5em }
-		.intro-title h2::after { background: #1c2b41 !important; margin: 0.5em auto 0 !important }
+		
+		/* Silhueta de quadrado ao redor de todos os títulos principais (Rede de réguas padronizada) */
+		.major h2 {
+			display: inline-block !important;
+			border: 2px solid #1c2b41 !important;
+			padding: 0.3em 0.8em !important;
+			border-radius: 4px !important;
+			margin-bottom: 0.6em !important;
+		}
+		.major h2::after {
+			display: none !important; /* Oculta a linha antiga embaixo de todos os títulos */
+		}
 		.intro-bio { font-size: 1.18em !important; line-height: 1.8 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: justify !important; text-justify: inter-word }
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: center !important; margin-top: 1.2em; margin-bottom: 0 }
 		
