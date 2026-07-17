@@ -12,8 +12,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 	<style>
 		html, body { font-family: 'Roboto', sans-serif; font-size: 14px; color: #0b0b0b }
-		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #2f3c4f, #121821) !important; min-height: 100vh }
-		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #2f3c4f, #121821); z-index: -1 }
+		body, #wrapper { background-color: #121821 !important; background-image: linear-gradient(to bottom, #000000, #121821) !important; min-height: 100vh }
+		body::before { content: ''; display: block; position: fixed; inset: 0; background-image: linear-gradient(to bottom, #000000, #121821); z-index: -1 }
 		h1,h2,h3,h4,h5,h6,p,dt,dd,li,blockquote { color: #0b0b0b }
 		#wrapper { max-width: 100% !important; width: 100% !important }
 		
@@ -87,7 +87,7 @@
 		/* Blockquote alinhado à esquerda estilo minimalista */
 		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: left !important; border: none !important; border-left: 4px solid #efa8b0 !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 100% !important; width: max-content !important; margin: 1.8em 0 !important; border-radius: 0 6px 6px 0; line-height: 1.5; letter-spacing: -0.01em }
 		
-		/* Estilização para o Logo em GIF/Vídeo no Header */
+		/* Estilização para o Logo em GIF/Vídeo no Header com Blend Otimizado */
 		#header .logo-gif {
 			margin: 0 auto 0.8em auto !important;
 			padding: 0 !important;
@@ -100,6 +100,7 @@
 			display: block;
 			margin: 0 auto;
 			outline: none;
+			mix-blend-mode: screen; /* Torna o fundo preto do logo totalmente invisível no gradiente */
 		}
 
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
