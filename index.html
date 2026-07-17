@@ -26,7 +26,7 @@
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
 		header p { font-size: 1em } p { font-size: 0.95em; line-height: 1.6 }
-		blockquote { font-size: 0.92em !important; font-weight: 700 !important; font-style: normal !important; text-align: left !important; border: none !important; border-left: 4px solid #efa8b0 !important; background: #dedede !important; color: #1c2b41 !important; padding: 1em 1.8em !important; max-width: 100% !important; width: max-content !important; margin: 1.8em 0 !important; border-radius: 0 6px 6px 0; line-height: 1.6; letter-spacing: -0.01em }
+		
 		#header { padding: 4.5em 2em 3.5em 2em !important }
 		#header.alt { padding-top: 5em !important }
 		#header .logo-gif { margin: 0 auto 1.5em auto !important; padding: 0 !important; border: 0 !important; width: 100% !important; display: flex !important; justify-content: center !important }
@@ -56,7 +56,7 @@
 		.major h2 { display: inline-block !important; border: 2px solid #1c2b41 !important; padding: 0.3em 0.8em !important; border-radius: 4px !important; margin-bottom: 0.6em !important }
 		.major h2::after { display: none !important }
 		.intro-bio { font-size: 1.18em !important; line-height: 1.8 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: justify !important; text-justify: inter-word }
-		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: center !important; margin-top: 1.2em; margin-bottom: 0 }
+		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1c2b41 !important; background: #dedede !important; padding: 0.8em 1.6em !important; border-left: 4px solid #efa8b0 !important; border-radius: 0 6px 6px 0; display: inline-block !important; margin: 0 !important }
 		.software-grid-split { display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 1.2em 1.2em !important; margin-top: 1.8em !important }
 		.software-item { width: 100% !important; max-width: 125px; padding: 1.2em 0.4em; background: rgba(28, 43, 65, 0.04); border-radius: 8px; transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 0 auto }
 		.software-item:hover { background: rgba(28, 43, 65, 0.08); transform: translateY(-4px) }
@@ -103,8 +103,6 @@
 			.software-grid-split { grid-template-columns: repeat(5, 1fr) !important }
 		}
 		@media (max-width: 768px) {
-			blockquote { width: auto !important; font-size: 0.78em !important }
-			.languages { text-align: left; margin-top: 1.2em }
 			.intro-bio { font-size: 1.05em !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
@@ -177,12 +175,12 @@
 								<h2>Olá, boas-vindas!</h2>
 							</header>
 							<p class="intro-bio">Sou estudante de Publicidade e Propaganda na UNAERP, e tenho buscado aprimorar os meus horizontes em áreas como Design Gráfico, Edição de Vídeos e Marketing. Sou apaixonada por transformar conceitos estratégicos em inovações e projetos tangíveis que comunicam com precisão, clareza e impacto.</p>
-							<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
+							<div style="text-align: center; margin-top: 1.8em;">
+								<p class="languages">Português (Nativo) &nbsp;&bull;&nbsp; Inglês (Fluente)</p>
+							</div>
 						</div>
 
-						<blockquote>"Meu foco é traduzir ideias significativas em projetos visuais organizados, com identidade forte e presença digital definida."</blockquote>
-
-						<div style="margin-top: 1.5em; text-align: left;">
+						<div style="margin-top: 2.2em; text-align: left;">
 							<!-- Painel 1: Matriz Criativa -->
 							<details class="expertise-details">
 								<summary><span class="toggle-btn-custom"><svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>Matriz Criativa</span></summary>
