@@ -87,21 +87,19 @@
 		/* Blockquote alinhado à esquerda estilo minimalista */
 		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: left !important; border: none !important; border-left: 4px solid #efa8b0 !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 100% !important; width: max-content !important; margin: 1.8em 0 !important; border-radius: 0 6px 6px 0; line-height: 1.5; letter-spacing: -0.01em }
 		
-		/* Estilização para o Logo em GIF no Header */
+		/* Estilização para o Logo em GIF/Vídeo no Header */
 		#header .logo-gif {
 			margin: 0 auto 0.8em auto !important;
 			padding: 0 !important;
 			border: 0 !important;
 		}
-		#header .logo-gif img {
-			max-width: 260px; /* Controle do tamanho ideal do GIF */
+		#header .logo-gif video {
+			max-width: 260px; /* Controle do tamanho ideal do logo */
 			width: 100%;
 			height: auto;
 			display: block;
 			margin: 0 auto;
-			
-			/* DESCOMENTE A LINHA ABAIXO se o seu GIF tiver fundo preto. Ela remove o fundo preto deixando-o transparente: */
-			/* mix-blend-mode: screen; */
+			outline: none;
 		}
 
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
@@ -259,9 +257,12 @@
 <div id="wrapper">
 
 	<header id="header" class="alt">
-		<!-- Logotipo em GIF Responsivo substituindo o texto -->
+		<!-- Logotipo em Vídeo/GIF Responsivo substituindo o texto -->
 		<h1 class="logo-gif">
-			<img src="images/logo.gif" alt="PORTFÓLIO" />
+			<video autoplay loop muted playsinline>
+				<source src="images/logo.gif.mp4" type="video/mp4">
+				PORTFÓLIO
+			</video>
 		</h1>
 		<p class="header-author">Gabriela Pacheco de Morais</p>
 		<p>Design &bull; Edição de Vídeo &bull; Estratégia Criativa &bull; Marketing</p>
