@@ -84,8 +84,8 @@
 			padding-bottom: 3.5em !important;
 		}
 		
-		/* Estrutura diagramada horizontal (Split Layout 50/50 para equilibrar os espaços laterais vazios) */
-		.intro-split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5em; align-items: start; text-align: left }
+		/* Estrutura diagramada horizontal (Split Layout 54/46 para equilibrar os espaços laterais e alinhar com a régua central) */
+		.intro-split-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 2.8em; align-items: start; text-align: left }
 		.intro-left-col, .intro-right-col { width: 100% }
 		.intro-right-col { padding-top: 0.5em }
 		.intro-content { text-align: left; margin-bottom: 1.5em }
@@ -94,14 +94,14 @@
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
 		
 		/* Grid de softwares horizontal (repeat 5 colunas no Desktop) com Ícones Ampliados e mais Distribuição */
-		.software-grid-split { display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 1em !important; margin-top: 1.8em !important }
+		.software-grid-split { display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 0.8em !important; margin-top: 1.8em !important }
 		.software-item {
-			width: 100% !important; max-width: 120px; padding: 1.2em 0.5em; background: rgba(28, 43, 65, 0.04); border-radius: 8px;
+			width: 100% !important; max-width: 125px; padding: 1.4em 0.4em; background: rgba(28, 43, 65, 0.04); border-radius: 8px;
 			transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 0 auto;
 		}
 		.software-item:hover { background: rgba(28, 43, 65, 0.08); transform: translateY(-4px) }
-		.software-item-icon { width: 44px; height: 44px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
-		.software-item span { font-size: .8em; font-weight: 600; display: block }
+		.software-item-icon { width: 54px; height: 54px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
+		.software-item span { font-size: .82em; font-weight: 600; display: block }
 		
 		.expertise-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5em; margin-top: 1.5em; text-align: left !important }
 		.expertise-columns h3 { font-family: 'Montserrat', sans-serif; font-size: 1.1em; font-weight: 700; color: #1c2b41; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5em; padding-bottom: 0.6em; border-bottom: 2px solid rgba(28, 43, 65, 0.1) }
