@@ -115,7 +115,10 @@
 			.header-buttons { gap: 0.8em }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
 			#nav a, nav a { padding: 0.8em 1em !important; font-size: 0.75em !important }
-			.software-grid-split { grid-template-columns: repeat(3, 1fr) !important }
+			.software-grid-split { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 0.8em !important }
+			.software-item { width: 22% !important; min-width: 90px !important; max-width: 110px !important; padding: 1em 0.3em !important }
+			.software-item-icon { width: 36px !important; height: 36px !important }
+			.software-item span { font-size: 0.78em !important }
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
@@ -124,9 +127,11 @@
 			.header-buttons { gap: 0.6em }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
 			#header .logo-gif video { max-width: 380px !important }
-			.software-item { width: 95px !important }
+			.software-item { width: 22% !important; min-width: 66px !important; max-width: 78px !important; padding: 0.8em 0.2em !important }
 			#nav a, nav a { padding: 0.8em 0.6em !important; font-size: 0.7em !important }
-			.software-grid-split { grid-template-columns: repeat(2, 1fr) !important }
+			.software-grid-split { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 0.6em !important }
+			.software-item-icon { width: 30px !important; height: 30px !important }
+			.software-item span { font-size: 0.72em !important }
 		}
 	</style>
 </head>
