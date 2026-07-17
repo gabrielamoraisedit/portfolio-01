@@ -87,14 +87,23 @@
 		/* Blockquote alinhado à esquerda estilo minimalista */
 		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: left !important; border: none !important; border-left: 4px solid #efa8b0 !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 100% !important; width: max-content !important; margin: 1.8em 0 !important; border-radius: 0 6px 6px 0; line-height: 1.5; letter-spacing: -0.01em }
 		
-		/* Estilização para o Logo em GIF/Vídeo no Header com Blend Otimizado */
+		/* Estilização para o Logo em GIF/Vídeo no Header com Spacing e Alinhamento de Hierarquia Visual */
+		#header {
+			padding: 4.5em 2em 3.5em 2em !important; /* Espaçamento superior estruturado (retângulo superior) */
+		}
+		#header.alt {
+			padding-top: 5em !important;
+		}
 		#header .logo-gif {
-			margin: 0 auto 1.2em auto !important;
+			margin: 0 auto 1.5em auto !important; /* Distanciamento harmônico entre o logo e o conteúdo abaixo */
 			padding: 0 !important;
 			border: 0 !important;
+			width: 100% !important;
+			display: flex !important;
+			justify-content: center !important;
 		}
 		#header .logo-gif video {
-			max-width: 480px; /* Aumentado para máxima nitidez e impacto no Desktop */
+			max-width: 540px; /* Aumentado e alinhado exatamente à largura do bloco de botões/conteúdo (retângulo menor) */
 			width: 100%;
 			height: auto;
 			display: block;
@@ -230,7 +239,7 @@
 			.intro-bio { font-size: 1.05em !important }
 			.expertise-columns { grid-template-columns: 1fr; gap: 2em }
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
-			#header .logo-gif video { max-width: 360px !important }
+			#header .logo-gif video { max-width: 400px !important }
 			.slideshow-wrapper { height: 320px }
 			.slide-btn { width: 24px; height: 48px; font-size: .75em }
 			.slideshow-stage { gap: 6px }
@@ -247,7 +256,7 @@
 			.slideshow-stage { gap: 4px }
 			.header-buttons { gap: 0.6em }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
-			#header .logo-gif video { max-width: 290px !important }
+			#header .logo-gif video { max-width: 310px !important }
 			.software-item { width: 95px !important }
 			#nav a, nav a { padding: 0.8em 0.6em !important; font-size: 0.7em !important }
 			.software-grid-split {
