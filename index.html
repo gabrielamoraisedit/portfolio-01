@@ -310,15 +310,18 @@
 		<section id="projects3d" class="main special">
 			<div class="sec-c">
 				<header class="major"><h2>Projetos 3D</h2><p>Modelagens, texturizações e renderizações tridimensionais desenvolvidos no Blender.</p></header>
-				<div class="video-grid">
-					<article class="video-card">
-						<div class="video-card-thumbnail" role="img" aria-label="Modelagem 3D"></div>
-						<div class="video-card-body"><span class="tag">Blender</span><h4>Modelagem Tridimensional — Projeto 01</h4><p>Desenvolvimento de objetos 3D, cenários virtuais e iluminação.</p></div>
-					</article>
-					<article class="video-card">
-						<div class="video-card-thumbnail" role="img" aria-label="Renderização"></div>
-						<div class="video-card-body"><span class="tag">Cycles / Eevee</span><h4>Renderização Realista — Projeto 02</h4><p>Configuração de materiais e iluminação realista para visualização final.</p></div>
-					</article>
+				<p class="slideshow-label">Modelagens &amp; Renders 3D</p>
+				<div class="slideshow-outer">
+					<div class="slideshow-stage">
+						<button id="prev-slide-3d" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
+						<div class="slideshow-wrapper" id="projects3d-slideshow">
+							<div class="slide"><img src="images/3d 01.png" alt="Projeto 3D 01" /></div>
+							<div class="slide"><img src="images/3d 02.png" alt="Projeto 3D 02" loading="lazy" /></div>
+							<div class="slide"><img src="images/3d 03.png" alt="Projeto 3D 03" loading="lazy" /></div>
+							<div class="slide"><img src="images/3d 04.png" alt="Projeto 3D 04" loading="lazy" /></div>
+						</div>
+						<button id="next-slide-3d" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -334,24 +337,31 @@
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById('footer-year').textContent = new Date().getFullYear();
-		const wrapper = document.getElementById('design-slideshow'), imgs = wrapper.querySelectorAll('.slide img'), total = imgs.length, MAX = [360, 480, 680];
-		let currentIdx = 0, scrollTimeout;
-		const maxH = () => window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2];
-		const applyHeight = (img) => { if (img && img.naturalWidth) wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxH()) + 'px'; };
-		const adjustFor = (idx) => { const img = imgs[idx]; if (img) img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true }); };
-		const getIdx = () => Math.round(wrapper.scrollLeft / wrapper.clientWidth);
-		const goTo = (i) => { currentIdx = i; wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); };
-		document.getElementById('next-slide').addEventListener('click', () => goTo((getIdx() + 1) % total));
-		document.getElementById('prev-slide').addEventListener('click', () => goTo((getIdx() - 1 + total) % total));
-		wrapper.addEventListener('scroll', () => {
-			clearTimeout(scrollTimeout);
-			scrollTimeout = setTimeout(() => { const next = getIdx(); if (currentIdx !== next) { currentIdx = next; adjustFor(currentIdx); } }, 40);
-		}, { passive: true });
-		window.addEventListener('resize', () => {
-			wrapper.style.scrollBehavior = 'auto'; wrapper.scrollLeft = currentIdx * wrapper.clientWidth; wrapper.style.scrollBehavior = 'smooth'; adjustFor(currentIdx);
-		}, { passive: true });
-		adjustFor(0);
-		imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyHeight(img); }, { once: true }); });
+		
+		const initSlideshow = (wrapperId, prevId, nextId) => {
+			const wrapper = document.getElementById(wrapperId);
+			if (!wrapper) return;
+			const imgs = wrapper.querySelectorAll('.slide img'), total = imgs.length, MAX = [360, 480, 680];
+			let currentIdx = 0, scrollTimeout;
+			const maxH = () => window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2];
+			const applyHeight = (img) => { if (img && img.naturalWidth) wrapper.style.height = Math.min(Math.round(wrapper.clientWidth * img.naturalHeight / img.naturalWidth), maxH()) + 'px'; };
+			const adjustFor = (idx) => { const img = imgs[idx]; if (img) img.complete && img.naturalWidth ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img), { once: true }); };
+			const getIdx = () => Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+			const goTo = (i) => { currentIdx = i; wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); };
+			document.getElementById(nextId).addEventListener('click', () => goTo((getIdx() + 1) % total));
+			document.getElementById(prevId).addEventListener('click', () => goTo((getIdx() - 1 + total) % total));
+			wrapper.addEventListener('scroll', () => {
+				clearTimeout(scrollTimeout);
+				scrollTimeout = setTimeout(() => { const next = getIdx(); if (currentIdx !== next) { currentIdx = next; adjustFor(currentIdx); } }, 40);
+			}, { passive: true });
+			window.addEventListener('resize', () => {
+				wrapper.style.scrollBehavior = 'auto'; wrapper.scrollLeft = currentIdx * wrapper.clientWidth; wrapper.style.scrollBehavior = 'smooth'; adjustFor(currentIdx);
+			}, { passive: true });
+			adjustFor(0);
+			imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyHeight(img); }, { once: true }); });
+		};
+		initSlideshow('design-slideshow', 'prev-slide', 'next-slide');
+		initSlideshow('projects3d-slideshow', 'prev-slide-3d', 'next-slide-3d');
 
 		// Script de scroll active state dos links do menu
 		const navLinks = document.querySelectorAll('#nav ul li a'), sections = [];
