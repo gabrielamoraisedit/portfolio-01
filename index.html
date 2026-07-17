@@ -19,66 +19,28 @@
 		
 		/* Menu Navegação Centralizado e IBM Plex Mono (Resolução Definitiva de Alinhamento) */
 		#nav {
-			position: sticky !important;
-			top: 0 !important;
-			left: 0 !important;
-			right: 0 !important;
-			width: 100% !important;
-			max-width: 100% !important;
-			margin: 0 auto !important;
-			background: rgba(255, 255, 255, 0.95) !important;
-			z-index: 10000 !important;
-			display: block !important;
-			text-align: center !important;
-			box-shadow: 0 1px 0 0 rgba(0,0,0,0.05) !important;
+			position: sticky !important; top: 0 !important; left: 0 !important; right: 0 !important;
+			width: 100% !important; max-width: 100% !important; margin: 0 auto !important;
+			background: rgba(255, 255, 255, 0.95) !important; z-index: 10000 !important;
+			display: block !important; text-align: center !important; box-shadow: 0 1px 0 0 rgba(0,0,0,0.05) !important;
 		}
 		#nav.alt {
-			position: fixed !important;
-			top: 0 !important;
-			left: 0 !important;
-			transform: none !important;
-			width: 100% !important;
-			max-width: 100% !important;
-			border-radius: 0 !important;
-			margin: 0 !important;
-			padding: 0.5em 1em !important;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+			position: fixed !important; top: 0 !important; left: 0 !important; transform: none !important;
+			width: 100% !important; max-width: 100% !important; border-radius: 0 !important;
+			margin: 0 !important; padding: 0.5em 1em !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 		}
-		#nav ul {
-			display: block !important;
-			text-align: center !important;
-			width: 100% !important;
-			margin: 0 auto !important;
-			padding: 0 !important;
-			list-style: none !important;
-		}
-		#nav li {
-			display: inline-block !important;
-			padding: 0 !important;
-			margin: 0 !important;
-		}
+		#nav ul { display: block !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; list-style: none !important }
+		#nav li { display: inline-block !important; padding: 0 !important; margin: 0 !important }
 		#nav a, nav a {
-			display: inline-block !important;
-			padding: 1em 1.4em !important;
-			font-family: 'IBM Plex Mono', monospace !important;
-			font-weight: 600 !important;
-			letter-spacing: 0.08em !important;
-			text-transform: uppercase !important;
-			font-size: 0.82em !important;
-			color: rgba(28, 43, 65, 0.75) !important;
-			border-bottom: none !important;
-			transition: color 0.2s ease !important;
+			display: inline-block !important; padding: 1em 1.4em !important;
+			font-family: 'IBM Plex Mono', monospace !important; font-weight: 600 !important;
+			letter-spacing: 0.08em !important; text-transform: uppercase !important; font-size: 0.82em !important;
+			color: rgba(28, 43, 65, 0.75) !important; border-bottom: none !important; transition: color 0.2s ease !important;
 		}
-		#nav a:hover, #nav a.active {
-			color: #1c2b41 !important;
-			background: transparent !important;
-			border-bottom: none !important;
-		}
+		#nav a:hover, #nav a.active { color: #1c2b41 !important; background: transparent !important; border-bottom: none !important }
 
 		/* Correção do espaçamento em branco abaixo do menu */
-		#nav + #main {
-			padding-top: 0 !important;
-		}
+		#nav + #main { padding-top: 0 !important }
 
 		h1,h2,h3,h4,h5,h6,header h1,header p,section header h2 { font-family: 'Montserrat', sans-serif }
 		h1 { font-size: 2.2em } h2 { font-size: 1.6em } h3 { font-size: 1.3em } h4,h5,h6 { font-size: 1.1em }
@@ -88,36 +50,16 @@
 		blockquote { font-size: 0.85em !important; font-weight: 700 !important; font-style: normal !important; text-align: left !important; border: none !important; border-left: 4px solid #efa8b0 !important; background: #dedede !important; color: #1c2b41 !important; padding: 0.8em 1.6em !important; max-width: 100% !important; width: max-content !important; margin: 1.8em 0 !important; border-radius: 0 6px 6px 0; line-height: 1.5; letter-spacing: -0.01em }
 		
 		/* Estilização para o Logo em GIF/Vídeo no Header com Spacing e Alinhamento de Hierarquia Visual */
-		#header {
-			padding: 4.5em 2em 3.5em 2em !important; /* Espaçamento superior estruturado */
-		}
-		#header.alt {
-			padding-top: 5em !important;
-		}
-		#header .logo-gif {
-			margin: 0 auto 1.5em auto !important; /* Distanciamento harmônico entre o logo e o conteúdo abaixo */
-			padding: 0 !important;
-			border: 0 !important;
-			width: 100% !important;
-			display: flex !important;
-			justify-content: center !important;
-		}
-		#header .logo-gif video {
-			max-width: 700px; /* Alinhado exatamente à largura total do menu de navegação (linha vermelha vertical) */
-			width: 100%;
-			height: auto;
-			display: block;
-			margin: 0 auto;
-			outline: none;
-			mix-blend-mode: screen; /* Torna o fundo preto do logo totalmente invisível no gradiente */
-		}
+		#header { padding: 4.5em 2em 3.5em 2em !important }
+		#header.alt { padding-top: 5em !important }
+		#header .logo-gif { margin: 0 auto 1.5em auto !important; padding: 0 !important; border: 0 !important; width: 100% !important; display: flex !important; justify-content: center !important }
+		#header .logo-gif video { max-width: 700px; width: 100%; height: auto; display: block; margin: 0 auto; outline: none; mix-blend-mode: screen }
 
 		#header, #header .logo, #header h1, #header > p, #header .header-buttons, #header .header-buttons li, #header .header-buttons a { opacity: 1 !important; transform: none !important; visibility: visible !important }
 		#header h1, #header > p { color: #8b99ad !important }
 		#header h1 { font-family: 'IBM Plex Mono', monospace !important; font-size: 2em; letter-spacing: 0.18em; font-weight: 600 }
-		.header-author { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.25em; color: #e8eaed !important; margin: 0.8em 0 0.4em 0 !important; letter-spacing: 0.22em; text-transform: uppercase }
+		.header-author { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.25em; color: #ffffff !important; margin: 0.8em 0 0.4em 0 !important; letter-spacing: 0.22em; text-transform: uppercase }
 		.header-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2em; margin: 2.5em 0 0 0; padding: 0; list-style: none }
-		.header-buttons li { padding: 0 }
 		.header-buttons a { display: inline-flex; align-items: center; gap: 10px; padding: 0.8em 1.6em; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(139, 153, 173, 0.15); border-radius: 5px; color: #8b99ad !important; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease }
 		.header-buttons a:hover { background: rgba(239, 168, 176, 0.05); border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
 		.header-buttons .icon { border: 0; padding: 0; width: auto; height: auto; line-height: 1; font-size: 1.2em; color: inherit !important; display: inline-block }
@@ -131,59 +73,33 @@
 		#design::before, #design::after, #videos::before, #videos::after { display: none !important }
 		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
 		
-		/* Seção de Introdução e Kit de Ferramentas Otimizada */
-		#intro { background: #f0f1f3 }
+		/* Seção de Introdução e Kit de Ferramentas Otimizada (Remoção total da enorme lacuna superior) */
+		#intro { 
+			background: #f0f1f3;
+			padding: 0 !important; /* Remove o padding padrão da classe .main */
+		}
 		#intro .sec {
-			max-width: 1350px !important; /* Desloca o bloco esquerdo mais para a esquerda e o direito mais para a direita */
-			padding-top: 2.2em !important;
+			max-width: 1350px !important;
+			padding-top: 2.2em !important; /* Espaçamento interno minimalista e equilibrado */
 			padding-bottom: 2.2em !important;
 		}
 		
 		/* Estrutura diagramada horizontal (Split Layout) */
-		.intro-split-grid {
-			display: grid;
-			grid-template-columns: 1.1fr 0.9fr;
-			gap: 4em;
-			align-items: start;
-			text-align: left;
-		}
-		.intro-left-col {
-			width: 100%;
-		}
-		.intro-right-col {
-			width: 100%;
-			padding-top: 0.5em;
-		}
+		.intro-split-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4em; align-items: start; text-align: left }
+		.intro-left-col, .intro-right-col { width: 100% }
+		.intro-right-col { padding-top: 0.5em }
 		.intro-content { text-align: left; margin-bottom: 1.5em }
 		.intro-title h2 { display: inline-block !important; font-family: 'IBM Plex Mono', monospace !important; font-size: 1.8em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; margin-bottom: 0.5em }
 		.intro-bio { font-size: 1.12em !important; line-height: 1.75 !important; color: #1a222d !important; letter-spacing: 0.015em; font-weight: 400; margin: 0 0 1.2em 0; text-align: left !important }
 		.languages { font-family: 'IBM Plex Mono', monospace !important; font-size: 0.8em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4e5a6a !important; text-align: left; margin-top: 1.2em; margin-bottom: 0 }
 		
 		/* Grid de softwares horizontal (repeat 5 colunas no Desktop) */
-		.software-grid-split {
-			display: grid !important;
-			grid-template-columns: repeat(5, 1fr) !important;
-			gap: 0.8em !important;
-			margin-top: 1.5em !important;
-		}
+		.software-grid-split { display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 0.8em !important; margin-top: 1.5em !important }
 		.software-item {
-			width: 100% !important;
-			max-width: 110px;
-			padding: 0.8em 0.3em;
-			background: rgba(28, 43, 65, 0.04);
-			border-radius: 6px;
-			transition: background .3s, transform .3s;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-			margin: 0 auto;
+			width: 100% !important; max-width: 110px; padding: 0.8em 0.3em; background: rgba(28, 43, 65, 0.04); border-radius: 6px;
+			transition: background .3s, transform .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 0 auto;
 		}
-		.software-item:hover {
-			background: rgba(28, 43, 65, 0.08);
-			transform: translateY(-4px);
-		}
+		.software-item:hover { background: rgba(28, 43, 65, 0.08); transform: translateY(-4px) }
 		.software-item-icon { width: 36px; height: 36px; display: block; margin-bottom: .8em; filter: drop-shadow(0 2px 6px rgba(28,43,65,.45)) }
 		.software-item span { font-size: .75em; font-weight: 500; display: block }
 		
@@ -222,16 +138,9 @@
 		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 } .link-ext:hover svg { transform: translate(2px,-2px) }
 		
 		@media (max-width: 1200px) {
-			.intro-split-grid {
-				grid-template-columns: 1fr;
-				gap: 3.5em;
-			}
-			#intro .sec {
-				max-width: 1000px !important;
-			}
-			.software-grid-split {
-				grid-template-columns: repeat(5, 1fr) !important;
-			}
+			.intro-split-grid { grid-template-columns: 1fr; gap: 3.5em }
+			#intro .sec { max-width: 1000px !important }
+			.software-grid-split { grid-template-columns: repeat(5, 1fr) !important }
 		}
 		@media (max-width: 768px) {
 			blockquote { width: auto !important; font-size: 0.78em !important }
@@ -246,9 +155,7 @@
 			.header-buttons { gap: 0.8em }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
 			#nav a, nav a { padding: 0.8em 1em !important; font-size: 0.75em !important }
-			.software-grid-split {
-				grid-template-columns: repeat(3, 1fr) !important;
-			}
+			.software-grid-split { grid-template-columns: repeat(3, 1fr) !important }
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
@@ -259,9 +166,7 @@
 			#header .logo-gif video { max-width: 380px !important }
 			.software-item { width: 95px !important }
 			#nav a, nav a { padding: 0.8em 0.6em !important; font-size: 0.7em !important }
-			.software-grid-split {
-				grid-template-columns: repeat(2, 1fr) !important;
-			}
+			.software-grid-split { grid-template-columns: repeat(2, 1fr) !important }
 		}
 	</style>
 </head>
@@ -451,8 +356,8 @@
 </div>
 
 <script>
-	document.getElementById('footer-year').textContent = new Date().getFullYear();
 	document.addEventListener('DOMContentLoaded', () => {
+		document.getElementById('footer-year').textContent = new Date().getFullYear();
 		const wrapper = document.getElementById('design-slideshow'), imgs = wrapper.querySelectorAll('.slide img'), total = imgs.length, MAX = [360, 480, 680];
 		let currentIdx = 0, scrollTimeout;
 		const maxH = () => window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2];
@@ -471,33 +376,29 @@
 		}, { passive: true });
 		adjustFor(0);
 		imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyHeight(img); }, { once: true }); });
-	});
-</script>
-<script>
-	(function () {
-		var navLinks = document.querySelectorAll('#nav ul li a');
-		var sections = [];
-		navLinks.forEach(function (link) {
-			var id = link.getAttribute('href');
+
+		// Script de scroll active state dos links do menu
+		const navLinks = document.querySelectorAll('#nav ul li a'), sections = [];
+		navLinks.forEach(link => {
+			const id = link.getAttribute('href');
 			if (id && id.startsWith('#')) {
-				var section = document.querySelector(id);
-				if (section) sections.push({ link: link, section: section });
+				const section = document.querySelector(id);
+				if (section) sections.push({ link, section });
 			}
 		});
-		function onScroll() {
-			var scrollY = window.scrollY || window.pageYOffset;
-			var windowH = window.innerHeight;
-			var active = null;
-			sections.forEach(function (item) {
+		const onScroll = () => {
+			const scrollY = window.scrollY || window.pageYOffset, windowH = window.innerHeight;
+			let active = null;
+			sections.forEach(item => {
 				if (scrollY >= item.section.offsetTop - windowH * 0.35) active = item;
 			});
-			navLinks.forEach(function (l) { l.classList.remove('active'); });
+			navLinks.forEach(l => l.classList.remove('active'));
 			if (active) active.link.classList.add('active');
 			else if (sections.length > 0) sections[0].link.classList.add('active');
-		}
+		};
 		window.addEventListener('scroll', onScroll, { passive: true });
 		onScroll();
-	})();
+	});
 </script>
 </body>
 </html>
