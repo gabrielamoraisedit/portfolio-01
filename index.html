@@ -80,8 +80,11 @@
 		.slideshow-stage { display: flex; align-items: center; gap: 8px }
 		.slideshow-wrapper { flex: 1; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; height: 480px; transition: height .38s cubic-bezier(.4,0,.2,1); scrollbar-width: none; -ms-overflow-style: none; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.28); background: #e8eaed }
 		.slideshow-wrapper::-webkit-scrollbar { display: none }
-		.slide { flex: 0 0 100%; scroll-snap-align: start; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8eaed; overflow: hidden; border-radius: 12px }
-		.slide img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block }
+		.slide { position: relative; flex: 0 0 100%; scroll-snap-align: start; height: 100%; display: flex; align-items: center; justify-content: center; background: #dedede; overflow: hidden; border-radius: 12px; border: 2px dashed rgba(28,43,65,0.18) }
+		.slide img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; position: relative; z-index: 2 }
+		.slide-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #1c2b41; pointer-events: none; z-index: 1 }
+		.slide-ph svg { width: 36px; height: 36px; opacity: 0.3 }
+		.slide-ph span { font-family: 'IBM Plex Mono', monospace; font-size: 0.78em; font-weight: 600; opacity: 0.5; letter-spacing: 0.05em }
 		.slide-btn { flex-shrink: 0; width: 28px; height: 56px; border-radius: 5px; background: rgba(18,24,33,.55); color: #efa8b0; border: 1px solid rgba(239,168,176,.25); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: .8em; transition: background .2s, border-color .2s, transform .15s; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
 		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06) }
 		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
@@ -273,12 +276,30 @@
 					<div class="slideshow-stage">
 						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 						<div class="slideshow-wrapper" id="design-slideshow">
-							<div class="slide"><img src="images/project 01.png" alt="Projeto 01" /></div>
-							<div class="slide"><img src="images/project 02.png" alt="Projeto 02" loading="lazy" /></div>
-							<div class="slide"><img src="images/project 03.png" alt="Projeto 03" loading="lazy" /></div>
-							<div class="slide"><img src="images/project 04.png" alt="Projeto 04" loading="lazy" /></div>
-							<div class="slide"><img src="images/project 05.png" alt="Projeto 05" loading="lazy" /></div>
-							<div class="slide"><img src="images/project 06.png" alt="Projeto 06" loading="lazy" /></div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (project 01.png)</span></div>
+								<img src="images/project 01.png" alt="Projeto 01" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (project 02.png)</span></div>
+								<img src="images/project 02.png" alt="Projeto 02" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (project 03.png)</span></div>
+								<img src="images/project 03.png" alt="Projeto 03" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (project 04.png)</span></div>
+								<img src="images/project 04.png" alt="Projeto 04" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (project 05.png)</span></div>
+								<img src="images/project 05.png" alt="Projeto 05" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (project 06.png)</span></div>
+								<img src="images/project 06.png" alt="Projeto 06" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
 						</div>
 						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
@@ -318,10 +339,22 @@
 					<div class="slideshow-stage">
 						<button id="prev-slide-3d" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
 						<div class="slideshow-wrapper" id="projects3d-slideshow">
-							<div class="slide"><img src="images/3d 01.png" alt="Projeto 3D 01" /></div>
-							<div class="slide"><img src="images/3d 02.png" alt="Projeto 3D 02" loading="lazy" /></div>
-							<div class="slide"><img src="images/3d 03.png" alt="Projeto 3D 03" loading="lazy" /></div>
-							<div class="slide"><img src="images/3d 04.png" alt="Projeto 3D 04" loading="lazy" /></div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (3d 01.png)</span></div>
+								<img src="images/3d 01.png" alt="Projeto 3D 01" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (3d 02.png)</span></div>
+								<img src="images/3d 02.png" alt="Projeto 3D 02" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (3d 03.png)</span></div>
+								<img src="images/3d 03.png" alt="Projeto 3D 03" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
+							<div class="slide">
+								<div class="slide-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Espaço para Imagem (3d 04.png)</span></div>
+								<img src="images/3d 04.png" alt="Projeto 3D 04" loading="lazy" onerror="this.style.opacity='0';" onload="this.style.opacity='1';" />
+							</div>
 						</div>
 						<button id="next-slide-3d" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
 					</div>
