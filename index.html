@@ -83,12 +83,11 @@
 		.slide img { width: 100%; height: 100%; object-fit: contain; display: block; object-position: center }
 		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
 		.slideshow-timeline { display: flex; align-items: stretch; justify-content: center; margin-top: 1.5em; position: relative; gap: 8px }
-		.tl-dot { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex: 1; background: rgba(28, 43, 65, 0.05); border: 1px solid rgba(28, 43, 65, 0.12); border-radius: 8px; cursor: pointer; padding: 12px 6px 10px 6px; outline: none; -webkit-tap-highlight-color: transparent; transition: all .3s cubic-bezier(.4,0,.2,1); box-shadow: 0 2px 5px rgba(28,43,65,0.03) }
-		.tl-dot::before { content: ''; position: absolute; top: 18px; left: 50%; width: 100%; height: 0; border-top: 1.5px dashed rgba(28,43,65,0.2); z-index: 0; pointer-events: none }
-		.tl-dot:last-child::before { display: none }
+		.tl-dot { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; flex: 1; background: rgba(28, 43, 65, 0.05); border: 1px solid rgba(28, 43, 65, 0.12); border-radius: 8px; cursor: pointer; padding: 10px 4px 8px 4px; outline: none; -webkit-tap-highlight-color: transparent; transition: all .3s cubic-bezier(.4,0,.2,1); box-shadow: 0 2px 5px rgba(28,43,65,0.03) }
 		.tl-glow { position: absolute; top: 2px; left: 50%; transform: translateX(-50%); width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle, rgba(28,43,65,0.09) 0%, transparent 70%); transition: all .35s ease; pointer-events: none; z-index: 0 }
-		.tl-core { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #1c2b41; background: #e8eaed; position: relative; z-index: 1; transition: all .35s ease; flex-shrink: 0 }
-		.tl-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6em; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(28,43,65,0.65); transition: color .35s; position: relative; z-index: 1; text-align: center; font-weight: 600 }
+		.tl-core { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid #1c2b41; background: #e8eaed; position: relative; z-index: 1; transition: all .35s ease; flex-shrink: 0 }
+		.tl-label { display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.25; font-family: 'IBM Plex Mono', monospace; font-size: 0.58em; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(28,43,65,0.65); transition: color .35s; position: relative; z-index: 1; text-align: center; font-weight: 600 }
+		.tl-label .tl-num { font-size: 1.15em; font-weight: 700; margin-top: 1px; color: rgba(28,43,65,0.85) }
 		.tl-dot:hover { background: rgba(28, 43, 65, 0.11); border-color: rgba(28, 43, 65, 0.28); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(28,43,65,0.08) }
 		.tl-dot:hover .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.28) 0%, transparent 70%); width: 40px; height: 40px; top: -1px }
 		.tl-dot:hover .tl-core { border-color: #1c2b41; background: rgba(28,43,65,0.2) }
@@ -97,6 +96,7 @@
 		.tl-dot.active .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.45) 0%, rgba(28,43,65,0.06) 55%, transparent 75%); width: 44px; height: 44px; top: -3px }
 		.tl-dot.active .tl-core { background: #1c2b41; border-color: #1c2b41; box-shadow: 0 0 0 2.5px rgba(28,43,65,0.15) }
 		.tl-dot.active .tl-label { color: #1c2b41; font-weight: 700 }
+		.tl-dot.active .tl-label .tl-num { color: #1c2b41 }
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.8em; margin-top: 1.5em }
 		.video-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,153,173,.12); border-radius: 8px; overflow: hidden; transition: transform .3s, box-shadow .3s, border-color .3s }
 		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.4); border-color: rgba(239,168,176,.35) }
@@ -133,9 +133,10 @@
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
-			.tl-label { display: none }
-			.tl-dot { padding-top: 8px }
-			.tl-dot::before { top: 13px }
+			.slideshow-timeline { gap: 3px }
+			.tl-dot { padding: 6px 2px 5px 2px }
+			.tl-label { font-size: 0.46em; letter-spacing: 0 }
+			.tl-label .tl-num { font-size: 1.1em }
 			.header-buttons { gap: 0.6em }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
 			#header .logo-gif video { max-width: 380px !important }
@@ -290,12 +291,12 @@
 						<div class="slide"><img src="" alt="Projeto 06" loading="lazy" /></div>
 					</div>
 					<nav class="slideshow-timeline" id="design-timeline" aria-label="Navegação dos projetos">
-						<button class="tl-dot active" data-idx="0"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 01</span></button>
-						<button class="tl-dot" data-idx="1"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 02</span></button>
-						<button class="tl-dot" data-idx="2"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 03</span></button>
-						<button class="tl-dot" data-idx="3"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 04</span></button>
-						<button class="tl-dot" data-idx="4"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 05</span></button>
-						<button class="tl-dot" data-idx="5"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 06</span></button>
+						<button class="tl-dot active" data-idx="0"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>PROJETO</span><span class="tl-num">01</span></span></button>
+						<button class="tl-dot" data-idx="1"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>PROJETO</span><span class="tl-num">02</span></span></button>
+						<button class="tl-dot" data-idx="2"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>PROJETO</span><span class="tl-num">03</span></span></button>
+						<button class="tl-dot" data-idx="3"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>PROJETO</span><span class="tl-num">04</span></span></button>
+						<button class="tl-dot" data-idx="4"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>PROJETO</span><span class="tl-num">05</span></span></button>
+						<button class="tl-dot" data-idx="5"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>PROJETO</span><span class="tl-num">06</span></span></button>
 					</nav>
 				</div>
 				<p style="margin-top:3.4em; margin-bottom: 0.5em;"><a href="https://www.behance.net/gabrielamorais_" class="btn-behance-custom" target="_blank" rel="noopener noreferrer">PORTFÓLIO COMPLETO <span class="icon brands fa-behance" style="font-size: 1.15em;"></span></a></p>
@@ -337,10 +338,10 @@
 						<div class="slide"><img src="images/3d 04.png" alt="Projeto 3D 04" loading="lazy" /></div>
 					</div>
 					<nav class="slideshow-timeline" id="projects3d-timeline" aria-label="Navegação dos projetos 3D">
-						<button class="tl-dot active" data-idx="0"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Modelagem</span></button>
-						<button class="tl-dot" data-idx="1"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Textura</span></button>
-						<button class="tl-dot" data-idx="2"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Iluminação</span></button>
-						<button class="tl-dot" data-idx="3"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Render</span></button>
+						<button class="tl-dot active" data-idx="0"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>MODELAGEM</span><span class="tl-num">01</span></span></button>
+						<button class="tl-dot" data-idx="1"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>TEXTURA</span><span class="tl-num">02</span></span></button>
+						<button class="tl-dot" data-idx="2"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>ILUMINAÇÃO</span><span class="tl-num">03</span></span></button>
+						<button class="tl-dot" data-idx="3"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label"><span>RENDER</span><span class="tl-num">04</span></span></button>
 					</nav>
 				</div>
 			</div>
