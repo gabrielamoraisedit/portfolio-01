@@ -82,18 +82,20 @@
 		.slide { flex: 0 0 100%; scroll-snap-align: start; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8eaed; overflow: hidden; border-radius: 12px }
 		.slide img { width: 100%; height: 100%; object-fit: contain; display: block; object-position: center }
 		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
-		.slideshow-timeline { display: flex; align-items: flex-start; justify-content: center; margin-top: 1.4em; position: relative }
-		.tl-dot { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; background: none; border: none; cursor: pointer; padding: 14px 4px 0; outline: none; -webkit-tap-highlight-color: transparent }
-		.tl-dot::before { content: ''; position: absolute; top: 19px; left: 50%; width: 100%; height: 0; border-top: 1.5px dashed rgba(28,43,65,0.2); z-index: -1; pointer-events: none }
+		.slideshow-timeline { display: flex; align-items: stretch; justify-content: center; margin-top: 1.5em; position: relative; gap: 8px }
+		.tl-dot { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex: 1; background: rgba(28, 43, 65, 0.05); border: 1px solid rgba(28, 43, 65, 0.12); border-radius: 8px; cursor: pointer; padding: 12px 6px 10px 6px; outline: none; -webkit-tap-highlight-color: transparent; transition: all .3s cubic-bezier(.4,0,.2,1); box-shadow: 0 2px 5px rgba(28,43,65,0.03) }
+		.tl-dot::before { content: ''; position: absolute; top: 18px; left: 50%; width: 100%; height: 0; border-top: 1.5px dashed rgba(28,43,65,0.2); z-index: 0; pointer-events: none }
 		.tl-dot:last-child::before { display: none }
-		.tl-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle, rgba(28,43,65,0.09) 0%, transparent 70%); transition: all .35s ease; pointer-events: none; z-index: 0 }
-		.tl-core { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid rgba(28,43,65,0.35); background: #e8eaed; position: relative; z-index: 1; transition: all .35s ease; flex-shrink: 0 }
-		.tl-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6em; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(28,43,65,0.4); transition: color .35s; position: relative; z-index: 1; text-align: center }
-		.tl-dot:hover .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.28) 0%, transparent 70%); width: 44px; height: 44px; top: -3px }
-		.tl-dot:hover .tl-core { border-color: rgba(28,43,65,0.7); background: rgba(28,43,65,0.12) }
-		.tl-dot:hover .tl-label { color: rgba(28,43,65,0.65) }
-		.tl-dot.active .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.45) 0%, rgba(28,43,65,0.06) 55%, transparent 75%); width: 50px; height: 50px; top: -6px }
-		.tl-dot.active .tl-core { background: #1c2b41; border-color: #1c2b41; box-shadow: 0 0 0 2.5px rgba(28,43,65,0.12) }
+		.tl-glow { position: absolute; top: 2px; left: 50%; transform: translateX(-50%); width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle, rgba(28,43,65,0.09) 0%, transparent 70%); transition: all .35s ease; pointer-events: none; z-index: 0 }
+		.tl-core { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #1c2b41; background: #e8eaed; position: relative; z-index: 1; transition: all .35s ease; flex-shrink: 0 }
+		.tl-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6em; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(28,43,65,0.65); transition: color .35s; position: relative; z-index: 1; text-align: center; font-weight: 600 }
+		.tl-dot:hover { background: rgba(28, 43, 65, 0.11); border-color: rgba(28, 43, 65, 0.28); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(28,43,65,0.08) }
+		.tl-dot:hover .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.28) 0%, transparent 70%); width: 40px; height: 40px; top: -1px }
+		.tl-dot:hover .tl-core { border-color: #1c2b41; background: rgba(28,43,65,0.2) }
+		.tl-dot:hover .tl-label { color: #1c2b41 }
+		.tl-dot.active { background: rgba(28, 43, 65, 0.14); border-color: #1c2b41; box-shadow: 0 4px 12px rgba(28,43,65,0.12) }
+		.tl-dot.active .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.45) 0%, rgba(28,43,65,0.06) 55%, transparent 75%); width: 44px; height: 44px; top: -3px }
+		.tl-dot.active .tl-core { background: #1c2b41; border-color: #1c2b41; box-shadow: 0 0 0 2.5px rgba(28,43,65,0.15) }
 		.tl-dot.active .tl-label { color: #1c2b41; font-weight: 700 }
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.8em; margin-top: 1.5em }
 		.video-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,153,173,.12); border-radius: 8px; overflow: hidden; transition: transform .3s, box-shadow .3s, border-color .3s }
@@ -106,6 +108,8 @@
 		.link-ext { display: inline-flex; align-items: center; gap: 7px; font-size: .82em; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #1c2b41; text-decoration: none; cursor: pointer; padding: .3em 0; border-bottom: 1px solid rgba(28,43,65,.3); transition: color .22s, border-color .22s }
 		.link-ext svg { flex-shrink: 0; transition: transform .22s }
 		.link-ext:hover { color: #2d4a6e; border-color: #1c2b41 } .link-ext:hover svg { transform: translate(2px,-2px) }
+		.btn-behance-custom { display: inline-flex; align-items: center; gap: 8px; padding: 0.8em 1.6em; background: #1c2b41 !important; border: 1px solid rgba(139, 153, 173, 0.2); border-radius: 5px; color: #8b99ad !important; text-decoration: none !important; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(28,43,65,0.15) }
+		.btn-behance-custom:hover { background: #24354f !important; border-color: #efa8b0 !important; color: #efa8b0 !important; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(28,43,65,0.22) }
 
 		@media (max-width: 1200px) {
 			.intro-split-grid { grid-template-columns: 1fr; gap: 3.5em }
@@ -294,7 +298,7 @@
 						<button class="tl-dot" data-idx="5"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 06</span></button>
 					</nav>
 				</div>
-				<p style="margin-top:2.2em; margin-bottom: 0;"><a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
+				<p style="margin-top:3.4em; margin-bottom: 0.5em;"><a href="https://www.behance.net/gabrielamorais_" class="btn-behance-custom" target="_blank" rel="noopener noreferrer">PORTFÓLIO COMPLETO <span class="icon brands fa-behance" style="font-size: 1.15em;"></span></a></p>
 			</div>
 		</section>
 
