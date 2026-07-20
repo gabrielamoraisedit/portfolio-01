@@ -77,14 +77,24 @@
 		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
 		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0; transition: max-width .38s cubic-bezier(.4,0,.2,1) }
-		.slideshow-stage { display: flex; align-items: center; gap: 8px }
-		.slideshow-wrapper { flex: 1; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; height: 480px; transition: height .38s cubic-bezier(.4,0,.2,1); scrollbar-width: none; -ms-overflow-style: none; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.28); background: #e8eaed }
+		.slideshow-wrapper { width: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; height: 480px; transition: height .38s cubic-bezier(.4,0,.2,1); scrollbar-width: none; -ms-overflow-style: none; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.28); background: #e8eaed }
 		.slideshow-wrapper::-webkit-scrollbar { display: none }
 		.slide { flex: 0 0 100%; scroll-snap-align: start; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8eaed; overflow: hidden; border-radius: 12px }
 		.slide img { width: 100%; height: 100%; object-fit: contain; display: block; object-position: center }
-		.slide-btn { flex-shrink: 0; width: 28px; height: 56px; border-radius: 5px; background: rgba(18,24,33,.55); color: #efa8b0; border: 1px solid rgba(239,168,176,.25); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: .8em; transition: background .2s, border-color .2s, transform .15s; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
-		.slide-btn:hover { background: #efa8b0; color: #121821; border-color: #efa8b0; transform: scale(1.06) }
 		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
+		.slideshow-timeline { display: flex; align-items: flex-start; justify-content: center; margin-top: 2em; position: relative }
+		.tl-dot { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; background: none; border: none; cursor: pointer; padding: 14px 4px 0; outline: none; -webkit-tap-highlight-color: transparent }
+		.tl-dot::before { content: ''; position: absolute; top: 19px; left: 50%; width: 100%; height: 0; border-top: 1.5px dashed rgba(28,43,65,0.2); z-index: -1; pointer-events: none }
+		.tl-dot:last-child::before { display: none }
+		.tl-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle, rgba(28,43,65,0.09) 0%, transparent 70%); transition: all .35s ease; pointer-events: none; z-index: 0 }
+		.tl-core { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid rgba(28,43,65,0.35); background: #e8eaed; position: relative; z-index: 1; transition: all .35s ease; flex-shrink: 0 }
+		.tl-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6em; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(28,43,65,0.4); transition: color .35s; position: relative; z-index: 1; text-align: center }
+		.tl-dot:hover .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.28) 0%, transparent 70%); width: 44px; height: 44px; top: -3px }
+		.tl-dot:hover .tl-core { border-color: rgba(28,43,65,0.7); background: rgba(28,43,65,0.12) }
+		.tl-dot:hover .tl-label { color: rgba(28,43,65,0.65) }
+		.tl-dot.active .tl-glow { background: radial-gradient(circle, rgba(239,168,176,0.45) 0%, rgba(28,43,65,0.06) 55%, transparent 75%); width: 50px; height: 50px; top: -6px }
+		.tl-dot.active .tl-core { background: #1c2b41; border-color: #1c2b41; box-shadow: 0 0 0 2.5px rgba(28,43,65,0.12) }
+		.tl-dot.active .tl-label { color: #1c2b41; font-weight: 700 }
 		.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.8em; margin-top: 1.5em }
 		.video-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,153,173,.12); border-radius: 8px; overflow: hidden; transition: transform .3s, box-shadow .3s, border-color .3s }
 		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.4); border-color: rgba(239,168,176,.35) }
@@ -108,8 +118,7 @@
 			#header h1 { font-size: 1.5em; letter-spacing: 0.12em }
 			#header .logo-gif video { max-width: 540px !important }
 			.slideshow-wrapper { height: 320px }
-			.slide-btn { width: 24px; height: 48px; font-size: .75em }
-			.slideshow-stage { gap: 6px }
+			.tl-label { font-size: 0.52em }
 			.header-buttons { gap: 0.8em }
 			.header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em }
 			#nav a, nav a { padding: 0.8em 1em !important; font-size: 0.75em !important }
@@ -120,8 +129,9 @@
 		}
 		@media (max-width: 480px) {
 			.slideshow-wrapper { height: 240px }
-			.slide-btn { width: 20px; height: 40px; font-size: .7em }
-			.slideshow-stage { gap: 4px }
+			.tl-label { display: none }
+			.tl-dot { padding-top: 8px }
+			.tl-dot::before { top: 13px }
 			.header-buttons { gap: 0.6em }
 			.header-buttons a { padding: 0.6em 1em; font-size: 0.68em }
 			#header .logo-gif video { max-width: 380px !important }
@@ -267,18 +277,22 @@
 				<header class="major"><h2>Design Gráfico</h2><p>Projetos de identidade visual, editorial e comunicação digital.</p></header>
 				<p class="slideshow-label">Posters &amp; Displays Horizontais</p>
 				<div class="slideshow-outer">
-					<div class="slideshow-stage">
-						<button id="prev-slide" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
-						<div class="slideshow-wrapper" id="design-slideshow">
-							<div class="slide"><img src="images/project 01.jpg" alt="Projeto 01" /></div>
-							<div class="slide"><img src="" alt="Projeto 02" loading="lazy" /></div>
-							<div class="slide"><img src="" alt="Projeto 03" loading="lazy" /></div>
-							<div class="slide"><img src="" alt="Projeto 04" loading="lazy" /></div>
-							<div class="slide"><img src="" alt="Projeto 05" loading="lazy" /></div>
-							<div class="slide"><img src="" alt="Projeto 06" loading="lazy" /></div>
-						</div>
-						<button id="next-slide" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
+					<div class="slideshow-wrapper" id="design-slideshow">
+						<div class="slide"><img src="images/project 01.jpg" alt="Projeto 01" /></div>
+						<div class="slide"><img src="" alt="Projeto 02" loading="lazy" /></div>
+						<div class="slide"><img src="" alt="Projeto 03" loading="lazy" /></div>
+						<div class="slide"><img src="" alt="Projeto 04" loading="lazy" /></div>
+						<div class="slide"><img src="" alt="Projeto 05" loading="lazy" /></div>
+						<div class="slide"><img src="" alt="Projeto 06" loading="lazy" /></div>
 					</div>
+					<nav class="slideshow-timeline" id="design-timeline" aria-label="Navegação dos projetos">
+						<button class="tl-dot active" data-idx="0"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Conceito</span></button>
+						<button class="tl-dot" data-idx="1"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Identidade</span></button>
+						<button class="tl-dot" data-idx="2"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Paleta</span></button>
+						<button class="tl-dot" data-idx="3"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Tipografia</span></button>
+						<button class="tl-dot" data-idx="4"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Aplicações</span></button>
+						<button class="tl-dot" data-idx="5"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Mockup</span></button>
+					</nav>
 				</div>
 				<p style="margin-top:2.5em"><a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
 			</div>
@@ -312,16 +326,18 @@
 				<header class="major"><h2>Projetos 3D</h2><p>Modelagens, texturizações e renderizações tridimensionais desenvolvidos no Blender.</p></header>
 				<p class="slideshow-label">Modelagens &amp; Renders 3D</p>
 				<div class="slideshow-outer">
-					<div class="slideshow-stage">
-						<button id="prev-slide-3d" class="slide-btn" aria-label="Slide anterior">&#10094;</button>
-						<div class="slideshow-wrapper" id="projects3d-slideshow">
-							<div class="slide"><img src="images/3d 01.png" alt="Projeto 3D 01" /></div>
-							<div class="slide"><img src="images/3d 02.png" alt="Projeto 3D 02" loading="lazy" /></div>
-							<div class="slide"><img src="images/3d 03.png" alt="Projeto 3D 03" loading="lazy" /></div>
-							<div class="slide"><img src="images/3d 04.png" alt="Projeto 3D 04" loading="lazy" /></div>
-						</div>
-						<button id="next-slide-3d" class="slide-btn" aria-label="Próximo slide">&#10095;</button>
+					<div class="slideshow-wrapper" id="projects3d-slideshow">
+						<div class="slide"><img src="images/3d 01.png" alt="Projeto 3D 01" /></div>
+						<div class="slide"><img src="images/3d 02.png" alt="Projeto 3D 02" loading="lazy" /></div>
+						<div class="slide"><img src="images/3d 03.png" alt="Projeto 3D 03" loading="lazy" /></div>
+						<div class="slide"><img src="images/3d 04.png" alt="Projeto 3D 04" loading="lazy" /></div>
 					</div>
+					<nav class="slideshow-timeline" id="projects3d-timeline" aria-label="Navegação dos projetos 3D">
+						<button class="tl-dot active" data-idx="0"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Modelagem</span></button>
+						<button class="tl-dot" data-idx="1"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Textura</span></button>
+						<button class="tl-dot" data-idx="2"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Iluminação</span></button>
+						<button class="tl-dot" data-idx="3"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">Render</span></button>
+					</nav>
 				</div>
 			</div>
 		</section>
@@ -338,39 +354,44 @@
 	document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-		const initSlideshow = (wrapperId, prevId, nextId) => {
+		const initSlideshow = (wrapperId, timelineId) => {
 			const wrapper = document.getElementById(wrapperId);
 			if (!wrapper) return;
 			const outer = wrapper.closest('.slideshow-outer');
 			const imgs = wrapper.querySelectorAll('.slide img'), total = imgs.length, MAX = [360, 480, 680];
+			const dots = timelineId ? Array.from(document.querySelectorAll('#' + timelineId + ' .tl-dot')) : [];
 			let currentIdx = 0, scrollTimeout;
 			const maxH = () => window.innerWidth <= 480 ? MAX[0] : window.innerWidth <= 768 ? MAX[1] : MAX[2];
 			const applyDimensions = (img) => {
 				if (!img || !img.naturalWidth) return;
-				const btnArea = 80;
-				const availW = (outer ? outer.parentElement.clientWidth : wrapper.clientWidth) - btnArea;
+				const parent = outer ? outer.parentElement : wrapper.parentElement;
+				const cs = getComputedStyle(parent);
+				const availW = parent.clientWidth - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
 				const h = Math.min(Math.round(availW * img.naturalHeight / img.naturalWidth), maxH());
 				const idealW = Math.round(h * img.naturalWidth / img.naturalHeight);
 				wrapper.style.height = h + 'px';
-				if (outer) outer.style.maxWidth = Math.min(idealW + btnArea, availW + btnArea) + 'px';
+				if (outer) outer.style.maxWidth = Math.min(idealW, availW) + 'px';
 			};
 			const adjustFor = (idx) => { const img = imgs[idx]; if (img) img.complete && img.naturalWidth ? applyDimensions(img) : img.addEventListener('load', () => applyDimensions(img), { once: true }); };
-			const getIdx = () => Math.round(wrapper.scrollLeft / wrapper.clientWidth);
-			const goTo = (i) => { currentIdx = i; wrapper.scrollTo({ left: i * wrapper.clientWidth, behavior: 'smooth' }); };
-			document.getElementById(nextId).addEventListener('click', () => goTo((getIdx() + 1) % total));
-			document.getElementById(prevId).addEventListener('click', () => goTo((getIdx() - 1 + total) % total));
+			const setActive = (idx) => {
+				currentIdx = idx;
+				wrapper.scrollTo({ left: idx * wrapper.clientWidth, behavior: 'smooth' });
+				dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+				adjustFor(idx);
+			};
+			dots.forEach((dot, i) => dot.addEventListener('click', () => setActive(i)));
 			wrapper.addEventListener('scroll', () => {
 				clearTimeout(scrollTimeout);
-				scrollTimeout = setTimeout(() => { const next = getIdx(); if (currentIdx !== next) { currentIdx = next; adjustFor(currentIdx); } }, 40);
+				scrollTimeout = setTimeout(() => { const next = Math.round(wrapper.scrollLeft / wrapper.clientWidth); if (currentIdx !== next) { currentIdx = next; dots.forEach((d, i) => d.classList.toggle('active', i === next)); adjustFor(next); } }, 40);
 			}, { passive: true });
 			window.addEventListener('resize', () => {
 				wrapper.style.scrollBehavior = 'auto'; wrapper.scrollLeft = currentIdx * wrapper.clientWidth; wrapper.style.scrollBehavior = 'smooth'; adjustFor(currentIdx);
 			}, { passive: true });
 			adjustFor(0);
-			imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (getIdx() === i) applyDimensions(img); }, { once: true }); });
+			imgs.forEach((img, i) => { if (!img.complete) img.addEventListener('load', () => { if (Math.round(wrapper.scrollLeft / wrapper.clientWidth) === i) applyDimensions(img); }, { once: true }); });
 		};
-		initSlideshow('design-slideshow', 'prev-slide', 'next-slide');
-		initSlideshow('projects3d-slideshow', 'prev-slide-3d', 'next-slide-3d');
+		initSlideshow('design-slideshow', 'design-timeline');
+		initSlideshow('projects3d-slideshow', 'projects3d-timeline');
 
 		const navLinks = document.querySelectorAll('#nav ul li a'), sections = [];
 		navLinks.forEach(link => {
