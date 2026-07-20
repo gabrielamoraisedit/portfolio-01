@@ -40,13 +40,13 @@
 		.header-buttons a:hover { background: rgba(239, 168, 176, 0.05); border-color: #efa8b0; color: #efa8b0 !important; transform: translateY(-2px) }
 		.header-buttons .icon { border: 0; padding: 0; width: auto; height: auto; line-height: 1; font-size: 1.2em; color: inherit !important; display: inline-block }
 		.header-buttons .icon:before { display: inline-block; vertical-align: middle; font-size: inherit }
-		.sec { max-width: 1200px !important; margin: 0 auto; padding: 3em 2em }
-		.sec-c { max-width: 1200px !important; margin: 0 auto; padding: 3em 2em; text-align: center }
+		.sec { max-width: 1200px !important; margin: 0 auto; padding: 2em 2em }
+		.sec-c { max-width: 1200px !important; margin: 0 auto; padding: 2em 2em; text-align: center }
 		#design, #projects3d { background: #e8eaed } #videos { background: #f0f1f3 }
 		#design::before, #design::after, #videos::before, #videos::after, #projects3d::before, #projects3d::after { display: none !important }
 		#footer { background: rgba(11,16,25,.6) } #footer .copyright, #footer .copyright a { color: rgba(139,153,173,.6) }
 		#intro { background: #f0f1f3; padding: 0 !important }
-		#intro .sec { max-width: 1350px !important; padding-top: 3.5em !important; padding-bottom: 3.5em !important }
+		#intro .sec { max-width: 1350px !important; padding-top: 3em !important; padding-bottom: 1.8em !important }
 		.intro-split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5em; align-items: start; text-align: left }
 		.intro-left-col, .intro-right-col { width: 100% }
 		.intro-right-col { padding-top: 0.5em }
@@ -76,13 +76,13 @@
 		.expertise-details[open] .toggle-btn-custom .click-icon { transform: rotate(90deg) }
 		.expertise-details[open] .expertise-columns { animation: slideDownFade .4s ease-out forwards; margin-top: 3em }
 		@keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px) } to { opacity: 1; transform: translateY(0) } }
-		.slideshow-outer { max-width: 100%; margin: 2.5em auto 0; transition: max-width .38s cubic-bezier(.4,0,.2,1) }
+		.slideshow-outer { max-width: 100%; margin: 1.4em auto 0; transition: max-width .38s cubic-bezier(.4,0,.2,1) }
 		.slideshow-wrapper { width: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; height: 480px; transition: height .38s cubic-bezier(.4,0,.2,1); scrollbar-width: none; -ms-overflow-style: none; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.28); background: #e8eaed }
 		.slideshow-wrapper::-webkit-scrollbar { display: none }
 		.slide { flex: 0 0 100%; scroll-snap-align: start; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8eaed; overflow: hidden; border-radius: 12px }
 		.slide img { width: 100%; height: 100%; object-fit: contain; display: block; object-position: center }
 		.slideshow-label { display: inline-block; font-size: .72em; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6b7d92; margin-bottom: 1.2em }
-		.slideshow-timeline { display: flex; align-items: flex-start; justify-content: center; margin-top: 2em; position: relative }
+		.slideshow-timeline { display: flex; align-items: flex-start; justify-content: center; margin-top: 1.4em; position: relative }
 		.tl-dot { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; background: none; border: none; cursor: pointer; padding: 14px 4px 0; outline: none; -webkit-tap-highlight-color: transparent }
 		.tl-dot::before { content: ''; position: absolute; top: 19px; left: 50%; width: 100%; height: 0; border-top: 1.5px dashed rgba(28,43,65,0.2); z-index: -1; pointer-events: none }
 		.tl-dot:last-child::before { display: none }
@@ -208,7 +208,7 @@
 											<dt>Briefing &amp; Pesquisa</dt><dd>Imersão no contexto do projeto para compreender público, propósito e concorrência antes de qualquer etapa visual.</dd>
 											<dt>Conceituação</dt><dd>Exploração de referências e geração de conceitos que conectem a mensagem ao universo visual da marca, priorizando originalidade e clareza comunicativa.</dd>
 											<dt>Execução &amp; Refinamento</dt><dd>Produção do projeto com atenção aos detalhes técnicos (tipografia, grid, paleta e consistência) seguida de ciclos de revisão até a entrega impecável.</dd>
-											<dt>Entrega &amp; Aplicação</dt><dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja applied corretamente.</dd>
+											<dt>Entrega &amp; Aplicação</dt><dd>Exportação em formatos otimizados para cada canal e suporte contínuo para garantir que o material seja aplicado corretamente.</dd>
 										</dl>
 									</div>
 								</div>
@@ -275,7 +275,7 @@
 		<section id="design" class="main special">
 			<div class="sec-c">
 				<header class="major"><h2>Design Gráfico</h2><p>Projetos de identidade visual, editorial e comunicação digital.</p></header>
-				<div style="text-align: center; margin: 1.5em 0 2em 0;"><p class="languages" style="font-size: 0.88em !important;">Media Social &nbsp;&bull;&nbsp; Posteres &nbsp;&bull;&nbsp; Banners &nbsp;&bull;&nbsp; Logos</p></div>
+				<div style="text-align: center; margin: 1.2em 0 1.4em 0;"><p class="languages" style="font-size: 0.88em !important;">Media Social &nbsp;&bull;&nbsp; Posteres &nbsp;&bull;&nbsp; Banners &nbsp;&bull;&nbsp; Logos</p></div>
 				<div class="slideshow-outer">
 					<div class="slideshow-wrapper" id="design-slideshow">
 						<div class="slide"><img src="images/project-01.jpg" alt="Projeto 01" /></div>
@@ -294,7 +294,7 @@
 						<button class="tl-dot" data-idx="5"><span class="tl-glow"></span><span class="tl-core"></span><span class="tl-label">PROJETO 06</span></button>
 					</nav>
 				</div>
-				<p style="margin-top:4.5em"><a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
+				<p style="margin-top:2.2em; margin-bottom: 0;"><a href="https://www.behance.net/gabrielamorais_" class="link-ext" target="_blank" rel="noopener noreferrer">Ver portfólio completo no Behance <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
 			</div>
 		</section>
 
