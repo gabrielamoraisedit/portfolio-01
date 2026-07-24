@@ -100,11 +100,13 @@
 		.video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2em; margin-top: 1.5em }
 		.video-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,153,173,.12); border-radius: 8px; overflow: hidden; transition: transform .3s, box-shadow .3s, border-color .3s }
 		.video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.4); border-color: rgba(239,168,176,.35) }
-		.video-card-thumbnail { position: relative; background: #0b101a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; text-decoration: none; cursor: pointer }
-		.video-card-thumbnail img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; z-index: 1 }
-		.video-card-thumbnail::before { content: ''; display: block; width: 3em; height: 3em; background: rgba(239,168,176,.2); border: 2px solid rgba(239,168,176,.5); border-radius: 50%; position: relative; z-index: 2; transition: transform 0.3s ease }
-		.video-card-thumbnail::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .5em 0 .5em .9em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em; z-index: 3 }
-		.video-card:hover .video-card-thumbnail::before { transform: scale(1.1); background: rgba(239,168,176,.35) }
+		.video-card-thumbnail, .video-card-thumbnail-vertical { position: relative; background: #0b101a; display: flex; align-items: center; justify-content: center; overflow: hidden; text-decoration: none; cursor: pointer }
+		.video-card-thumbnail { aspect-ratio: 16/9 }
+		.video-card-thumbnail-vertical { aspect-ratio: 9/16 }
+		.video-card-thumbnail img, .video-card-thumbnail-vertical img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; z-index: 1 }
+		.video-card-thumbnail::before, .video-card-thumbnail-vertical::before { content: ''; display: block; width: 3em; height: 3em; background: rgba(239,168,176,.2); border: 2px solid rgba(239,168,176,.5); border-radius: 50%; position: relative; z-index: 2; transition: transform 0.3s ease }
+		.video-card-thumbnail::after, .video-card-thumbnail-vertical::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .5em 0 .5em .9em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em; z-index: 3 }
+		.video-card:hover .video-card-thumbnail::before, .video-card:hover .video-card-thumbnail-vertical::before { transform: scale(1.1); background: rgba(239,168,176,.35) }
 		.video-card-body { padding: 1em 1.1em 1.2em }
 		.video-card-body h4 { margin: 0 0 .4em; font-size: 0.92em; font-weight: 700 }
 		.video-card-body p { margin: 0; font-size: 0.8em; opacity: .8; line-height: 1.45 }
@@ -283,7 +285,7 @@
 				<p style="margin-top:3.4em; margin-bottom: 0.5em;"><a href="https://www.behance.net/gabrielamorais_" class="btn-behance-custom" target="_blank" rel="noopener noreferrer">PORTFÓLIO COMPLETO <span class="icon brands fa-behance" style="font-size: 1.15em;"></span></a></p>
 			</div>
 		</section>
-		<!-- SEÇÃO 3 — Edição de Vídeo Formato Horizontal -->
+		<!-- SEÇÃO 3 — Edição de Vídeo Formato Horizontal & Vertical -->
 		<section id="videos" class="main special">
 			<div class="sec-c">
 				<header class="major"><h2>Edição de Vídeo Formato Horizontal</h2><p>Conteúdo audiovisual para plataformas digitais e projetos criativos.</p></header>
@@ -322,6 +324,37 @@
 						<div class="video-card-body">
 							<span class="tag">Direção Criativa e Edição</span>
 							<h4>Conscientização Outubro Rosa</h4>
+						</div>
+					</article>
+				</div>
+				<header class="major" style="margin-top: 4.5em !important;"><h2>Edição de Vídeo Formato Vertical</h2><p>Conteúdo audiovisual em formato Reels &amp; TikTok para redes sociais.</p></header>
+				<div class="video-grid">
+					<article class="video-card">
+						<div class="video-card-thumbnail-vertical" role="img" aria-label="Reels 01"></div>
+						<div class="video-card-body">
+							<span class="tag">Direção Criativa e Edição</span>
+							<h4>Vídeo Vertical — Reels 01</h4>
+						</div>
+					</article>
+					<article class="video-card">
+						<div class="video-card-thumbnail-vertical" role="img" aria-label="Reels 02"></div>
+						<div class="video-card-body">
+							<span class="tag">Direção Criativa e Edição</span>
+							<h4>Vídeo Vertical — Reels 02</h4>
+						</div>
+					</article>
+					<article class="video-card">
+						<div class="video-card-thumbnail-vertical" role="img" aria-label="Reels 03"></div>
+						<div class="video-card-body">
+							<span class="tag">Direção Criativa e Edição</span>
+							<h4>Vídeo Vertical — Reels 03</h4>
+						</div>
+					</article>
+					<article class="video-card">
+						<div class="video-card-thumbnail-vertical" role="img" aria-label="Reels 04"></div>
+						<div class="video-card-body">
+							<span class="tag">Direção Criativa e Edição</span>
+							<h4>Vídeo Vertical — Reels 04</h4>
 						</div>
 					</article>
 				</div>
