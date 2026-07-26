@@ -118,6 +118,15 @@
 		.link-ext:hover svg { transform: translate(2px,-2px) }
 		.btn-behance-custom { display: inline-flex; align-items: center; gap: 8px; padding: 0.8em 1.6em; background: #1c2b41 !important; border: 1px solid rgba(139,153,173,0.2); border-radius: 5px; color: #8b99ad !important; text-decoration: none !important; font-family: 'Montserrat', sans-serif; font-size: 0.78em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(28,43,65,0.15) }
 		.btn-behance-custom:hover { background: #24354f !important; border-color: #efa8b0 !important; color: #efa8b0 !important; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(28,43,65,0.22) }
+		.video-pages-container { position: relative; width: 100% }
+		.video-page { display: none; width: 100% }
+		.video-page.active { display: block; animation: fadeInPage .35s ease-out }
+		@keyframes fadeInPage { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: translateY(0) } }
+		.video-nav-buttons { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 2em }
+		.vnav-btn { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 2px solid #1c2b41; border-radius: 4px; color: #1c2b41; cursor: pointer; transition: all 0.25s ease; outline: none; padding: 0 }
+		.vnav-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2.2; flex-shrink: 0 }
+		.vnav-btn:hover:not(:disabled) { background: #1c2b41; color: #efa8b0; border-color: #1c2b41; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(28,43,65,0.2) }
+		.vnav-btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: rgba(28,43,65,0.4) }
 		@media (max-width: 1200px) { .intro-split-grid { grid-template-columns: 1fr; gap: 3.5em } #intro .sec { max-width: 1000px !important } .software-grid-split { grid-template-columns: repeat(5, 1fr) !important } .video-grid { grid-template-columns: repeat(2, 1fr) !important } }
 		@media (max-width: 768px) { .major h2 { font-size: 1.4em !important } .intro-bio { font-size: 1.05em !important } .expertise-columns { grid-template-columns: 1fr; gap: 2em } #header h1 { font-size: 1.5em; letter-spacing: 0.12em } #header .logo-gif video { max-width: 540px !important } .slideshow-wrapper { height: 320px } .tl-label { font-size: 0.65em } .tl-label .tl-num { font-size: 1.3em } .header-buttons { gap: 0.8em } .header-buttons a { padding: 0.7em 1.2em; font-size: 0.72em } #nav a, nav a { padding: 0.8em 1em !important; font-size: 0.75em !important } .software-grid-split { grid-template-columns: repeat(5, 1fr) !important; gap: 0.6em !important } .software-item { padding: 0.8em 0.2em !important } .software-item-icon { width: 30px !important; height: 30px !important } .software-item span { font-size: 0.7em !important; font-weight: 700 !important } }
 		@media (max-width: 480px) { .major h2 { font-size: 1.1em !important } .video-grid { grid-template-columns: 1fr !important } .slideshow-wrapper { height: 240px } .slideshow-timeline { gap: 4px } .tl-dot { margin-top: 14px; min-height: 46px; padding: 6px 2px 5px; border-width: 1.5px } .tl-core { top: -12px; width: 8px; height: 8px } .tl-glow { top: -12px } .tl-label { font-size: 0.54em; letter-spacing: 0 } .tl-label .tl-num { font-size: 1.2em; margin-top: 1px } .header-buttons { gap: 0.6em } .header-buttons a { padding: 0.6em 1em; font-size: 0.68em } #header .logo-gif video { max-width: 380px !important } #nav a, nav a { padding: 0.8em 0.6em !important; font-size: 0.7em !important } .software-grid-split { grid-template-columns: repeat(5, 1fr) !important; gap: 0.4em !important } .software-item { padding: 0.6em 0.15em !important } .software-item-icon { width: 24px !important; height: 24px !important } .software-item span { font-size: 0.62em !important; font-weight: 700 !important; letter-spacing: -0.02em !important } }
@@ -246,23 +255,51 @@
 		<section id="videos" class="main special">
 			<div class="sec-c">
 				<header class="major"><h2>Edição de Vídeo Formato Horizontal</h2></header>
-				<div class="video-grid">
-					<article class="video-card">
-						<a href="https://www.youtube.com/watch?v=GHy3SanwGBQ" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Janeiro Branco"><img src="https://img.youtube.com/vi/GHy3SanwGBQ/hqdefault.jpg" alt="Janeiro Branco" loading="lazy" /></a>
-						<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Janeiro Branco</h4></div>
-					</article>
-					<article class="video-card">
-						<a href="https://www.youtube.com/watch?v=HhSy2ueblnU" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Dezembro Laranja"><img src="https://img.youtube.com/vi/HhSy2ueblnU/hqdefault.jpg" alt="Dezembro Laranja" loading="lazy" /></a>
-						<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Dezembro Laranja</h4></div>
-					</article>
-					<article class="video-card">
-						<a href="https://www.youtube.com/watch?v=aghrzjLqehc" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Novembro Azul"><img src="https://img.youtube.com/vi/aghrzjLqehc/hqdefault.jpg" alt="Novembro Azul" loading="lazy" /></a>
-						<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Novembro Azul</h4></div>
-					</article>
-					<article class="video-card">
-						<a href="https://www.youtube.com/watch?v=1cuHDrbcunA" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Outubro Rosa"><img src="https://img.youtube.com/vi/1cuHDrbcunA/hqdefault.jpg" alt="Outubro Rosa" loading="lazy" /></a>
-						<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Outubro Rosa</h4></div>
-					</article>
+				<div class="video-pages-container" id="hvideo-pages">
+					<div class="video-page active">
+						<div class="video-grid">
+							<article class="video-card">
+								<a href="https://www.youtube.com/watch?v=GHy3SanwGBQ" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Janeiro Branco"><img src="https://img.youtube.com/vi/GHy3SanwGBQ/hqdefault.jpg" alt="Janeiro Branco" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Janeiro Branco</h4></div>
+							</article>
+							<article class="video-card">
+								<a href="https://www.youtube.com/watch?v=HhSy2ueblnU" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Dezembro Laranja"><img src="https://img.youtube.com/vi/HhSy2ueblnU/hqdefault.jpg" alt="Dezembro Laranja" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Dezembro Laranja</h4></div>
+							</article>
+							<article class="video-card">
+								<a href="https://www.youtube.com/watch?v=aghrzjLqehc" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Novembro Azul"><img src="https://img.youtube.com/vi/aghrzjLqehc/hqdefault.jpg" alt="Novembro Azul" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Novembro Azul</h4></div>
+							</article>
+							<article class="video-card">
+								<a href="https://www.youtube.com/watch?v=1cuHDrbcunA" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Conscientização Outubro Rosa"><img src="https://img.youtube.com/vi/1cuHDrbcunA/hqdefault.jpg" alt="Outubro Rosa" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Conscientização Outubro Rosa</h4></div>
+							</article>
+						</div>
+					</div>
+					<div class="video-page">
+						<div class="video-grid">
+							<article class="video-card">
+								<a href="#" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Vídeo 05"><img src="" alt="Vídeo 05" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Vídeo 05</h4></div>
+							</article>
+							<article class="video-card">
+								<a href="#" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Vídeo 06"><img src="" alt="Vídeo 06" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Vídeo 06</h4></div>
+							</article>
+							<article class="video-card">
+								<a href="#" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Vídeo 07"><img src="" alt="Vídeo 07" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Vídeo 07</h4></div>
+							</article>
+							<article class="video-card">
+								<a href="#" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail" aria-label="Vídeo 08"><img src="" alt="Vídeo 08" loading="lazy" /></a>
+								<div class="video-card-body"><span class="tag">Direção, Edição<br />Legenda, e Thumbnail</span><h4>Vídeo 08</h4></div>
+							</article>
+						</div>
+					</div>
+				</div>
+				<div class="video-nav-buttons">
+					<button class="vnav-btn" id="hvideo-prev" aria-label="Página anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+					<button class="vnav-btn" id="hvideo-next" aria-label="Próxima página"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
 				</div>
 				<header class="major" style="margin-top: 3.5em !important;"><h2>Edição de Vídeo Formato Vertical</h2></header>
 				<div class="video-grid">
@@ -339,6 +376,10 @@
 		};
 		initSlideshow('design-slideshow', 'design-timeline');
 		initSlideshow('projects3d-slideshow', 'projects3d-timeline');
+		const hPages = document.querySelectorAll('#hvideo-pages .video-page'), hPrevBtn = document.getElementById('hvideo-prev'), hNextBtn = document.getElementById('hvideo-next');
+		let hCurrentPage = 0;
+		const updateHPages = (idx) => { hPages.forEach((p, i) => p.classList.toggle('active', i === idx)); if (hPrevBtn) hPrevBtn.disabled = (idx === 0); if (hNextBtn) hNextBtn.disabled = (idx === hPages.length - 1); };
+		if (hPrevBtn && hNextBtn && hPages.length > 0) { hPrevBtn.addEventListener('click', () => { if (hCurrentPage > 0) updateHPages(--hCurrentPage); }); hNextBtn.addEventListener('click', () => { if (hCurrentPage < hPages.length - 1) updateHPages(++hCurrentPage); }); updateHPages(0); }
 		const navLinks = document.querySelectorAll('#nav ul li a'), sections = [];
 		navLinks.forEach(link => { const id = link.getAttribute('href'); if (id && id.startsWith('#')) { const section = document.querySelector(id); if (section) sections.push({ link, section }); } });
 		const onScroll = () => {
