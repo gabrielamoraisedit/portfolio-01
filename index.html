@@ -103,10 +103,9 @@
 		.video-card-thumbnail, .video-card-thumbnail-vertical { position: relative; background: #0b101a; display: flex; align-items: center; justify-content: center; overflow: hidden; text-decoration: none; cursor: pointer }
 		.video-card-thumbnail { aspect-ratio: 16/9 }
 		.video-card-thumbnail-vertical { aspect-ratio: 9/16 }
-		.video-card-thumbnail img, .video-card-thumbnail-vertical img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; z-index: 2 }
-		.video-card-thumbnail-vertical iframe { width: 168%; height: 185%; position: absolute; top: -32%; left: -34%; border: 0; pointer-events: none; z-index: 1 }
-		.video-card-thumbnail::before, .video-card-thumbnail-vertical::before { content: ''; display: block; width: 3em; height: 3em; background: rgba(239,168,176,.2); border: 2px solid rgba(239,168,176,.5); border-radius: 50%; position: relative; z-index: 3; transition: transform 0.3s ease }
-		.video-card-thumbnail::after, .video-card-thumbnail-vertical::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .5em 0 .5em .9em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em; z-index: 4 }
+		.video-card-thumbnail img, .video-card-thumbnail-vertical img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; z-index: 1 }
+		.video-card-thumbnail::before, .video-card-thumbnail-vertical::before { content: ''; display: block; width: 3em; height: 3em; background: rgba(239,168,176,.2); border: 2px solid rgba(239,168,176,.5); border-radius: 50%; position: relative; z-index: 2; transition: transform 0.3s ease }
+		.video-card-thumbnail::after, .video-card-thumbnail-vertical::after { content: ''; display: block; position: absolute; width: 0; height: 0; border-style: solid; border-width: .5em 0 .5em .9em; border-color: transparent transparent transparent #efa8b0; margin-left: .2em; z-index: 3 }
 		.video-card:hover .video-card-thumbnail::before, .video-card:hover .video-card-thumbnail-vertical::before { transform: scale(1.1); background: rgba(239,168,176,.35) }
 		.video-card-body { padding: 1em 1.1em 1.2em }
 		.video-card-body h4 { margin: 0 0 .4em; font-size: 0.92em; font-weight: 700 }
@@ -332,8 +331,7 @@
 				<div class="video-grid">
 					<article class="video-card">
 						<a href="https://www.instagram.com/reel/DWC46haBWb-/" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail-vertical" aria-label="Vídeo Vertical — Reels 01">
-							<iframe src="https://www.instagram.com/reel/DWC46haBWb-/embed/" style="width:100%; height:100%; border:none; pointer-events:none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-							<img src="images/reels-01.jpg" alt="Reels 01" loading="lazy" onerror="this.remove();" />
+							<img src="images/reels-01.jpg" alt="Vídeo Vertical — Reels 01" loading="lazy" />
 						</a>
 						<div class="video-card-body">
 							<span class="tag">Edição e Legenda</span>
@@ -342,8 +340,7 @@
 					</article>
 					<article class="video-card">
 						<a href="https://www.instagram.com/reel/DXcsuxphgcK/" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail-vertical" aria-label="Vídeo Vertical — Reels 02">
-							<iframe src="https://www.instagram.com/reel/DXcsuxphgcK/embed/" style="width:100%; height:100%; border:none; pointer-events:none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-							<img src="images/reels-02.jpg" alt="Reels 02" loading="lazy" onerror="this.remove();" />
+							<img src="images/reels-02.jpg" alt="Vídeo Vertical — Reels 02" loading="lazy" />
 						</a>
 						<div class="video-card-body">
 							<span class="tag">Edição e Legenda</span>
@@ -352,8 +349,7 @@
 					</article>
 					<article class="video-card">
 						<a href="https://www.instagram.com/reel/DWmnei_xmE7/" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail-vertical" aria-label="Vídeo Vertical — Reels 03">
-							<iframe src="https://www.instagram.com/reel/DWmnei_xmE7/embed/" style="width:100%; height:100%; border:none; pointer-events:none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-							<img src="images/reels-03.jpg" alt="Reels 03" loading="lazy" onerror="this.remove();" />
+							<img src="images/reels-03.jpg" alt="Vídeo Vertical — Reels 03" loading="lazy" />
 						</a>
 						<div class="video-card-body">
 							<span class="tag">Edição e Legenda</span>
@@ -362,8 +358,7 @@
 					</article>
 					<article class="video-card">
 						<a href="https://www.instagram.com/reel/DWUlz7LBcgg/" target="_blank" rel="noopener noreferrer" class="video-card-thumbnail-vertical" aria-label="Vídeo Vertical — Reels 04">
-							<iframe src="https://www.instagram.com/reel/DWUlz7LBcgg/embed/" style="width:100%; height:100%; border:none; pointer-events:none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-							<img src="images/reels-04.jpg" alt="Reels 04" loading="lazy" onerror="this.remove();" />
+							<img src="images/reels-04.jpg" alt="Vídeo Vertical — Reels 04" loading="lazy" />
 						</a>
 						<div class="video-card-body">
 							<span class="tag">Edição e Legenda</span>
