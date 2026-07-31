@@ -206,6 +206,7 @@
 								</dl>
 								<h3>Destaques Acadêmicos</h3>
 								<dl class="expertise-list" style="margin-bottom: 2.5em;">
+									<dt style="margin-bottom: 0.85em;">Universidade de Ribeirão Preto: Graduação em Publicidade e Propaganda <span style="font-family: 'Roboto', sans-serif; font-weight: 400; color: #4e5a6a;">(2025-2029)</span></dt>
 									<dt style="margin-bottom: 0.85em;">Visita técnica à agência GALERIA: Estratégias de Marketing e Inovações <span style="font-family: 'Roboto', sans-serif; font-weight: 400; color: #4e5a6a;">(2025)</span></dt>
 									<dt style="margin-bottom: 0.85em;">Visita técnica ao escritório da Adobe Brasil: Estratégias de Vendas e Marketing <span style="font-family: 'Roboto', sans-serif; font-weight: 400; color: #4e5a6a;">(2025)</span></dt>
 								</dl>
@@ -393,4 +394,13 @@
 		navLinks.forEach(link => { const id = link.getAttribute('href'); if (id && id.startsWith('#')) { const section = document.querySelector(id); if (section) sections.push({ link, section }); } });
 		const onScroll = () => {
 			const scrollY = window.scrollY || window.pageYOffset, windowH = window.innerHeight; let active = null;
-			sections.forEach(item => { if (scrollY >= item.section.offsetTop - windowH
+			sections.forEach(item => { if (scrollY >= item.section.offsetTop - windowH * 0.35) active = item; });
+			navLinks.forEach(l => l.classList.remove('active'));
+			if (active) active.link.classList.add('active'); else if (sections.length > 0) sections[0].link.classList.add('active');
+		};
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	});
+</script>
+</body>
+</html>
