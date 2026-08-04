@@ -65,7 +65,7 @@ header p{font-size:1em}p{font-size:.95em;line-height:1.6}
 .software-grid-split{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:.8em!important;margin-top:.6em!important}
 .software-item{width:100%!important;max-width:105px;padding:.75em .3em;background:rgba(28,43,65,.04);border-radius:8px;transition:background .3s,transform .3s;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:0 auto}
 .software-item:hover{background:rgba(28,43,65,.08);transform:translateY(-4px)}
-.software-item-icon{width:36px!important;height:36px!important;display:block!important;margin:0 auto .45em!important;object-fit:contain!important}
+.software-item-icon{width:36px!important;height:36px!important;display:block!important;margin:0 auto .45em!important;flex-shrink:0}
 .software-item span{font-size:.78em;font-weight:600;display:block}
 .expertise-columns{display:grid;grid-template-columns:1fr 1fr;gap:3.5em;margin-top:1.5em;text-align:left!important;align-items:start}
 .expertise-columns h3{font-family:'Montserrat',sans-serif;font-size:1.15em;font-weight:700;color:#1c2b41;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1.5em;padding-bottom:.6em;border-bottom:2px solid rgba(28,43,65,.1)}
@@ -187,16 +187,16 @@ header p{font-size:1em}p{font-size:.95em;line-height:1.6}
 			<p style="font-size:1.02em;color:#4e5a6a;margin-top:-.2em;margin-bottom:0;line-height:1.4;text-align:center!important" data-i18n="skills.sub">Tecnologias que venho aprimorando com o passar dos anos…</p>
 		</header>
 		<div class="software-grid-split">
-			<div class="software-item"><img src="images/photoshop.svg" alt="Photoshop" class="software-item-icon" loading="eager"/><span>Photoshop</span></div>
-			<div class="software-item"><img src="images/illustrator.svg" alt="Illustrator" class="software-item-icon" loading="eager"/><span>Illustrator</span></div>
-			<div class="software-item"><img src="images/indesign.svg" alt="InDesign" class="software-item-icon" loading="eager"/><span>InDesign</span></div>
-			<div class="software-item"><img src="images/premierepro.svg" alt="Premiere Pro" class="software-item-icon" loading="eager"/><span>Premiere Pro</span></div>
-			<div class="software-item"><img src="images/aftereffects.svg" alt="After Effects" class="software-item-icon" loading="eager"/><span>After Effects</span></div>
-			<div class="software-item"><img src="images/figma.svg" alt="Figma" class="software-item-icon" loading="eager"/><span>Figma</span></div>
-			<div class="software-item"><img src="images/canva.svg" alt="Canva" class="software-item-icon" loading="eager"/><span>Canva</span></div>
-			<div class="software-item"><img src="images/capcut.svg" alt="CapCut" class="software-item-icon" loading="eager"/><span>CapCut</span></div>
-			<div class="software-item"><img src="images/blender.svg" alt="Blender" class="software-item-icon" loading="lazy"/><span>Blender</span></div>
-			<div class="software-item"><img src="images/clipchamp.svg" alt="Clipchamp" class="software-item-icon" loading="lazy"/><span>Clipchamp</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#001e36"/><text x="24" y="32" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" fill="#31a8ff">Ps</text></svg><span>Photoshop</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#330000"/><text x="24" y="32" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" fill="#ff9a00">Ai</text></svg><span>Illustrator</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#49021f"/><text x="24" y="32" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" fill="#ff3366">Id</text></svg><span>InDesign</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#00005b"/><text x="24" y="32" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" fill="#9999ff">Pr</text></svg><span>Premiere Pro</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#00005b"/><text x="24" y="32" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" fill="#9999ff">Ae</text></svg><span>After Effects</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="2" width="12" height="12" rx="2" fill="#f24e1e"/><rect x="24" y="2" width="12" height="12" rx="6" fill="#ff7262"/><rect x="12" y="14" width="12" height="12" rx="2" fill="#a259ff"/><circle cx="30" cy="20" r="6" fill="#1abcfe"/><path d="M12 26h12v6a6 6 0 1 1-12 0v-6z" fill="#0acf83"/></svg><span>Figma</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="20" fill="#7d2ae8"/><circle cx="24" cy="24" r="14" fill="#00c4cc"/><circle cx="24" cy="24" r="8" fill="#fff"/></svg><span>Canva</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#000"/><text x="24" y="32" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" fill="#fff">Cap</text></svg><span>CapCut</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#265787"/><circle cx="28" cy="24" r="7" fill="none" stroke="#ea7600" stroke-width="3"/><circle cx="28" cy="24" r="2.5" fill="#ea7600"/><path d="M8 24h13" stroke="#ea7600" stroke-width="3" stroke-linecap="round"/><path d="M8 24l7-5M8 24l7 5" stroke="#ea7600" stroke-width="2.5" stroke-linecap="round"/></svg><span>Blender</span></div>
+			<div class="software-item"><svg class="software-item-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="7" fill="#4c2882"/><polygon points="19,14 35,24 19,34" fill="#fff"/></svg><span>Clipchamp</span></div>
 		</div>
 	</div>
 </div>
